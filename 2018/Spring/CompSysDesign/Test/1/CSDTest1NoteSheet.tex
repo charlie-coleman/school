@@ -1,0 +1,196 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{moresize}
+\usepackage{mathtools}
+
+\pagenumbering{gobble}
+
+\colorlet{keyword}{blue!100!black!80}
+\colorlet{comment}{green!30!black!100}
+\definecolor{string}{gray}{0.3}
+\definecolor{ndkeyword}{HTML}{FF1493}
+\definecolor{lightergray}{gray}{0.9}
+
+\setlist[enumerate]{noitemsep, topsep=0pt}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+\newcommand{\ti}[1]{\hangindent=0.25in\noindent\begin{small}\textbf{#1}\end{small}}
+\newcommand{\chaptertitle}[1]{\noindent\begin{normalsize}\textbf{#1}\end{normalsize}}
+\newcommand{\hi}{\setlength\parindent{0.25in}\indent\hangindent=0.5in}
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\ra}{$\rightarrow$ }
+\newcommand{\sa}{\textbf{Answer: }}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\begin{document}
+
+	\begin{normalsize}
+	\noindent \textbf{Computer System Design Test \#1 Note Sheet}
+	\end{normalsize}
+	
+	\begin{small}
+	\begin{multicols*}{2}
+	\chaptertitle{RS 232}
+	
+	\ti{Signal Levels: }
+		
+		\hi\ti{Standard: }
+			
+			\hi\hi High Voltage (Space/False): 3 $\leftrightarrow$ 20V
+			
+			\hi\hi Low Voltage (Mark/True): -3 $\leftrightarrow$ -20V
+			
+		\hi\ti{TTL: } 
+		
+			\hi\hi High Voltage (True): 3.3V or 5V
+		
+			\hi\hi Low Voltage (False): 0V
+	
+	\ti{Waveforms: }
+		
+		\hi Start bit $\rightarrow$ a single 0
+		
+		\hi Data bits $\rightarrow$ 5-9 bits, LSB first
+		
+		\hi Parity bit $\rightarrow$ 0-1 bits, even/odd/none/etc.
+		
+		\hi Stop bits $\rightarrow$ 1 or more bits, can be fractional
+	
+	\ti{Handshaking: }
+	
+		\hi\ti{Hardware: } 
+		
+		\hi RTS \ra output from DTE, indicates ready to communicate
+		
+		\hi CTS \ra input to the DTE, indicates DCE is ready to communicate
+		
+		\hi\ti{Software: } XON \ra 0x11, XOFF \ra 0x13
+		
+	\ti{UART: }
+	
+		\hi\ti{8250: }
+		
+			\hi\hi\ti{Registers: }
+				
+				\hi\hi\hi Line Control Register
+				
+					\hi\hi\hi\hi LCR0-1: Data bits (5-8)
+					
+					\hi\hi\hi\hi LCR2: Stop bits (1/1.5-2)
+					
+					\hi\hi\hi\hi LCR3: Parity Enable
+					
+					\hi\hi\hi\hi LCR4: Odd/Even Parity
+					
+					\hi\hi\hi\hi LCR5: Stick Parity
+					
+					\hi\hi\hi\hi LCR6: Break control
+					
+					\hi\hi\hi\hi LCR7: Divisor Latch Access Bit
+					
+				\hi\hi\hi DLM, DLL: Divisor Latch MSB/LSB
+			
+			\hi\hi\ti{Programming: }
+			
+		\hi\ti{Building a UART: } 
+		
+	\ti{Clocks: }
+	
+		\hi\ti{Asynchronous: }
+		
+		\hi\ti{Synchronous: }
+		
+	\ti{Duplex: }
+	
+		\hi\ti{Full: } Both directions at the same time
+		
+		\hi\ti{Half: } Both directions at different times
+		
+		\hi\ti{Simplex: } Only one direction
+	
+	\ti{Bit rate vs. Data rate: } Bit rate == baud rate, for data rate, you need to take overhead into account
+	
+	\ti{Parity: } Make the \# of 1s in a message even or odd
+	
+	\ti{ASCII: } SP \ra 0x20, 0 \ra 0x30, A \ra 0x41, a \ra 0x61
+	
+	\ti{MARK time (1): } Low Voltage on RS232
+	
+	\ti{SPACE time (0): } High Voltage on RS232
+	
+	\ti{Clock Skew: } Deviation in average frequency
+	
+	\ti{Clock Jitter: } Slight variation from period to period
+	
+	\ti{DTE: } Data terminal equipment, typically a PC (host)
+	
+	\ti{DCE: } Data circuit terminating equipment (data sink)
+	
+	\ti{Crossover cable: } Needed when plugging 2 DTEs together. Cross over RX/TX, RTS/CTS, DTR/DSR
+	
+	~\\ \chaptertitle{USB 1.1}
+	
+	\ti{Bus Topology: }
+	
+	\ti{Maximum number of hops: }
+	
+	\ti{Differential Signaling: }
+	
+	\ti{Power Management: }
+	
+	\ti{Bus Protocol: }
+	
+	\ti{CRC: }
+	
+	\ti{Device Detection: }
+	
+		\hi\ti{Full Speed: }
+		
+		\hi\ti{Low Speed: }
+		
+	\ti{Packet Types Control, Bulk, Interrupt, Isochronous: }
+	
+	\ti{Signal Levels and Name (J, K, SE0): }
+	
+	\ti{NRZI: }
+	
+	\ti{Bit Stuffing: }
+	
+	\ti{Packet Format: }
+	
+		\hi\ti{Sync: }
+		
+		\hi\ti{PID: }
+		
+		\hi\ti{Address Field: }
+		
+		\hi\ti{Endpoint Field: }
+		
+		\hi\ti{Frame Number: }
+		
+		\hi\ti{Data Field: }
+		
+		\hi\ti{CRC: }
+		
+	\ti{Token Packet: }
+	
+	\ti{Start-of-Frame: }
+	
+	\ti{Data Packet: }
+	
+	\ti{Hand Shake Packet: }
+	
+	\ti{Packet Transmission Patterns: }
+	
+	\ti{Encoding/Decoding Packets: }	
+	
+	\end{multicols*}
+	\end{small}
+\end{document}

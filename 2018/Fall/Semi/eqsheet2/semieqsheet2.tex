@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{graphicx}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\noindent\begin{center}\textbf{Equations for Exam \#2}\end{center}
+	\begin{small}
+		\begin{multicols*}{2}
+			\noindent $\tau_n = \cfrac{1}{\alpha_r (n_0+p_0)}$ \\
+			$g_{op} = \alpha_r \left[(n_0+p_0)*\delta_n + \delta_n^2\right]$ \\
+			$n_i^2 = p_0 * n_0$\\
+			$E_{F_n}-E_i = kT \ln \cfrac{n_n}{n_i} \approx kT \ln \cfrac{N_D^-}{n_i}$\\
+			$E_{F_p}-E_i = kT \ln \cfrac{p_p}{n_i} \approx kT \ln \cfrac{N_A^+}{n_i}$\\\\
+			
+			\noindent\underline{For n-type sample:}\\
+			$F_n-E_i=kT \ln \cfrac{n_n}{n_i}$, $n_n = n_{n_0} + \delta_n$ \\ 
+			$E_i-F_p=kT \ln \cfrac{p_n}{n_i}$, $p_n = p_{n_0} + \delta_p$ \\ 
+			$\sigma_n = q \left[\mu_pp_n+\mu_nn_n\right]$\\
+			\underline{For p-type sample:}\\
+			$F_n-E_i=kT \ln \cfrac{n_p}{n_i}$, $n_p = n_{p_0} + \delta_n$ \\ 
+			$E_i-F_p=kT \ln \cfrac{p_p}{n_i}$, $p_p = p_{p_0} + \delta_p$ \\ 
+			$\sigma_p = q \left[\mu_pp_p+\mu_nn_p\right]$\\\\
+			
+			\noindent$J = \sigma \vec{\varepsilon}$ \tab[0.5cm] (if $\vec\varepsilon > \varepsilon_c, J = q(n+p)v_{sat}$)\\
+			$D = \cfrac{kT}{q}\mu$, $L=\sqrt{D\tau}$\\
+			$qV_0 = (E_{F_n}-E_{F_p})=kT\ln \cfrac{n_{n_0}p_{n_0}}{n_i^2}$\\
+			$\cfrac{p_p}{p_n}=\cfrac{n_n}{n_p}=e^{qV_0/kT}$\\
+			$\begin{aligned}
+				\vec\varepsilon_0 \equiv \text{Max Field at Junction} = -\cfrac{q}{\epsilon_s}N_Dx_{n_0}\\
+				 = -\cfrac{q}{\epsilon_s}N_Ax_{p_0}
+			\end{aligned}$\\
+			$V_0 = -\cfrac{1}{2}\cfrac{q}{\epsilon}*\cfrac{N_AN_D}{N_A+N_D} W^2$\\
+			$\begin{aligned}
+				W&=\left[ \cfrac{2\epsilon}{q} V_0 \left(\cfrac{1}{N_A}+\cfrac{1}{N_D}\right)\right]^{1/2}\\
+				&=\left[ \cfrac{2\epsilon}{q} \left(V_0-V\right) \left(\cfrac{1}{N_A}+\cfrac{1}{N_D}\right)\right]^{1/2}\text{(with bias)}
+			\end{aligned}$\\\\
+			$\epsilon_s = \epsilon_{r_s}\epsilon_0$\\
+			$x_{p_0} = \cfrac{W}{1+\cfrac{N_A}{N_D}}$, \tab[0.5cm] $x_{n_0} = \cfrac{W}{1+\cfrac{N_D}{N_A}}$\\
+			$C_j = \cfrac{\epsilon_s}{W} (F/cm^2)$\\
+			$I = I_0(e^{V/V_T}-1)$; $V_T=\cfrac{kT}{q}$\\
+			$I_0=qA\left[\cfrac{D_pp_n}{L_p} + \cfrac{D_nn_p}{L_n}\right]$\\
+			$Q_+ = qAx_{n_0}N_D=qAx_{p_0}N_A$\\
+			$\delta n(x_p) = \Delta n_p e^{-x_p/L_n}=n_p(e^{V/V_T}-1)e^{-x_p/L_n}$\\
+			$\delta p(x_n) = \Delta p_n e^{-x_n/L_p}=p_n(e^{V/V_T}-1)e^{-x_n/L_p}$\\
+			$x_{p_0} = \left[ \cfrac{2\epsilon}{q}V_0\left(\cfrac{N_D}{N_A(N_A+N_D)}\right)\right]^{1/2}$\\
+			$x_{n_0} = \left[ \cfrac{2\epsilon}{q}V_0\left(\cfrac{N_A}{N_D(N_A+N_D)}\right)\right]^{1/2}$\\
+			
+			\noindent\underline{Constants:}\\
+			$q = 1.6\times10^{-19}$C\\
+			$\epsilon_0 = 8.85\times10^{-14}$ Fm$^{-1}$,  $\epsilon_{r_{Si}} = 11.8$\\
+			$h = 6.626 \times 10^{-34}$ m$^2$kg/s\\
+			$\hbar = \frac{h}{2\pi} = 1.055 \times 10^{-31} $ Js/rad\\ 
+			$m^* = 9.11 \times 10^{-31}$ kg\\
+			$kT|_{T=300K} \approx 0.026$ eV \\
+			$n_i(Si)|_{300K} = 1.5 \times 10^{10}$ cm$^{-3}$\\
+			$v_{th} =$ Thermal Velocity $\approx 10^7$ cm/sec \\
+			$\vec{\varepsilon}_c =$ critical field $= 10^4$ V/cm\\\\
+		\end{multicols*}
+	
+
+		\pagebreak
+		
+		\begin{center}
+		\includegraphics[width=\textwidth]{fig1}
+		\includegraphics[width=\textwidth]{fig2}
+		\includegraphics[width=\textwidth]{fig3}
+		\end{center}
+	\end{small}
+\end{document}

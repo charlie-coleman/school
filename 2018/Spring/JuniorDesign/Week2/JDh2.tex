@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{forest}
+
+\title{\vspace*{\fill}\textbf{The Functions of a Design Project \\ (Autonomous Lawn Mower)}}
+\author{Charlie Coleman, Ahmed Ganibegovic, Romeo Scagliarini}
+\date{February 6, 2018\vspace*{\fill}}
+
+\begin{document}
+    
+    \maketitle
+    \pagebreak
+    
+    \noindent\begin{large}\textbf{Introduction}\end{large}
+    
+    All design projects have functionality breakdown. These functions are essentially tasks performed by the system. To implement a design project, we need to breakdown its functions into smaller sub functions. A sub function is a function that has to work in order for a more general function to take place$^{[1]}$. We want to continue breaking down functions until there are no more sub functions left. At the end, there should be a tree of functions with broad functions at the top with supporting functions below them. And extremely basic functions at the bottom that are either close or are raw materials. This process helps to convey the necessary pieces of a design and seperate the design process into discrete steps$^{[2]}$. For an autonomous lawn mower specifically, there are specific functions they have to perform such as mowing unassisted, cutting and bagging grass, and knowing what areas to continue cutting or what areas have been cut$^{[3]}$. \\
+    
+    \noindent\begin{large}\textbf{Functional Elements}\end{large}
+
+	\noindent\textit{Function Tree}
+	
+    \begin{center}
+    \begin{small}
+    \begin{forest}
+        for tree={
+            align=center,
+            l sep=1.5cm,
+            s sep=1cm
+        }
+        [Cut grass autonomously
+            [Detect objects\\in front
+                [Acquire signal]
+            ]1.25
+            [Monitor areas of\\grass remaining
+                [Record area\\covered]
+                [Measure yard\\dimensions]
+            ]
+            [Monitor gas\\remaining
+                [Acquire signal]
+            ]
+            [Control speed
+                [Acquire signal]
+            ]
+            [Bag grass]
+        ]
+    \end{forest}
+    \end{small}
+    \end{center}
+    
+    \noindent\textit{Function Breakdown \& Descriptions}
+    
+    \begin{itemize}
+		\item[-] Cut grass autonomously - This is the ultimate and most general function of our design project.
+		\item[-] Detect objects in front - The autonomous lawn mower needs knowledge it is unable to proceed if there is an object in its path. This function would give the lawn mower the ability to realize it has an object in its path and change paths. 
+		\item[-] Monitor areas of grass remaining - The lawn mower would need some sort of function that gives it knowledge of what grass has been cut versus what grass is not cut yet. 
+		\item[-] Record area covered - This function is different from the one above. This function tracks the area covered by the lawn mower. Recording area would help give the lawn mower an estimation of how much more time it needs to cut the grass. 
+		\item[-] Measure yard dimensions - This function allows the mower to remain within the yard of the owner.
+		\item[-] Monitor gas remaining - The mower would need the ability to monitor its current fuel supply and detect whether or not it needs refilled. 
+		\item[-] Control speed - This function makes sure the mowers speed stays within set parameters. This would ensure that the mower does not move dangerously fast or tediously slow.
+		\item[-] Acquire signal - This function is present in basically all functions within the system, as it is important for any control system. The signal would allow the controller inside the mower to interpret the data collected and act upon it.
+		\item[-] Bag grass - The mower would need a way to contain the grass clippings.
+
+    \end{itemize}~\\
+    
+    \noindent\begin{large}\textbf{Conclusion}\end{large}
+    
+    Design functional breakdown is vital to a good design project. The tree diagrams provide teams information on exactly how complex a certain design is, the time/effort needed to complete the design, what functions are essential to each other, cost, etc. All of this information helps achieve an organized and well thought out design project. In the end, this homework taught us the ability to breakdown a design project’s functions and the importance of functionality breakdown.\\
+    
+    \noindent\begin{large}\textbf{Bibliography}\end{large}
+    
+    \begin{enumerate}
+    	\item “Teacher Tool Box- Functional Decomposition.” What Is the Process of Functional Decomposition?, 2009, engineering.purdue.edu/EPICS/k12/resources/1.20\%20Teacher\%20Toolbox-\%20Functional\%20\\Decomposition.pdf.
+    	\item Borysowich, Craig. “Overview of Functional Decomposition.” Tech, 2007, it.toolbox.com/blogs/craigbo\\rysowich/overview-of-functional-decomposition-022007.
+    	\item “Top 5 Most Advanced Robotic Lawn Mowers.” Into Robotics, 30 July 2013, www.intorobotics.com/top-5-most-advanced-robotics-lawn-mowers/.
+    \end{enumerate}
+    
+\end{document}

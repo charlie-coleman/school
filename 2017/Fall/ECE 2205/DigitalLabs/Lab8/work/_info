@@ -1,0 +1,166 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8
+Edecode2_4e
+Z1 w1477543613
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8Decode2_4e.vhd
+Z5 FDecode2_4e.vhd
+l0
+L32
+Vl?[EiB8daNQ0Ck=8zR9[M0
+!s100 f;;_YiVf;=C57e4OePD]H3
+Z6 OP;C;10.4a;61
+31
+Z7 !s110 1477543633
+!i10b 1
+Z8 !s108 1477543633.000000
+Z9 !s90 -reportprogress|300|-explicit|-93|Decode2_4e.vhd|
+Z10 !s107 Decode2_4e.vhd|
+!i113 1
+Z11 o-explicit -93 -O0
+Z12 tExplicit 1
+Abehavioral
+R2
+R3
+DEx4 work 10 decode2_4e 0 22 l?[EiB8daNQ0Ck=8zR9[M0
+l44
+L42
+VH0RofJ<>=FY6K7a[9DGo90
+!s100 n6S25l>ncbRddJeg:lcXI1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edflipflop
+Z13 w1477539056
+R2
+R3
+R0
+Z14 8DFlipFlop.vhd
+Z15 FDFlipFlop.vhd
+l0
+L32
+VMBz3BWWT[4k4nEj=;4B5l3
+!s100 KF9QYIg1znR?OmZ3_XXP12
+R6
+31
+Z16 !s110 1477543578
+!i10b 1
+Z17 !s108 1477543578.000000
+Z18 !s90 -reportprogress|300|-explicit|-93|DFlipFlop.vhd|
+Z19 !s107 DFlipFlop.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 9 dflipflop 0 22 MBz3BWWT[4k4nEj=;4B5l3
+l40
+L38
+Vo5Ifccl0V^3kb937HFgcY2
+!s100 NUVoaUT?B?HED7LOF[Jk>1
+R6
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Eedgetriggereddflipflop
+Z20 w1477542348
+R2
+R3
+R0
+Z21 8EdgeTriggeredDFlipFlop.vhd
+Z22 FEdgeTriggeredDFlipFlop.vhd
+l0
+L32
+VD4:lJkTHdDBY]FiRNj=g53
+!s100 >WWdKli4VbPkcLJd@a_Za0
+R6
+31
+R16
+!i10b 1
+R17
+Z23 !s90 -reportprogress|300|-explicit|-93|EdgeTriggeredDFlipFlop.vhd|
+Z24 !s107 EdgeTriggeredDFlipFlop.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 22 edgetriggereddflipflop 0 22 D4:lJkTHdDBY]FiRNj=g53
+l49
+L38
+V<fKfSdcPlFIm[;lQB;0IZ3
+!s100 D5h1Q]19GYE?SbCWi3cRF0
+R6
+31
+R16
+!i10b 1
+R17
+R23
+R24
+!i113 1
+R11
+R12
+Efourbitregister
+Z25 w1477543192
+R2
+R3
+R0
+Z26 8FourBitRegister.vhd
+Z27 FFourBitRegister.vhd
+l0
+L32
+Vmdm0MDGhB8I9J3V84^H:Q1
+!s100 7ak>4k9Y15B[Q]MQ?GgZ]3
+R6
+31
+R16
+!i10b 1
+R17
+Z28 !s90 -reportprogress|300|-explicit|-93|FourBitRegister.vhd|
+Z29 !s107 FourBitRegister.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 15 fourbitregister 0 22 mdm0MDGhB8I9J3V84^H:Q1
+l57
+L44
+V=`;77fChko]=m>DK_6_m=2
+!s100 g0TY7b?7QBdM19JP4N:3M0
+R6
+31
+R16
+!i10b 1
+R17
+R28
+R29
+!i113 1
+R11
+R12

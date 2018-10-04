@@ -1,0 +1,154 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{moresize}
+\usepackage{mathtools}
+\usepackage{array}
+\graphicspath{{./}}
+
+\pagenumbering{gobble}
+
+\colorlet{keyword}{blue!100!black!80}
+\colorlet{comment}{green!30!black!100}
+\definecolor{string}{gray}{0.3}
+\definecolor{ndkeyword}{HTML}{FF1493}
+\definecolor{lightergray}{gray}{0.9}
+
+\setlist[enumerate]{noitemsep, topsep=0pt}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+\newcommand{\ti}[1]{\hangindent=0.25in\noindent\begin{footnotesize}\textbf{#1:}\end{footnotesize}}
+\newcommand{\chaptertitle}[1]{\noindent\begin{normalsize}\textbf{#1}\end{normalsize}}
+\newcommand{\hi}{\setlength\parindent{0.25in}\indent\hangindent=0.5in}
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\ra}{$\rightarrow$ }
+\newcommand{\lra}{$\leftrightarrow$ }
+\newcommand{\la}{$\leftarrow$ }
+\newcommand{\sa}{\textbf{Answer: }}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\begin{document}
+
+	\begin{normalsize}
+	\noindent \textbf{Computer System Design Test \#3 Note Sheet}
+	\end{normalsize}
+	
+	\begin{footnotesize}
+	\begin{multicols*}{2}
+	
+	\ti{Max Buses / Max Functions} PCI supports up to 256 buses with 80 cards/bus
+	
+	\ti{Bus Speed} Originally 0 \lra 33MHz, V2.1 introduced 0 \lra 66MHz
+	
+	\ti{Memory Spaces} Data/Memory, IO, Control
+	
+		\hi\ti{Bus Width} 32 bits, V2.1 increased it to 64 bits
+	
+	\ti{North Bridge} High performance bridge, location of PCI cards/RAM, connected directly to CPU
+	
+	\ti{South Bridge} The legacy bridge, provides backwards-compatibility for ISA cards, etc.
+	
+	\ti{Initiator} The device with control of a the bus. Similar to bus master in ISA
+	
+	\ti{Target} Destination device of a transaction
+	
+	\ti{Bus Clock Speeds} Spec says 0 \lra 33MHz, speed can vary based on certain conditions. Slowing the clock can save power. If the clock goes to 0MHz (think sleeping), the card must be able to resume when the clock starts again.
+	
+	\ti{Address/Data Phase}
+	
+		\hi\ti{Address phase} The assertion of FRAME\# indicates the start of a new burst transfer. This indicates the beginning of an address phase.
+		
+		\hi\ti{Data phase} C/BE\# becomes active low byte enables, indicating which of the 4 bytes have valid data. AD contains the data. DEVSEL\# is asserted by the receiver of the transaction to allow the start of the data phase.
+	
+		\hi\ti{Claiming Transactions} The target must claim the transaction (using DEVSEL\#) in 6 clocks or bus must be returned.
+		
+		\hi\ti{IRDY/TRDY Wait States} IRDY: Initiator Ready. TRDY: Target ready. Both initiator and target can insert wait states if needed.
+		
+		\hi\ti{STOP\#} Used by the target to tell the initiator to stop the transaction
+		
+	\ti{Reflected Wave Switching} Wires are not terminated to cause (nearly) complete reflection. The source end is terminated to allow for 1 reflection to be added. This means the wire only needs driven at half the desired voltage, but it require precise timing of clock edges to ensure the sample is taken during constructive interference.
+	
+	\ti{Incident Wave Switching} Output pins drive the desired voltage onto the wire with sufficient current to ensure all devices can see the correct voltage transition. Wires are terminated to minimize reflections that will cause interference.
+	
+	\ti{Ground Bounce} Switching of inputs requires modification of the charge on the gate of a transistor. Switching many of these at once will cause a large transient current in the digital supply lines. 
+	
+	\ti{Green Machine} PCI has a goal of low power consumption. This is achieved through reflected wave switching, variable clock speeds, and preventing lines from floating for long periods of time.
+	
+	\ti{Burst Transfers} Multiple data phases per address phase. The initiator send the start address during the address phase and the target is responsible for tracking the current destination address for each data phase.
+	
+	\ti{Throughput Calculations}
+	
+	\underline{Theoretical (33 MHz clock):} 
+	
+	$33\times 10^6 \cfrac{\text{cycles}}{\text{sec}} * 32 \cfrac{\text{bits}}{\text{cycle}} = 1056\times 10^6 \cfrac{\text{bits}}{\text{sec}} = 132 \text{ MBps}$
+	
+	\underline{Burst Length of 9 Data Phases:}
+	
+	$33\times 10^6 \cfrac{\text{cycles}}{\text{sec}} * 32 \cfrac{\text{bits}}{\text{cycle}} * \cfrac{9 \text{ data cycles}}{10 \text{ cycles}} = 118.8 MBps$
+	
+	\ti{Signal Groups}
+	
+		\hi\ti{System Signals} CLK, CLKRUN\#, RST\# (reset)
+		
+		\hi\ti{Address/Data Bus} AD, C/BE\#, PAR (parity)
+		
+		\hi\ti{Transaction Control} FRAME\#, IRDY\#, TRDY\#, STOP\#, IDSEL, LOCK\#, DEVSEL\#
+		
+		\hi\ti{Arbitration Signals} GNT\#, REQ\#
+	
+	\ti{C/BE\#}
+	
+		\hi\ti{Commands}
+		
+		\begin{tabular}{cccc|l}
+		\multicolumn{4}{c}{Command} & Meaning \\\hline
+		0 & 0 & 0 & 0 & Int Ack \\
+		0 & 0 & 1 & 0 & IO Read \\
+		0 & 0 & 1 & 1 & IO Write \\
+		0 & 1 & 1 & 0 & Mem Read \\
+		0 & 1 & 1 & 1 & Mem Write \\
+		1 & 0 & 1 & 0 & Config Read \\
+		1 & 0 & 1 & 1 & Config Write \\
+		1 & 1 & 0 & 1 & Dual Address Cycle
+		\end{tabular}
+		
+		\hi Dual address cycle is used to send 64 bit addresses across a 32 bit bus.		
+		
+		\hi\ti{Byte Enable Patterns} Byte Enable is active low, each bit 0-3 corresponds to 8 of the AD lines. (0 \ra enabled, 1 \ra disabled)
+		
+	\ti{Bus Arbitration} The action of determining which device will be the next initiator. Arbitration must be fair (each device gets to be bus master in a \textit{knowable} maximum \# of grant cycles.
+	
+		\hi\ti{GNT\#} A card asserts grant to indicate it wants control of the bus
+		
+		\hi\ti{ACK\#} The bus arbitrator will assert ACK\# to indicate that card is scheduled to be the next master.
+		
+		\hi\ti{FRAME\#} During the start of a new bus transfer, the card with ACK\# asserts FRAME\# indicating it is in control of the bus (claiming the bus)
+	
+	\ti{Hidden Arbitration} Cards can request the bus at any time. The next card is selected as soon as the current transaction is started and the next card waits until the transaction is complete.
+	
+	\ti{Subtractive Decoding} Technique for placing legacy devices in a PCI system. If DEVSEL\# is not asserted in 4 clock cycles, the south/legacy bridge asserts DEVSEL\# \& copies the transaction to the legacy bus.
+	
+	\ti{MIN\_GNT} Indicates the minimum time the device needs to be in charge of the bus in 250ns chunks.
+	
+	\ti{Min/Max Latencies} Minimum/maximum time that can elapse without a device being in charge of the bus.
+	
+	\ti{Bus Parking} Arbitrator asserts ACK\# to a card that is not asserting GNT\#. This is only fair if no other cards are asserting GNT\#. This saves 2 clock cycles on a lightly loaded bus.
+	
+	\ti{PCI implementation of Plug and Play (PNP)} PCI PNP is a "no surprise" PNP methodology. The user must first warn the software before removing or installing a card. The software prepares the card connector for insertion/removal and indicates to the user when the process can happen. The steps for PNP are:
+	
+	\begin{enumerate}
+	\item Selectively assert and deassert RST\# to the connector
+	\item Isolate the card from the logic
+	\item Remove or apply power to connector
+	\item Turn on/off Attention Indicator for the connector to indicate the connector is ready for removal/insertion
+	\end{enumerate}
+	
+	\end{multicols*}
+	\end{footnotesize}
+\end{document}

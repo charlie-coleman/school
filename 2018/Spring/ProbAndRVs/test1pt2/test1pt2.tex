@@ -1,0 +1,19 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+\begin{itemize}
+	\item[4a.] $P(M) = P(M|J)P(J) + P(M|\bar{J})P(\bar{J})$\\
+	$P(\text{1 match}) = B(100, 1, P(M))$\\
+	$P(J|M) = \cfrac{P(M|J)P(J)}{P(M)}$\\
+	$P(\text{1 correct match}) = P(\text{1 match})*P(J|M)$
+	\item[4b.] $P(\bar{J}|M) = \cfrac{P(M|\bar{J})*P(\bar{J})}{P(M)}$\\
+	$P(\text{1 incorrect match}) = P(\text{1 match})*P(\bar{J}|M)$
+	\item[4c.] $P(\text{0 matches}) = B(100, 0, P(M))$
+\end{itemize}
+
+
+\end{document}

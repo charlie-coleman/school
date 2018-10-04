@@ -1,0 +1,6 @@
+EN dflipflop NULL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/DFlipFlop.vhd" sub00/vhpl00 1477543551
+EN fourbitregister NULL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/FourBitRegister.vhd" sub00/vhpl04 1477543555
+AR fourbitregister behavioral "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/FourBitRegister.vhd" sub00/vhpl05 1477543556
+AR dflipflop behavioral "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/DFlipFlop.vhd" sub00/vhpl01 1477543552
+AR edgetriggereddflipflop behavioral "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/EdgeTriggeredDFlipFlop.vhd" sub00/vhpl03 1477543554
+EN edgetriggereddflipflop NULL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/EdgeTriggeredDFlipFlop.vhd" sub00/vhpl02 1477543553

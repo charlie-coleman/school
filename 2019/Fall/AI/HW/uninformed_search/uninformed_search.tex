@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\begin{document}
+	\begin{enumerate}
+		\item[3.15:] \begin{enumerate}
+			\item \begin{tikzpicture}[level/.style={sibling distance=60mm/#1}]
+				\node {1}
+					child {node {2}
+						child{node {4}
+							child{node {8}}
+							child{node {9}}
+						}
+						child{node {5}
+							child{node {10}}
+							child{node {11}}	
+						}
+					}
+					child{node {3}
+						child{ node {6}
+							child{node {12}}
+							child{node {13}}
+						}
+						child{ node {7}
+							child{node {14}}
+							child{node {15}}
+						}
+					};
+			\end{tikzpicture}
+			\item \begin{enumerate}
+				\item 1,2,3,4,5,6,7,8,9,10,11
+				\item 1,2,4,8,9,5,10,11
+				\item 1,2,3,4,5,6,7,8,9,10,11
+			\end{enumerate}
+			\item Would work well. From start: branch factor = 2, from goal: branch factor = 1
+			\item Moving backwards from the goal is easier than finding the goal
+			\item If goal is odd, subtract 1, divide by 2 until odd, repeat until you hit 1 (subtract 1 \& divide = move left from goal, divide by 2 means move right from goal). Play those moves backwards and you have your path.
+		\end{enumerate}
+	\end{enumerate}
+\end{document}

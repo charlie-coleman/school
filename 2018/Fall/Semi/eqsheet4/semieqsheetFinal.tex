@@ -1,0 +1,304 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{lmodern}
+
+\graphicspath{{figs/}}
+\newcommand{\sect}[1]{\noindent\textbf{#1}\\}
+\newcommand{\hl}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.2pt}}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
+
+\begin{document}
+	\begin{small}\begin{center}\textbf{Semiconductors Final Exam Equation Sheet}\end{center}\end{small}
+	{\fontsize{7pt}{8pt} \selectfont
+	
+	\begin{multicols*}{2}
+		\sect{Chapter 2: Intro to Q.M}
+		\begin{tabular}{ccc}
+			Classic. var. && Quantum operator \\
+			$x$ & $\rightarrow$ & $x$ \\
+			$f(x)$ & $\rightarrow$ & $f(x)$ \\
+			$p(x)$ & $\rightarrow$ & $\cfrac{\hbar}{j} \cfrac{\partial}{\partial x}$ \\
+			$E$ & $\rightarrow$ & $-\cfrac{\hbar}{j} \cfrac{\partial}{\partial t}$ \\
+		\end{tabular}
+	
+		\noindent $\left< Q_{op} \right> = \int_{-\infty}^\infty \Psi^* Q_{op} \Psi dx$
+		
+		\noindent $\left< P_x \right> = \int_{-\infty}^\infty \left(\Psi^*\right)\left(\cfrac{\hbar}{j}\cfrac{\partial}{\partial x}\right) \Psi dx$
+		
+		\noindent $\left(\Delta P_x\right) = \cfrac{\int_{-\infty}^\infty \Psi^* \left(\cfrac{\hbar}{j} \cfrac{\partial}{\partial x}\right) \Psi dx}{\int_{-\infty}^\infty \Psi^*\Psi dx}$ (normalized)
+		
+		\noindent $\left(\Delta  E\right) = \left<E\right> = \int_{-\infty}^\infty \Psi^*\left( -\cfrac{\hbar}{j} \cfrac{\partial}{\partial x} \right) \Psi dx$
+		
+		\noindent $\left(\Delta P_x\right)\left(\Delta x\right) \geq \cfrac{\hbar}{2}$, \tab[0.25cm] $\left(\Delta E\right)\left(\Delta t\right) \geq \cfrac{\hbar}{2}$\\\\
+		
+		\sect{Chapter 3: Energy Bands}
+		$f(E) = \cfrac{1}{1 + e^{(E-E_f)/kT}}$
+		
+		\noindent $N_A=p_{n_o} f(E_A)$, $N_D = n_{n_o} (1 - f(E_D))$
+		
+		\noindent $n_{n_o} p_{n_o} = n_i^2$, $n_{p_o} p_{p_o} = n_i^2$
+		
+		\noindent $q\phi_f = E_f - E_i = kT\ln \cfrac{N_D}{n_i}$ or $kT\ln\cfrac{N_A}{n_i}$
+		
+		\noindent $J = \cfrac{I}{A} = \sigma \vec{\varepsilon} = Qv$
+		
+		\noindent $\sigma_n = q\mu_nn_n$ or $\sigma_p = q\mu_pp_p$
+		
+		\noindent if $\varepsilon < \varepsilon_c$, use $\left\{\begin{aligned} J_n &= q\mu_nn_n\vec{\varepsilon} \\ J_p &= q\mu_pp_p\vec{\varepsilon}\end{aligned}\right.$
+		
+		\noindent if $\varepsilon > \varepsilon_c$, use $\left\{\begin{aligned}
+		J_n &= qn_nv_{sat} \\ J_p &= qp_pv_{sat}
+		\end{aligned}\right.$\\\\
+		
+		\sect{Chapter 5: P-N Junctions}
+		$qV_0 = kT\ln\cfrac{N_DN_A}{n_i^2}$
+		
+		\noindent $\delta_n(x) = \Delta n_p e^{-x_p/L_n}$ (p side)
+		
+		\noindent $\Delta n_p = n_{p_o}\left(e^{qV/kT}-1\right)$
+		
+		\noindent $\delta_p(x) = \Delta p_n e^{-x_n/L_p}$ (n side)
+		
+		\noindent $\Delta p_n = p_{n_o}\left(e^{qV/kT}-1\right)$
+		
+		\noindent $W_D \biggr\rvert_{eq} = \sqrt{\cfrac{2\epsilon_s}{q} V_o \left(\cfrac{1}{N_A} + \cfrac{1}{N_D}\right)}$
+		
+		\noindent $W_D \biggr\rvert_{\text{f.bias}} = \sqrt{\cfrac{2\epsilon_s}{q} \left(V_o-V_F\right) \left(\cfrac{1}{N_A} + \cfrac{1}{N_D}\right)}$
+		
+		\noindent $W_D \biggr\rvert_{\text{r.bias}} = \sqrt{\cfrac{2\epsilon_s}{q} \left(V_o+V_R\right) \left(\cfrac{1}{N_A} + \cfrac{1}{N_D}\right)}$
+		
+		\noindent $D_p = \cfrac{kT}{q}\mu_p$, $L_p = \sqrt{D_p \tau_p}$
+		
+		\noindent $D_n = \cfrac{kT}{q}\mu_n$, $L_n = \sqrt{D_n \tau_n}$
+		
+		\noindent $I_o = qA\left[ \cfrac{D_p}{L_p} p_n + \cfrac{D_n}{L_n} n_p\right]$
+		
+		\noindent $I = I_o \left( e^{qV/kT} - 1 \right)$
+		
+		\noindent $V \equiv $ applied voltage
+		
+		\noindent $I(V_{r.bias}) \approx -I_o$
+		
+		\noindent $C_j = \cfrac{\epsilon_s}{W_D}$
+		
+		\noindent\begin{tabular}{c|c|c|}
+			& Ohmic & Rectifying \\ \hline
+			p-type & $\phi_m > \phi_s$ & $\phi_m < \phi_s$ \\
+			n-type & $\phi_m < \phi_s$ & $\phi_m > \phi_s$ \\
+		\end{tabular}
+		\vfill\null
+		\columnbreak
+	
+		\sect{Chapter 6: Field Effect Transistors}
+		
+		\noindent\underline{\textit{JFETs}}
+		
+		\noindent $V_o = \cfrac{kT}{q} \ln \cfrac{N_AN_D}{n_i}$
+		
+		\noindent $W = \sqrt{ \cfrac{2\epsilon_s}{q} \left(\cfrac{1}{N_A} + \cfrac{1}{N_A}\right)\left(V_o + |V_R|\right) }$
+		
+		\noindent if $V_o + |V_R| \geq V_P \Rightarrow W = a$
+		
+		\noindent $|V_R| = |V_G| + |V_D|$	
+		
+		\noindent $|V_P| = |V_o| + |V_G| + |V_D|$
+		
+		\noindent p-type: $V_P = \cfrac{a^2qN_A}{2\epsilon_s}$
+		
+		\noindent n-type: $V_P = \cfrac{a^2qN_D}{2\epsilon_s}$
+		
+		\noindent $|V_{D_{sat}}| = |V_P| - |V_G| - |V_o|$\\\\
+		
+		\noindent \underline{\textit{MOSFET}}
+		
+		\noindent $V_T(\text{ideal}) = V_T = \cfrac{Q_D}{C_i} + 2\phi_f$
+		
+		n-channel: $V_T = \left|\cfrac{Q_D}{C_i}\right| + \left|2\phi_f\right|$
+		
+		p-channel: $V_T = -\left|\cfrac{Q_D}{C_i}\right| - \left|2\phi_f\right|$
+		
+		\noindent Non-Ideal: $V_{FB} = -\left|\cfrac{Q_i}{C_i}\right| - \left|\Phi_{ms}\right|$
+		
+		$\Phi_{ms} = \phi_m - \phi_s$
+		
+		$V_T = V_{FB} + V_T(\text{ideal})$
+		
+		$V_{D_{sat}} = V_G - V_T$\\
+		
+		\noindent n-channel:
+		
+		$Q_D = qN_AW_m$, $\phi_f = \cfrac{kT}{q} \ln \cfrac{N_A}{n_i}$
+		
+		$W_m = \sqrt{\cfrac{2\epsilon_s}{qN_A}\left(2\phi_f + \left|V_{sb}\right|\right)}$
+		
+		$C_i = C_{oxide} = \cfrac{\epsilon_{oxide}}{t_{oxide}}$ 
+		
+		\noindent p-channel:
+		
+		$Q_D = qN_DW_m$, $\phi_f = \cfrac{kT}{q} \ln \cfrac{N_D}{n_i}$
+		
+		$W_m = \sqrt{\cfrac{2\epsilon_s}{qN_D}\left(2\phi_f + \left|V_{sb}\right|\right)}$
+		
+		$C_i = C_{oxide} = \cfrac{\epsilon_{oxide}}{t_{oxide}}$ 
+		
+		\noindent Drain Current:
+		
+		Linear:
+		
+		$I_D = \cfrac{z\mu C_i}{L} \left[ \left( V_G - V_T \right) V_D - \frac{1}{2} V_D^2 \right]$
+		
+		Saturation:
+		
+		$I_{D_{sat}} = \cfrac{z \mu C_i}{2L} \left(V_G-V_T\right)^2$
+		
+		$g = g_m(\text{sat.}) \approx \cfrac{Z\mu C_i}{L} (V_G - V_T)$\\
+		
+		\sect{Chapter 7: BJTs}
+		
+		\noindent Relation between terminal currents:
+		
+		$I_E = I_B + I_C$
+		
+		$I_C = \beta_F I_B$, $\beta \gg 1$
+		
+		$I_E = (1+\beta) I_B$
+		
+		$I_C = \alpha_F I_E$, $\alpha_F \lessapprox 1$
+		
+		$\beta_F = \cfrac{\alpha_F}{1-\alpha_F}$
+		
+		\noindent\underline{\textit{P-N-P:}}
+		
+		\noindent Emitter Injection Efficiency:
+		
+		$\begin{aligned}
+			\gamma &= \cfrac{i_{E_p}}{i_{E_n} + i_{E_p}} \\
+			&= \cfrac{\text{emitter hole component}}{\text{total emitter current}}
+		\end{aligned}$
+		
+		$i_c = B i_{E_p}$
+		
+		\noindent B: Base transport factor
+		
+		\noindent $\alpha$: current transfer ratio
+		
+		$\alpha \equiv \cfrac{i_c}{i_E} = B\gamma = \cfrac{Bi_{E_p}}{i_{E_n} + i_{E_p}}$
+		
+		\noindent $i_B$ : base current
+		
+		$i_B = i_{E_n} + (1-B) i_{E_P}$
+		
+		\noindent $\beta$: Base to Collector current amplification factor
+		
+		$\beta = \cfrac{\alpha}{1-\alpha} = \cfrac{\tau_p}{\tau_t}$
+		
+		\noindent $\tau_p$: Minority carrier lifetime
+		
+		\noindent $\tau_t$: base transit time
+		
+		\noindent More general $\gamma$:
+		
+		$\gamma \approx \left[ 1 + \cfrac{W_bn_n\mu_n^p}{L_n^pp_p\mu_p^n} \right]^{-1}$
+		
+		\noindent $I_E \approx qA\cfrac{D_p}{L_p}\Delta p_E \text{ctnh} \cfrac{W_b}{L_p}$
+		
+		\noindent $I_C \approx qA\cfrac{D_P}{L_P}\Delta p_E \text{csch} \cfrac{W_b}{L_p}$
+		
+		\noindent $I_B = I_E - I_C \approx qA\cfrac{D_P}{L_P}\Delta p_E \text{tanh} \cfrac{W_b}{L_p}$
+		
+		\noindent $\Delta p_E = p_{n_o} \left(e^{qV_{EB}/kT}-1\right)$
+		
+		\noindent $\Delta p_C = p_{n_o} \left(e^{qV_{CB}/kT}-1\right)$
+		
+		\noindent $n_{n_o} \equiv N_D$ in the base region 
+		
+		\noindent $n_{n_o} \equiv$ hole concentration in the base region 
+		
+		\noindent $B = \cfrac{1}{\cosh\left[\cfrac{W_b}{L_p}\right]}$
+		
+		\noindent $I_E = I_{E_n} + I_{E_p} \approx I_{E_p}$
+		
+		\noindent $I_{E_n} = \cfrac{qAD_n^E}{L_n^E} n_p^Ee^{qV_{EB}/kT}$
+		
+		\noindent $I_{E_p} = \cfrac{qAD_p^B}{L_p^B}p_n^B \text{ctnh}\left(\cfrac{W_b}{L_p}\right) e^{qV_{EB}/kT}$
+		
+		\noindent\underline{\textit{N-P-N:}}
+		
+		\noindent Emitter Injection Efficiency:
+		
+		$\begin{aligned}
+		\gamma &= \cfrac{i_{E_n}}{i_{E_p} + i_{E_n}} \\
+		&= \cfrac{\text{emitter electron component}}{\text{total emitter current}}
+		\end{aligned}$
+		
+		$i_c = B i_{E_n}$
+		
+		\noindent B: Base transport factor
+		
+		\noindent $\alpha$: current transfer ratio
+		
+		$\alpha \equiv \cfrac{i_c}{i_E} = B\gamma = \cfrac{Bi_{E_n}}{i_{E_n} + i_{E_p}}$
+		
+		\noindent $i_B$ : base current
+		
+		$i_B = i_{E_p} + (1-B) i_{E_n}$
+		
+		\noindent $\beta$: Base to Collector current amplification factor
+		
+		$\beta = \cfrac{\alpha}{1-\alpha} = \cfrac{\tau_n}{\tau_t}$
+		
+		\noindent $\tau_p$: Minority carrier lifetime
+		
+		\noindent $\tau_t$: base transit time
+		
+		\noindent More general $\gamma$:
+		
+		$\gamma \approx \left[ 1 + \cfrac{W_bp_p\mu_p^n}{L_p^nn_n\mu_n^p} \right]^{-1}$
+		
+		\noindent $I_E \approx qA\cfrac{D_n}{L_n}\Delta n_E \text{ctnh} \cfrac{W_b}{L_n}$
+		
+		\noindent $I_C \approx qA\cfrac{D_n}{L_n}\Delta n_E \text{csch} \cfrac{W_b}{L_n}$
+		
+		\noindent $I_B = I_E - I_C \approx qA\cfrac{D_n}{L_n}\Delta n_E \text{tanh} \cfrac{W_b}{L_n}$
+		
+		\noindent $\Delta n_E = n_{p_o} \left(e^{qV_{EB}/kT}-1\right)$
+		
+		\noindent $\Delta n_C = n_{p_o} \left(e^{qV_{CB}/kT}-1\right)$
+		
+		\noindent $p_{p_o} \equiv N_A$ in the base region 
+		
+		\noindent $n_{p_o} \equiv$ electron concentration in the base region 
+		
+		\noindent $B = \cfrac{1}{\cosh\left[\cfrac{W_b}{L_p}\right]}$
+		
+		\noindent $I_E = I_{E_n} + I_{E_p}$ \\
+		
+		\vfill\null
+		\columnbreak
+		
+		\sect{Constants:}
+		$q = 1.6\times10^{-19}$C\\
+		$\epsilon_0 = 8.85\times10^{-14}$ Fm$^{-1}$,  $\epsilon_{r_{Si}} = 11.8$\\
+		$ \epsilon_r(\text{SiO}_2) = 3.9 $ \\
+		$h = 6.626 \times 10^{-34}$ m$^2$kg/s, \tab[0.25cm] $\hbar = 1.055 \times 10^{-31} $ Js/rad\\ 
+		$m^* = 9.11 \times 10^{-31}$ kg\\
+		$kT|_{T=300K} \approx 0.026$ eV \\
+		$n_i(Si)|_{300K} = 1.5 \times 10^{10}$ cm$^{-3}$\\
+		$v_{th} =$ Thermal Velocity $\approx 10^7$ cm/sec \\
+		$\vec{\varepsilon}_c =$ critical field $= 10^4$ V/cm \\
+		$q\chi(Si) = 4.05$eV\\
+		$E_g(Si) = 1.14$eV
+		
+		
+	\end{multicols*}
+	
+	}
+\end{document}

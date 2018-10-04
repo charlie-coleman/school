@@ -1,0 +1,22 @@
+V3 11
+FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/DFlipFlop.vhd" 2016/10/26.22:30:56 P.20131013
+EN work/DFlipFlop 1477543551 \
+      FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/DFlipFlop.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/DFlipFlop/Behavioral 1477543552 \
+      FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/DFlipFlop.vhd" \
+      EN work/DFlipFlop 1477543551
+FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/EdgeTriggeredDFlipFlop.vhd" 2016/10/26.23:25:48 P.20131013
+EN work/EdgeTriggeredDFlipFlop 1477543553 \
+      FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/EdgeTriggeredDFlipFlop.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/EdgeTriggeredDFlipFlop/Behavioral 1477543554 \
+      FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/EdgeTriggeredDFlipFlop.vhd" \
+      EN work/EdgeTriggeredDFlipFlop 1477543553 CP DFlipFlop
+FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/FourBitRegister.vhd" 2016/10/26.23:39:52 P.20131013
+EN work/FourBitRegister 1477543555 \
+      FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/FourBitRegister.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/FourBitRegister/Behavioral 1477543556 \
+      FL "D:/Charlie Coleman/School 2017/ECE 2205/DigitalLabs/Lab8/FourBitRegister.vhd" \
+      EN work/FourBitRegister 1477543555 CP EdgeTriggeredDFlipFlop

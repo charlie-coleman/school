@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+	\begin{center}\begin{large}Lab 1: Bootstrap your embedded system\end{large}\\Charlie Coleman\end{center}
+	
+	To familiarize myself with the Digilent Zybo, I followed a tutorial found here:
+	
+	\begin{footnotesize}\begin{center}
+	\noindent \texttt{https://reference.digilentinc.com/learn/programmable-logic/tutorials/\\zybo-getting-started-with-zynq/start}
+	\end{center}\end{footnotesize}
+	
+	\noindent This guide walks through creating a new project in Xilinx Vivado, designing a block diagram that exposes the switches/buttons/LEDs so the processor side, generating bit files, and using the SDK to program the  processor side. All of this combined together allows us to toggle the LEDs using the corresponding switch and allows us to print to the Xilinx console when a button is pressed. The steps outlined in the guide are:
+	
+	\begin{enumerate}
+		\item Create New Project
+		\item Create a new block design using the ZYNQ7 Processing System \& 2$\times$ AXI GPIO core
+		\begin{enumerate}
+			\item For AXI GPIO Core 0, enable Dual Channel
+			\item Run the Connection Automation Tool for all automation
+			\item For axi\_gpio\_0, select GPIO \& set to btns\_4bits
+			\item Select GPIO2 \& set to sws\_4bits
+			\item For axi\_gpio\_1, select GPIO \& set to leds\_4bits
+		\end{enumerate}
+		\item Generate HDL Wrapper, Validate Design, Generate Bitstream
+		\item File $\rightarrow$ Export $\rightarrow$ Export Hardware... \& include Bitstream
+		\item File $\rightarrow$ Launch SDK, Create new Application Project
+		\item In helloworld.c, replace the code with the one given in the tutorial.
+		\item Program FPGA \& Run \& Test
+	\end{enumerate}
+	
+	Currently, I am planning on using the Zybo without an operating system. This may help with DMA required to write/read the frame buffer fast enough for the VGA output. It will also require some testing/research to find out how to get the Asteroids program to start at boot up.
+\end{document}

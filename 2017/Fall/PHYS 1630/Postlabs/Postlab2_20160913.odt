@@ -1,0 +1,72 @@
+Physics Lab #2: Parallel and Series Circuits
+Charlie Coleman
+Lab Partners: Alex Bielewicz, Tracey Jaron
+2016 September 07
+
+Abstract: In this lab, the resistance of parallel and series circuits were found through calculation and measurement. The lab was unsuccessful because in parts two and three, the percent errors were over 5%, but part four was successful.
+
+Theory: The formula to determine the resistance in a series circuit can be found by applying Kirchoff's Voltage Law and Ohm's Law. The current flowing through a circuit can be assumed to be the same, because there is only one path through the circuit for the current to take. The sum of the voltages across components must equal the total current supplied by the power supply, so the equation we receive is .
+
+The formula to determine the resistance in a parallel circuit can be found by applying Kirchoff's Current Law and Ohm's Law. The voltage across all resistors is the same in parallel, and the current varies dependent on resistance. With this information, the equation for resistance in parallel circuits is 
+
+Objective: The objective of the lab was to look at the properties of parallel and series circuits, like resistance, voltage, and current.
+
+Procedure: First, the resistance of the three resistors were measured. Then, the three resistors were put in series with one another, and the voltage drop across each resistor was measured. The current between each resistor was then measured. The voltage drop across the entire circuit was also measured, and so was the current. Next, the resistors were put in parallel, and all the same things were measured. Next, two resistors were put in parallel, and those two were put in series with the last resistor, and the same values were measured. Finally, the voltage and current across a light bulb were measured as the voltage supplied changed. 
+
+Setup:
+Part two					           Part three
+
+Part four					           Part five
+
+
+Data:
+
+
+
+
+Calculations:
+	Part One:
+		Series Resistance:
+		
+		Parallel Resistance:
+		
+	Part Two:
+		Calculated Resistance:
+		
+	Part Five:
+		Calculated Power:
+		
+
+Qualitative Error Analysis: One error for this lab is that resistors all have their own error range, so that can throw off the results. Another error is that the breadboard was most likely adding resistance to the circuit, making the measured current values smaller and increasing the total calculated resistance.
+
+Quantitative Error Analysis:
+	Part One: N/A
+	Part Two: 
+		Percent Error: 6.19%
+	Part Three:
+		Percent Error: 6.32%
+	Part Four:
+		Percent Error: 0.67%
+	Part Five: N/A
+
+Results:
+	Part One:
+		Series Resistance: 16020 ?
+		Parallel Resistance: 777.5 ?
+	Part Two:
+		
+		Total Resisance: 17000 ?
+	Part Three:
+		
+		Total Resistance: 826 ?
+	Part Four:
+		
+		Total Resistance: 11000 ?
+	Part Five:
+		
+
+	
+	
+
+
+Conclusion: This lab was unsuccessful because our percent error was over 5% for part two and three. Part four was successful, however the lab was successful only one of three times. Part one and five had no percent error or ways to determine success.

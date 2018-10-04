@@ -1,0 +1,806 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.9.26)  7 DEC 2017 23:07
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**./semieqsheet3.tex
+(./semieqsheet3.tex
+LaTeX2e <2017-04-15>
+Babel <3.13> and hyphenation patterns for 84 language(s) loaded.
+(c:/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2017/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(c:/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(c:/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(c:/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen111
+))
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen112
+)
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen113
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks17
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks18
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2017/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen120
+\WF@size=\dimen121
+\c@WF@wrappedlines=\count102
+\WF@box=\box28
+\WF@everypar=\toks21
+Package: wrapfig 2003/01/31  v 3.6
+)
+(c:/texlive/2017/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count103
+\mult@box=\box29
+\multicol@leftmargin=\dimen122
+\c@unbalance=\count104
+\c@collectmore=\count105
+\doublecol@number=\count106
+\multicoltolerance=\count107
+\multicolpretolerance=\count108
+\full@width=\dimen123
+\page@free=\dimen124
+\premulticols=\dimen125
+\postmulticols=\dimen126
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box30
+\last@line=\box31
+\maxbalancingoverflow=\dimen127
+\mult@rightbox=\box32
+\mult@grightbox=\box33
+\mult@gfirstbox=\box34
+\mult@firstbox=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\c@columnbadness=\count109
+\c@finalcolumnbadness=\count110
+\last@try=\dimen128
+\multicolovershoot=\dimen129
+\multicolundershoot=\dimen130
+\mult@nat@firstbox=\box53
+\colbreak@box=\box54
+\mc@col@check@num=\count111
+)
+(c:/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(c:/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen131
+\Gin@req@width=\dimen132
+)
+(c:/texlive/2017/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+
+(c:/texlive/2017/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen133
+\extrarowheight=\dimen134
+\NC@list=\toks22
+\extratabsurround=\skip48
+\backup@length=\skip49
+)
+\rotheadsize=\dimen135
+\c@nlinenum=\count112
+\TeXr@lab=\toks23
+)
+
+LaTeX Warning: Unused global option(s):
+    [8pt].
+
+(./semieqsheet3.aux)
+\openout1 = `semieqsheet3.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(c:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count113
+\scratchdimen=\dimen136
+\scratchbox=\box55
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen137
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
+\everyMPtoPDFconversion=\toks25
+) (c:/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(c:/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 21.
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (1.401pt too wide) in paragraph at lines 20--88
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--88
+
+ []
+
+[1
+
+{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<figs/fig1.png, id=20, 616.55344pt x 630.10406pt>
+File: figs/fig1.png Graphic file (type png)
+<use figs/fig1.png>
+Package pdftex.def Info: figs/fig1.png  used on input line 92. on input line 92
+.
+Package pdftex.def Info: Requested size: 469.75502pt x 480.08589pt on input lin
+e 92.
+<figs/fig2.png, id=22, 658.71094pt x 645.91313pt>
+File: figs/fig2.png Graphic file (type png)
+<use figs/fig2.png>
+Package pdftex.def Info: figs/fig2.png  used on input line 93. on input line 93
+.
+Package pdftex.def Info: Requested size: 469.75502pt x 460.6417pt on input line
+ 93.
+ [2 <./figs/fig1.png>]
+<figs/fig3.png, id=28, 624.83438pt x 488.57532pt>
+File: figs/fig3.png Graphic file (type png)
+<use figs/fig3.png>
+Package pdftex.def Info: figs/fig3.png  used on input line 94. on input line 94
+.
+Package pdftex.def Info: Requested size: 469.75502pt x 367.3252pt on input line
+ 94.
+ [3 <./figs/fig2.png>]
+<figs/fig6-1.png, id=33, 496.85625pt x 174.6525pt>
+File: figs/fig6-1.png Graphic file (type png)
+<use figs/fig6-1.png>
+Package pdftex.def Info: figs/fig6-1.png  used on input line 96. on input line 
+96.
+Package pdftex.def Info: Requested size: 328.82707pt x 115.58813pt on input lin
+e 96.
+<figs/fig6-2.png, id=34, 498.36188pt x 266.49562pt>
+File: figs/fig6-2.png Graphic file (type png)
+<use figs/fig6-2.png>
+Package pdftex.def Info: figs/fig6-2.png  used on input line 97. on input line 
+97.
+Package pdftex.def Info: Requested size: 328.82707pt x 175.84291pt on input lin
+e 97.
+ [4 <./figs/fig3.png> <./figs/fig6-1.png>]
+<figs/fig6-3.png, id=40, 696.35156pt x 439.6425pt>
+File: figs/fig6-3.png Graphic file (type png)
+<use figs/fig6-3.png>
+Package pdftex.def Info: figs/fig6-3.png  used on input line 99. on input line 
+99.
+Package pdftex.def Info: Requested size: 328.82707pt x 207.6047pt on input line
+ 99.
+<figs/fig6-4.png, id=41, 700.11563pt x 465.99094pt>
+File: figs/fig6-4.png Graphic file (type png)
+<use figs/fig6-4.png>
+Package pdftex.def Info: figs/fig6-4.png  used on input line 100. on input line
+ 100.
+Package pdftex.def Info: Requested size: 328.82707pt x 218.86644pt on input lin
+e 100.
+
+[5 <./figs/fig6-2.png> <./figs/fig6-3.png>]
+<figs/fig6-5.png, id=47, 746.79pt x 261.22594pt>
+File: figs/fig6-5.png Graphic file (type png)
+<use figs/fig6-5.png>
+Package pdftex.def Info: figs/fig6-5.png  used on input line 101. on input line
+ 101.
+Package pdftex.def Info: Requested size: 328.82707pt x 115.02345pt on input lin
+e 101.
+<figs/fig6-6.png, id=48, 721.19438pt x 445.665pt>
+File: figs/fig6-6.png Graphic file (type png)
+<use figs/fig6-6.png>
+Package pdftex.def Info: figs/fig6-6.png  used on input line 102. on input line
+ 102.
+Package pdftex.def Info: Requested size: 328.82707pt x 203.19951pt on input lin
+e 102.
+<figs/fig6-8.png, id=49, 725.71124pt x 359.09157pt>
+File: figs/fig6-8.png Graphic file (type png)
+<use figs/fig6-8.png>
+Package pdftex.def Info: figs/fig6-8.png  used on input line 104. on input line
+ 104.
+Package pdftex.def Info: Requested size: 328.82707pt x 162.70747pt on input lin
+e 104.
+ [6 <./figs/fig6-4.png> <./figs/fig6-5.png> <./figs/fig6-6.png>]
+<figs/fig6-9.png, id=56, 709.90219pt x 357.58594pt>
+File: figs/fig6-9.png Graphic file (type png)
+<use figs/fig6-9.png>
+Package pdftex.def Info: figs/fig6-9.png  used on input line 105. on input line
+ 105.
+Package pdftex.def Info: Requested size: 328.82707pt x 165.63734pt on input lin
+e 105.
+<figs/fig6-10.png, id=57, 727.21687pt x 752.8125pt>
+File: figs/fig6-10.png Graphic file (type png)
+<use figs/fig6-10.png>
+Package pdftex.def Info: figs/fig6-10.png  used on input line 106. on input lin
+e 106.
+Package pdftex.def Info: Requested size: 328.82707pt x 340.40512pt on input lin
+e 106.
+ [7 <./figs/fig6-8.png> <./figs/fig6-9.png>]
+<figs/fig6-11.png, id=64, 524.71031pt x 685.05937pt>
+File: figs/fig6-11.png Graphic file (type png)
+<use figs/fig6-11.png>
+Package pdftex.def Info: figs/fig6-11.png  used on input line 108. on input lin
+e 108.
+Package pdftex.def Info: Requested size: 328.82707pt x 429.3318pt on input line
+ 108.
+
+[8 <./figs/fig6-10.png>]
+<figs/fig6-12.png, id=69, 427.5975pt x 701.62125pt>
+File: figs/fig6-12.png Graphic file (type png)
+<use figs/fig6-12.png>
+Package pdftex.def Info: figs/fig6-12.png  used on input line 109. on input lin
+e 109.
+Package pdftex.def Info: Requested size: 328.82707pt x 539.55414pt on input lin
+e 109.
+ [9 <./figs/fig6-11.png>]
+<figs/fig6-13.png, id=74, 449.42906pt x 273.27094pt>
+File: figs/fig6-13.png Graphic file (type png)
+<use figs/fig6-13.png>
+Package pdftex.def Info: figs/fig6-13.png  used on input line 110. on input lin
+e 110.
+Package pdftex.def Info: Requested size: 328.82707pt x 199.94894pt on input lin
+e 110.
+ [10 <./figs/fig6-12.png>]
+<figs/fig6-14.png, id=79, 519.44063pt x 520.19344pt>
+File: figs/fig6-14.png Graphic file (type png)
+<use figs/fig6-14.png>
+Package pdftex.def Info: figs/fig6-14.png  used on input line 111. on input lin
+e 111.
+Package pdftex.def Info: Requested size: 328.82707pt x 329.30315pt on input lin
+e 111.
+<figs/fig6-15.png, id=80, 448.67625pt x 665.48625pt>
+File: figs/fig6-15.png Graphic file (type png)
+<use figs/fig6-15.png>
+Package pdftex.def Info: figs/fig6-15.png  used on input line 112. on input lin
+e 112.
+Package pdftex.def Info: Requested size: 328.82707pt x 487.74043pt on input lin
+e 112.
+
+[11 <./figs/fig6-13.png> <./figs/fig6-14.png>]
+<figs/fig6-16.png, id=86, 729.47531pt x 373.395pt>
+File: figs/fig6-16.png Graphic file (type png)
+<use figs/fig6-16.png>
+Package pdftex.def Info: figs/fig6-16.png  used on input line 113. on input lin
+e 113.
+Package pdftex.def Info: Requested size: 328.82707pt x 168.31677pt on input lin
+e 113.
+ [12 <./figs/fig6-15.png>]
+<figs/fig6-17.png, id=91, 636.12656pt x 363.60844pt>
+File: figs/fig6-17.png Graphic file (type png)
+<use figs/fig6-17.png>
+Package pdftex.def Info: figs/fig6-17.png  used on input line 114. on input lin
+e 114.
+Package pdftex.def Info: Requested size: 328.82707pt x 187.95673pt on input lin
+e 114.
+<figs/fig6-18.png, id=92, 730.98094pt x 326.72063pt>
+File: figs/fig6-18.png Graphic file (type png)
+<use figs/fig6-18.png>
+Package pdftex.def Info: figs/fig6-18.png  used on input line 115. on input lin
+e 115.
+Package pdftex.def Info: Requested size: 328.82707pt x 146.97305pt on input lin
+e 115.
+<figs/fig6-19.png, id=93, 752.0597pt x 540.51938pt>
+File: figs/fig6-19.png Graphic file (type png)
+<use figs/fig6-19.png>
+Package pdftex.def Info: figs/fig6-19.png  used on input line 116. on input lin
+e 116.
+Package pdftex.def Info: Requested size: 328.82707pt x 236.33643pt on input lin
+e 116.
+
+[13 <./figs/fig6-16.png> <./figs/fig6-17.png> <./figs/fig6-18.png>]
+<figs/fig6-20.png, id=101, 697.8572pt x 548.0475pt>
+File: figs/fig6-20.png Graphic file (type png)
+<use figs/fig6-20.png>
+Package pdftex.def Info: figs/fig6-20.png  used on input line 117. on input lin
+e 117.
+Package pdftex.def Info: Requested size: 328.82707pt x 258.23463pt on input lin
+e 117.
+<figs/fig6-21.png, id=102, 515.67656pt x 709.14937pt>
+File: figs/fig6-21.png Graphic file (type png)
+<use figs/fig6-21.png>
+Package pdftex.def Info: figs/fig6-21.png  used on input line 118. on input lin
+e 118.
+Package pdftex.def Info: Requested size: 328.82707pt x 452.2093pt on input line
+ 118.
+ [14 <./figs/fig6-19.png> <./figs/fig6-20.png>]
+<figs/fig6-22.png, id=108, 503.63156pt x 422.32782pt>
+File: figs/fig6-22.png Graphic file (type png)
+<use figs/fig6-22.png>
+Package pdftex.def Info: figs/fig6-22.png  used on input line 119. on input lin
+e 119.
+Package pdftex.def Info: Requested size: 328.82707pt x 275.74066pt on input lin
+e 119.
+ [15 <./figs/fig6-21.png>]
+<figs/fig6-23.png, id=113, 496.10344pt x 365.11406pt>
+File: figs/fig6-23.png Graphic file (type png)
+<use figs/fig6-23.png>
+Package pdftex.def Info: figs/fig6-23.png  used on input line 120. on input lin
+e 120.
+Package pdftex.def Info: Requested size: 328.82707pt x 242.00668pt on input lin
+e 120.
+<figs/fig6-24.png, id=114, 514.17094pt x 721.94719pt>
+File: figs/fig6-24.png Graphic file (type png)
+<use figs/fig6-24.png>
+Package pdftex.def Info: figs/fig6-24.png  used on input line 121. on input lin
+e 121.
+Package pdftex.def Info: Requested size: 328.82707pt x 461.71414pt on input lin
+e 121.
+ [16 <./figs/fig6-22.png> <./figs/fig6-23.png>]
+<figs/fig6-25.png, id=120, 612.78937pt x 528.47438pt>
+File: figs/fig6-25.png Graphic file (type png)
+<use figs/fig6-25.png>
+Package pdftex.def Info: figs/fig6-25.png  used on input line 122. on input lin
+e 122.
+Package pdftex.def Info: Requested size: 328.82707pt x 283.58173pt on input lin
+e 122.
+ [17 <./figs/fig6-24.png>]
+<figs/fig6-26.png, id=125, 612.03656pt x 394.47375pt>
+File: figs/fig6-26.png Graphic file (type png)
+<use figs/fig6-26.png>
+Package pdftex.def Info: figs/fig6-26.png  used on input line 124. on input lin
+e 124.
+Package pdftex.def Info: Requested size: 328.82707pt x 211.93521pt on input lin
+e 124.
+<figs/fig6-27.png, id=126, 618.05907pt x 408.02437pt>
+File: figs/fig6-27.png Graphic file (type png)
+<use figs/fig6-27.png>
+Package pdftex.def Info: figs/fig6-27.png  used on input line 125. on input lin
+e 125.
+Package pdftex.def Info: Requested size: 328.82707pt x 217.08617pt on input lin
+e 125.
+ [18 <./figs/fig6-25.png> <./figs/fig6-26.png>]
+<figs/fig6-28.png, id=132, 587.19376pt x 542.025pt>
+File: figs/fig6-28.png Graphic file (type png)
+<use figs/fig6-28.png>
+Package pdftex.def Info: figs/fig6-28.png  used on input line 126. on input lin
+e 126.
+Package pdftex.def Info: Requested size: 328.82707pt x 303.53192pt on input lin
+e 126.
+<figs/fig6-29.png, id=133, 575.14874pt x 288.3272pt>
+File: figs/fig6-29.png Graphic file (type png)
+<use figs/fig6-29.png>
+Package pdftex.def Info: figs/fig6-29.png  used on input line 127. on input lin
+e 127.
+Package pdftex.def Info: Requested size: 328.82707pt x 164.84975pt on input lin
+e 127.
+ [19 <./figs/fig6-27.png> <./figs/fig6-28.png>]
+<figs/fig6-30.png, id=140, 535.2497pt x 304.13625pt>
+File: figs/fig6-30.png Graphic file (type png)
+<use figs/fig6-30.png>
+Package pdftex.def Info: figs/fig6-30.png  used on input line 128. on input lin
+e 128.
+Package pdftex.def Info: Requested size: 328.82707pt x 186.85008pt on input lin
+e 128.
+<figs/fig6-31.png, id=141, 612.03656pt x 297.36093pt>
+File: figs/fig6-31.png Graphic file (type png)
+<use figs/fig6-31.png>
+Package pdftex.def Info: figs/fig6-31.png  used on input line 129. on input lin
+e 129.
+Package pdftex.def Info: Requested size: 328.82707pt x 159.76031pt on input lin
+e 129.
+<figs/fig6-32.png, id=142, 581.17125pt x 461.47406pt>
+File: figs/fig6-32.png Graphic file (type png)
+<use figs/fig6-32.png>
+Package pdftex.def Info: figs/fig6-32.png  used on input line 130. on input lin
+e 130.
+Package pdftex.def Info: Requested size: 328.82707pt x 261.10652pt on input lin
+e 130.
+ [20 <./figs/fig6-29.png> <./figs/fig6-30.png> <./figs/fig6-31.png>]
+<figs/fig6-33.png, id=149, 569.87906pt x 506.6428pt>
+File: figs/fig6-33.png Graphic file (type png)
+<use figs/fig6-33.png>
+Package pdftex.def Info: figs/fig6-33.png  used on input line 131. on input lin
+e 131.
+Package pdftex.def Info: Requested size: 328.82707pt x 292.33781pt on input lin
+e 131.
+<figs/fig6-34.png, id=150, 578.16pt x 409.53pt>
+File: figs/fig6-34.png Graphic file (type png)
+<use figs/fig6-34.png>
+Package pdftex.def Info: figs/fig6-34.png  used on input line 132. on input lin
+e 132.
+Package pdftex.def Info: Requested size: 328.82707pt x 232.91586pt on input lin
+e 132.
+ [21 <./figs/fig6-32.png> <./figs/fig6-33.png>]
+<figs/fig6-35.png, id=156, 521.69907pt x 566.86781pt>
+File: figs/fig6-35.png Graphic file (type png)
+<use figs/fig6-35.png>
+Package pdftex.def Info: figs/fig6-35.png  used on input line 133. on input lin
+e 133.
+Package pdftex.def Info: Requested size: 328.82707pt x 357.3016pt on input line
+ 133.
+<figs/fig6-36.png, id=157, 538.26094pt x 261.97874pt>
+File: figs/fig6-36.png Graphic file (type png)
+<use figs/fig6-36.png>
+Package pdftex.def Info: figs/fig6-36.png  used on input line 134. on input lin
+e 134.
+Package pdftex.def Info: Requested size: 328.82707pt x 160.04665pt on input lin
+e 134.
+ [22 <./figs/fig6-34.png> <./figs/fig6-35.png>]
+<figs/fig6-37.png, id=163, 623.32875pt x 611.28375pt>
+File: figs/fig6-37.png Graphic file (type png)
+<use figs/fig6-37.png>
+Package pdftex.def Info: figs/fig6-37.png  used on input line 135. on input lin
+e 135.
+Package pdftex.def Info: Requested size: 328.82707pt x 322.47713pt on input lin
+e 135.
+<figs/fig6-38.png, id=164, 476.53032pt x 653.44125pt>
+File: figs/fig6-38.png Graphic file (type png)
+<use figs/fig6-38.png>
+Package pdftex.def Info: figs/fig6-38.png  used on input line 136. on input lin
+e 136.
+Package pdftex.def Info: Requested size: 328.82707pt x 450.9248pt on input line
+ 136.
+
+[23 <./figs/fig6-36.png> <./figs/fig6-37.png>]
+<figs/fig6-39.png, id=170, 517.18219pt x 375.65344pt>
+File: figs/fig6-39.png Graphic file (type png)
+<use figs/fig6-39.png>
+Package pdftex.def Info: figs/fig6-39.png  used on input line 137. on input lin
+e 137.
+Package pdftex.def Info: Requested size: 328.82707pt x 238.85254pt on input lin
+e 137.
+ [24 <./figs/fig6-38.png>]
+<figs/fig6-40.png, id=175, 482.55281pt x 640.64343pt>
+File: figs/fig6-40.png Graphic file (type png)
+<use figs/fig6-40.png>
+Package pdftex.def Info: figs/fig6-40.png  used on input line 138. on input lin
+e 138.
+Package pdftex.def Info: Requested size: 328.82707pt x 436.5702pt on input line
+ 138.
+
+[25 <./figs/fig6-39.png>]
+<figs/fig6-41.png, id=181, 526.21594pt x 360.59718pt>
+File: figs/fig6-41.png Graphic file (type png)
+<use figs/fig6-41.png>
+Package pdftex.def Info: figs/fig6-41.png  used on input line 139. on input lin
+e 139.
+Package pdftex.def Info: Requested size: 328.82707pt x 225.34517pt on input lin
+e 139.
+ [26 <./figs/fig6-40.png>]
+<figs/fig6-42.png, id=186, 497.60907pt x 508.90125pt>
+File: figs/fig6-42.png Graphic file (type png)
+<use figs/fig6-42.png>
+Package pdftex.def Info: figs/fig6-42.png  used on input line 140. on input lin
+e 140.
+Package pdftex.def Info: Requested size: 328.82707pt x 336.29518pt on input lin
+e 140.
+<figs/fig6-43.png, id=187, 481.8pt x 465.99094pt>
+File: figs/fig6-43.png Graphic file (type png)
+<use figs/fig6-43.png>
+Package pdftex.def Info: figs/fig6-43.png  used on input line 141. on input lin
+e 141.
+Package pdftex.def Info: Requested size: 328.82707pt x 318.04286pt on input lin
+e 141.
+ [27 <./figs/fig6-41.png> <./figs/fig6-42.png>]
+<figs/fig6-44.png, id=193, 514.92375pt x 537.50812pt>
+File: figs/fig6-44.png Graphic file (type png)
+<use figs/fig6-44.png>
+Package pdftex.def Info: figs/fig6-44.png  used on input line 142. on input lin
+e 142.
+Package pdftex.def Info: Requested size: 328.82707pt x 343.25766pt on input lin
+e 142.
+ [28 <./figs/fig6-43.png>]
+<figs/fig6-45.png, id=198, 514.17094pt x 228.855pt>
+File: figs/fig6-45.png Graphic file (type png)
+<use figs/fig6-45.png>
+Package pdftex.def Info: figs/fig6-45.png  used on input line 143. on input lin
+e 143.
+Package pdftex.def Info: Requested size: 328.82707pt x 146.36192pt on input lin
+e 143.
+<figs/fig6-46.png, id=199, 407.27156pt x 175.40532pt>
+File: figs/fig6-46.png Graphic file (type png)
+<use figs/fig6-46.png>
+Package pdftex.def Info: figs/fig6-46.png  used on input line 144. on input lin
+e 144.
+Package pdftex.def Info: Requested size: 328.82707pt x 141.6252pt on input line
+ 144.
+ [29 <./figs/fig6-44.png> <./figs/fig6-45.png>]
+<figs/fig6-47.png, id=205, 513.41812pt x 228.855pt>
+File: figs/fig6-47.png Graphic file (type png)
+<use figs/fig6-47.png>
+Package pdftex.def Info: figs/fig6-47.png  used on input line 145. on input lin
+e 145.
+Package pdftex.def Info: Requested size: 328.82707pt x 146.57494pt on input lin
+e 145.
+<figs/fig6-48.png, id=206, 517.18219pt x 502.12593pt>
+File: figs/fig6-48.png Graphic file (type png)
+<use figs/fig6-48.png>
+Package pdftex.def Info: figs/fig6-48.png  used on input line 146. on input lin
+e 146.
+Package pdftex.def Info: Requested size: 328.82707pt x 319.26782pt on input lin
+e 146.
+ [30 <./figs/fig6-46.png> <./figs/fig6-47.png>]
+<figs/fig6-49.png, id=212, 418.56375pt x 289.08pt>
+File: figs/fig6-49.png Graphic file (type png)
+<use figs/fig6-49.png>
+Package pdftex.def Info: figs/fig6-49.png  used on input line 148. on input lin
+e 148.
+Package pdftex.def Info: Requested size: 328.82707pt x 227.10031pt on input lin
+e 148.
+<figs/fig6-50.png, id=213, 510.40688pt x 453.94594pt>
+File: figs/fig6-50.png Graphic file (type png)
+<use figs/fig6-50.png>
+Package pdftex.def Info: figs/fig6-50.png  used on input line 149. on input lin
+e 149.
+Package pdftex.def Info: Requested size: 328.82707pt x 292.46387pt on input lin
+e 149.
+ [31 <./figs/fig6-48.png> <./figs/fig6-49.png>] [32 <./figs/fig6-50.png>] (./se
+mieqsheet3.aux) ) 
+Here is how much of TeX's memory you used:
+ 3443 strings out of 492990
+ 46813 string characters out of 6136349
+ 127144 words of memory out of 5000000
+ 6897 multiletter control sequences out of 15000+600000
+ 8310 words of font info for 32 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,13n,32p,281b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2017/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2017/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2017/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/symbols/msbm10.pfb>
+Output written on semieqsheet3.pdf (32 pages, 3420542 bytes).
+PDF statistics:
+ 273 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,11 @@
+\documentclass{article}
+
+\usepackage{amssymb, amsmath}
+
+\begin{document}
+	\noindent From problem: $\sigma^2 = 10\times 10^{-6}$, $m = 0 \therefore f_X(x) = \cfrac{1}{\sqrt{2\pi * 10^{-5}}} * e^{-x^2/(2\times 10^{-5})}$
+	
+	$F_X(x) = 1 - Q\left(\cfrac{x-m}{\sigma}\right) \rightarrow P(x \geq 0.1) = 1 - F(0.1) = Q\left(\cfrac{0.1 - 0}{\sqrt{10^{-5}}}\right)$
+	
+	$=\cfrac{(1-e^{-1.4*0.1/\sqrt{10^{-5}}}) * e^{-(0.1/\sqrt{10^{-5}})^2/2}}{1.135*(0.1/\sqrt{10^-5})*\sqrt{2\pi}} = 0.0111$
+\end{document}

@@ -1,0 +1,17 @@
+Charlie Coleman, Amy Guo
+
+1. Program 1: "This is an output from Program 1."
+Program 2: hello there
+Program 2 got: hello there
+
+
+2. This is an output from Program 1.
+Program 2 got: 
+3. fd[0] = read end, fd[1] = write end
+4. newfd is closed
+5. dup2(fd[0], STDIN_FILENO);
+6. This is an output from Program 1.
+Program 2 got:
+7. Program 2 got: 
+This is an output from Program 1.
+8. can be used for any programs, can be nested

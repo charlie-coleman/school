@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/charlie/backups/School 2018/Fall/ADD/XilinxWorkspace/Lab1/ripple_carry_adder_isim_beh.exe" -prj "/home/charlie/backups/School 2018/Fall/ADD/XilinxWorkspace/Lab1/ripple_carry_adder_beh.prj" "work.ripple_carry_adder" 
