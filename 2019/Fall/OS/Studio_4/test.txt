@@ -1,3 +1,0 @@
-This is a readable file
-
-It contains some text, such as this text.

@@ -1,8 +1,0 @@
-1. Amy Guo, Charlie Coleman
-2. 0.248s
-3.    8: 1.134s
-     80: 0.248s
-    800: 0.150s
-   4096: 0.141s
-4. Fewer system calls with more characters. Many system calls may be split up by the OS to allow other programs to use the processor.
-5. None
