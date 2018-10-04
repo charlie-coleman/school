@@ -1,0 +1,1 @@
+This is a best first algorithm using the Manhattan distance as the heuristic.
