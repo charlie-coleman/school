@@ -1,8 +1,0 @@
-V3 3
-FL "/home/charlie/backups/School 2018/Fall/ADD/XilinxWorkspace/Lab1/ripple_carry_adder.vhd" 2017/09/07.19:58:22 P.20131013
-EN work/ripple_carry_adder 1504832638 \
-      FL "/home/charlie/backups/School 2018/Fall/ADD/XilinxWorkspace/Lab1/ripple_carry_adder.vhd" \
-      PB ieee/std_logic_1164 1381692176
-AR work/ripple_carry_adder/Behavioral 1504832639 \
-      FL "/home/charlie/backups/School 2018/Fall/ADD/XilinxWorkspace/Lab1/ripple_carry_adder.vhd" \
-      EN work/ripple_carry_adder 1504832638

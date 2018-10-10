@@ -1,3 +1,0 @@
-vhdl work "DFlipFlop.vhd"
-vhdl work "EdgeTriggeredDFlipFlop.vhd"
-vhdl work "FourBitRegister.vhd"

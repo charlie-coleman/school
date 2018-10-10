@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/charlie/backups/School 2018/Fall/ADD/XilinxWorkspace/Lab1/ripple_carry_adder.ncd
-OUTFILE=/home/charlie/backups/School 2018/Fall/ADD/XilinxWorkspace/Lab1/ripple_carry_adder.bit
-FAMILY=Spartan3E
-PART=xc3s500e-4fg320
-WORKINGDIR=/home/charlie/backups/School 2018/Fall/ADD/XilinxWorkspace/Lab1
-LICENSE=WebPack
-USER_INFO=211395084_0_0_636
