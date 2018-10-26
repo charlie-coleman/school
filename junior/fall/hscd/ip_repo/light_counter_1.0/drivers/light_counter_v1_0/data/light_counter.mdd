@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER light_counter
+	OPTION supported_peripherals = (light_counter);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = light_counter;
+END DRIVER

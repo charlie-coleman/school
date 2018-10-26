@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../../ip_repo/light_counter_1.0/hdl/light_counter_v1_0_LIGHT_REG_AXI.vhd" \
+"../../../../../../../ip_repo/light_counter_1.0/hdl/light_counter_v1_0.vhd" \
+
+# Do not sort compile order
+nosort

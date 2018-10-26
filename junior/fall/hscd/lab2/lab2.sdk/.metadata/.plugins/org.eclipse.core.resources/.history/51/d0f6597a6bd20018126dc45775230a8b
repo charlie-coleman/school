@@ -1,0 +1,22 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 17, 2018
+ *      Author: Charlie
+ */
+
+#include "xil_printf.h";
+#include "xil_io.h";
+#include "xparameters.h";
+
+int main(int argc, char** argv) {
+	int reg_start = XPAR_RW_REG_0_RW_REG_AXI_BASEADDR;
+	u32 reg_val = 123;
+	Xil_Out32(reg_start, u32);
+
+	u32 read_val = Xil_Out32(reg_start);
+
+	printf("%d\n", read_val);
+
+	return 0;
+}

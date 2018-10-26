@@ -1,0 +1,12 @@
+
+{ 
+    crc :  5175635142752564626  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 2d37c7a8a9f140aa95d04ccdc1d312a7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot light_counter_v1_0_behav xil_defaultlib.light_counter_v1_0" , 
+    buildDate : "Jun 14 2018" , 
+    buildTime : "20:41:02" , 
+    linkCmd : "C:\\Xilinx\\Vivado\\2018.2\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/light_counter_v1_0_behav/xsimk.exe\"   \"xsim.dir/light_counter_v1_0_behav/obj/xsim_0.win64.obj\" \"xsim.dir/light_counter_v1_0_behav/obj/xsim_1.win64.obj\" \"C:\\Xilinx\\Vivado\\2018.2\\lib\\win64.o\\\\librdi_simulator_kernel.dll\"  \"C:\\Xilinx\\Vivado\\2018.2\\lib\\win64.o\\\\librdi_simbridge_kernel.dll\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

@@ -1,0 +1,6 @@
+1539818354749	Delete resource 'rw_reg_test_bsp'
+1539818359734	Delete resource 'rw_reg_test'
+1539819146364	Delete resource 'register_reads_writes_bsp'
+1539819152196	Delete resource 'register_reads_writes'
+1539819161027	Delete resource 'ZC702_hw_platform'
+1539821969100	Delete resource 'rw_reg_test_bsp/main.c'

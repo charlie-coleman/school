@@ -1,0 +1,1 @@
+-wto "2d37c7a8a9f140aa95d04ccdc1d312a7" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "light_counter_v1_0_behav" "xil_defaultlib.light_counter_v1_0" -log "elaborate.log" 

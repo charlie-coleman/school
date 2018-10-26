@@ -1,0 +1,9 @@
+vhdl xil_defaultlib  \
+"../../../bd/flash_lights/ipshared/e9c3/hdl/light_counter_v1_0_LIGHT_REG_AXI.vhd" \
+"../../../bd/flash_lights/ipshared/e9c3/hdl/light_counter_v1_0.vhd" \
+"../../../bd/flash_lights/ip/flash_lights_light_counter_0_0/sim/flash_lights_light_counter_0_0.vhd" \
+"../../../bd/flash_lights/ip/flash_lights_rst_ps7_0_50M_0/sim/flash_lights_rst_ps7_0_50M_0.vhd" \
+"../../../bd/flash_lights/ip/flash_lights_axi_gpio_0_0/sim/flash_lights_axi_gpio_0_0.vhd" \
+"../../../bd/flash_lights/sim/flash_lights.vhd" \
+
+nosort

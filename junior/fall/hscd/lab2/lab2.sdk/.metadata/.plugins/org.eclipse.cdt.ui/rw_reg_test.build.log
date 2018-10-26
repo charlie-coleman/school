@@ -1,0 +1,8 @@
+19:36:47 **** Incremental Build of configuration Debug for project rw_reg_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+
+19:36:47 Build Finished (took 204ms)
+

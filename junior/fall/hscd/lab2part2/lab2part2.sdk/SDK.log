@@ -1,0 +1,1204 @@
+20:47:33 INFO  : Registering command handlers for SDK TCF services
+20:47:34 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+20:47:37 INFO  : XSCT server has started successfully.
+20:47:38 INFO  : Successfully done setting XSCT server connection channel  
+20:47:38 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+20:47:38 INFO  : Successfully done setting SDK workspace  
+21:33:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:33:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:33:07 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:33:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:33:24 INFO  : 'fpga -state' command is executed.
+21:33:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:33:24 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:33:24 INFO  : 'jtag frequency' command is executed.
+21:33:24 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:33:24 INFO  : Context for 'APU' is selected.
+21:33:24 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:33:24 INFO  : 'configparams force-mem-access 1' command is executed.
+21:33:24 INFO  : Context for 'APU' is selected.
+21:33:24 INFO  : 'stop' command is executed.
+21:33:25 INFO  : 'ps7_init' command is executed.
+21:33:25 INFO  : 'ps7_post_config' command is executed.
+21:33:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:33:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:33:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:33:25 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:33:25 INFO  : 'configparams force-mem-access 0' command is executed.
+21:33:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:33:25 INFO  : Memory regions updated for context APU
+21:33:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:33:25 INFO  : 'con' command is executed.
+21:33:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:33:25 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+21:34:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:34:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:34:20 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:34:29 INFO  : Disconnected from the channel tcfchan#1.
+21:34:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:34:30 INFO  : 'fpga -state' command is executed.
+21:34:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:34:31 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:34:31 INFO  : 'jtag frequency' command is executed.
+21:34:31 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:34:31 INFO  : Context for 'APU' is selected.
+21:34:33 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:34:33 INFO  : 'configparams force-mem-access 1' command is executed.
+21:34:33 INFO  : Context for 'APU' is selected.
+21:34:33 INFO  : 'stop' command is executed.
+21:34:33 ERROR : Memory read error at 0xF8007080. AHB AP transaction error, DAP status f0000021
+21:34:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+----------------End of Script----------------
+
+21:35:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:35:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:35:20 ERROR : fpga configuration failed. DONE PIN is not HIGH
+21:36:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:36:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:36:02 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:36:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:36:08 INFO  : 'fpga -state' command is executed.
+21:36:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:36:08 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:36:08 INFO  : 'jtag frequency' command is executed.
+21:36:09 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:36:09 INFO  : Context for 'APU' is selected.
+21:36:09 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:36:09 INFO  : 'configparams force-mem-access 1' command is executed.
+21:36:09 INFO  : Context for 'APU' is selected.
+21:36:09 INFO  : 'stop' command is executed.
+21:36:09 INFO  : 'ps7_init' command is executed.
+21:36:09 INFO  : 'ps7_post_config' command is executed.
+21:36:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:36:09 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:36:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:36:09 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:36:09 INFO  : 'configparams force-mem-access 0' command is executed.
+21:36:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:36:09 INFO  : Memory regions updated for context APU
+21:36:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:36:10 INFO  : 'con' command is executed.
+21:36:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:36:10 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+21:38:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:38:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:38:09 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:38:24 INFO  : Disconnected from the channel tcfchan#2.
+21:38:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:38:25 INFO  : 'fpga -state' command is executed.
+21:38:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:38:26 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:38:26 INFO  : 'jtag frequency' command is executed.
+21:38:26 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:38:26 INFO  : Context for 'APU' is selected.
+21:38:28 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:38:28 INFO  : 'configparams force-mem-access 1' command is executed.
+21:38:28 INFO  : Context for 'APU' is selected.
+21:38:28 INFO  : 'stop' command is executed.
+21:38:29 INFO  : 'ps7_init' command is executed.
+21:38:29 INFO  : 'ps7_post_config' command is executed.
+21:38:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:29 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:38:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:29 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:38:29 INFO  : 'configparams force-mem-access 0' command is executed.
+21:38:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:38:29 INFO  : Memory regions updated for context APU
+21:38:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:29 INFO  : 'con' command is executed.
+21:38:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:38:29 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+21:41:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:41:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:41:33 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:41:41 INFO  : Disconnected from the channel tcfchan#3.
+21:41:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:41:42 INFO  : 'fpga -state' command is executed.
+21:41:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:41:42 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:41:42 INFO  : 'jtag frequency' command is executed.
+21:41:42 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:41:42 INFO  : Context for 'APU' is selected.
+21:41:45 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:41:45 INFO  : 'configparams force-mem-access 1' command is executed.
+21:41:45 INFO  : Context for 'APU' is selected.
+21:41:45 INFO  : 'stop' command is executed.
+21:41:45 INFO  : 'ps7_init' command is executed.
+21:41:45 INFO  : 'ps7_post_config' command is executed.
+21:41:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:41:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:41:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:41:46 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:41:46 INFO  : 'configparams force-mem-access 0' command is executed.
+21:41:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:41:46 INFO  : Memory regions updated for context APU
+21:41:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:41:46 INFO  : 'con' command is executed.
+21:41:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:41:46 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+21:44:25 INFO  : Disconnected from the channel tcfchan#4.
+21:44:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:44:26 INFO  : 'fpga -state' command is executed.
+21:44:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:44:27 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:44:27 INFO  : 'jtag frequency' command is executed.
+21:44:27 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:44:27 INFO  : Context for 'APU' is selected.
+21:44:29 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:44:29 INFO  : 'configparams force-mem-access 1' command is executed.
+21:44:29 INFO  : Context for 'APU' is selected.
+21:44:29 INFO  : 'stop' command is executed.
+21:44:30 INFO  : 'ps7_init' command is executed.
+21:44:30 INFO  : 'ps7_post_config' command is executed.
+21:44:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:30 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:44:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:30 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:44:30 INFO  : 'configparams force-mem-access 0' command is executed.
+21:44:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:44:30 INFO  : Memory regions updated for context APU
+21:44:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:30 INFO  : 'con' command is executed.
+21:44:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:44:30 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+21:44:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:44:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:44:57 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:45:02 INFO  : Disconnected from the channel tcfchan#5.
+21:45:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:45:03 INFO  : 'fpga -state' command is executed.
+21:45:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:45:04 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:45:04 INFO  : 'jtag frequency' command is executed.
+21:45:04 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:45:04 INFO  : Context for 'APU' is selected.
+21:45:06 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:45:06 INFO  : 'configparams force-mem-access 1' command is executed.
+21:45:07 INFO  : Context for 'APU' is selected.
+21:45:07 INFO  : 'stop' command is executed.
+21:45:07 INFO  : 'ps7_init' command is executed.
+21:45:07 INFO  : 'ps7_post_config' command is executed.
+21:45:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:45:07 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:45:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:45:07 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:45:07 INFO  : 'configparams force-mem-access 0' command is executed.
+21:45:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:45:07 INFO  : Memory regions updated for context APU
+21:45:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:45:08 INFO  : 'con' command is executed.
+21:45:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:45:08 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+21:48:56 INFO  : Disconnected from the channel tcfchan#6.
+21:52:47 INFO  : Registering command handlers for SDK TCF services
+21:52:48 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+21:52:53 INFO  : XSCT server has started successfully.
+21:52:53 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+21:52:53 INFO  : Successfully done setting XSCT server connection channel  
+21:52:53 INFO  : Successfully done setting SDK workspace  
+21:52:53 INFO  : Checking for hwspec changes in the project flash_lights_wrapper_hw_platform_0.
+21:52:57 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1539831138447,  Project:1539827216450
+21:52:57 INFO  : The hardware specification for project 'flash_lights_wrapper_hw_platform_0' is different from F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+21:52:58 INFO  : Copied contents of F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf into \flash_lights_wrapper_hw_platform_0\system.hdf.
+21:53:03 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+21:53:08 INFO  : 
+21:53:09 INFO  : Updating hardware inferred compiler options for flash_lights.
+21:53:09 INFO  : Clearing existing target manager status.
+21:53:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:53:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:53:20 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:53:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:53:28 INFO  : 'fpga -state' command is executed.
+21:53:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:53:29 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:53:29 INFO  : 'jtag frequency' command is executed.
+21:53:29 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:53:29 INFO  : Context for 'APU' is selected.
+21:53:29 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:53:29 INFO  : 'configparams force-mem-access 1' command is executed.
+21:53:29 INFO  : Context for 'APU' is selected.
+21:53:29 INFO  : 'stop' command is executed.
+21:53:29 ERROR : Memory read error at 0xF8007080. AHB AP transaction error, DAP status f0000021
+21:53:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+----------------End of Script----------------
+
+21:55:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:55:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:55:15 ERROR : fpga configuration failed. DONE PIN is not HIGH
+21:55:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:55:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:55:29 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:55:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:55:35 INFO  : 'fpga -state' command is executed.
+21:55:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:55:35 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:55:35 INFO  : 'jtag frequency' command is executed.
+21:55:35 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:55:36 INFO  : Context for 'APU' is selected.
+21:55:36 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:55:36 INFO  : 'configparams force-mem-access 1' command is executed.
+21:55:36 INFO  : Context for 'APU' is selected.
+21:55:36 INFO  : 'stop' command is executed.
+21:55:36 INFO  : 'ps7_init' command is executed.
+21:55:36 INFO  : 'ps7_post_config' command is executed.
+21:55:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:55:36 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:55:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:55:36 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:55:36 INFO  : 'configparams force-mem-access 0' command is executed.
+21:55:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:55:37 INFO  : Memory regions updated for context APU
+21:55:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:55:37 INFO  : 'con' command is executed.
+21:55:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:55:37 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+21:56:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:56:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:56:48 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:57:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:57:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:57:15 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+21:57:21 INFO  : Disconnected from the channel tcfchan#1.
+21:57:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:57:22 INFO  : 'fpga -state' command is executed.
+21:57:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:57:23 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:57:23 INFO  : 'jtag frequency' command is executed.
+21:57:23 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:57:23 INFO  : Context for 'APU' is selected.
+21:57:26 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:57:26 INFO  : 'configparams force-mem-access 1' command is executed.
+21:57:26 INFO  : Context for 'APU' is selected.
+21:57:26 INFO  : 'stop' command is executed.
+21:57:27 INFO  : 'ps7_init' command is executed.
+21:57:27 INFO  : 'ps7_post_config' command is executed.
+21:57:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:27 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:57:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:27 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:57:27 INFO  : 'configparams force-mem-access 0' command is executed.
+21:57:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:57:27 INFO  : Memory regions updated for context APU
+21:57:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:27 INFO  : 'con' command is executed.
+21:57:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:57:27 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+21:57:57 INFO  : Disconnected from the channel tcfchan#2.
+21:57:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+21:57:58 INFO  : 'fpga -state' command is executed.
+21:57:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:57:59 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+21:57:59 INFO  : 'jtag frequency' command is executed.
+21:57:59 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:57:59 INFO  : Context for 'APU' is selected.
+21:57:59 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+21:57:59 INFO  : 'configparams force-mem-access 1' command is executed.
+21:57:59 INFO  : Context for 'APU' is selected.
+21:57:59 INFO  : 'stop' command is executed.
+21:58:00 INFO  : 'ps7_init' command is executed.
+21:58:00 INFO  : 'ps7_post_config' command is executed.
+21:58:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:00 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:58:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:00 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:58:00 INFO  : 'configparams force-mem-access 0' command is executed.
+21:58:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:58:00 INFO  : Memory regions updated for context APU
+21:58:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:00 INFO  : 'con' command is executed.
+21:58:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+21:58:00 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+22:00:33 INFO  : Disconnected from the channel tcfchan#3.
+22:00:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+22:00:35 INFO  : 'fpga -state' command is executed.
+22:00:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:00:35 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+22:00:35 INFO  : 'jtag frequency' command is executed.
+22:00:35 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:00:35 INFO  : Context for 'APU' is selected.
+22:00:36 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+22:00:36 INFO  : 'configparams force-mem-access 1' command is executed.
+22:00:36 INFO  : Context for 'APU' is selected.
+22:00:36 INFO  : 'stop' command is executed.
+22:00:36 INFO  : 'ps7_init' command is executed.
+22:00:36 INFO  : 'ps7_post_config' command is executed.
+22:00:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:00:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:37 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:00:37 INFO  : 'configparams force-mem-access 0' command is executed.
+22:00:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:00:37 INFO  : Memory regions updated for context APU
+22:00:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:37 INFO  : 'con' command is executed.
+22:00:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+22:00:37 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+22:01:21 INFO  : Disconnected from the channel tcfchan#4.
+22:01:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+22:01:22 INFO  : 'fpga -state' command is executed.
+22:01:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:01:23 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+22:01:23 INFO  : 'jtag frequency' command is executed.
+22:01:23 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:01:23 INFO  : Context for 'APU' is selected.
+22:01:23 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+22:01:23 INFO  : 'configparams force-mem-access 1' command is executed.
+22:01:23 INFO  : Context for 'APU' is selected.
+22:01:23 INFO  : 'stop' command is executed.
+22:01:24 INFO  : 'ps7_init' command is executed.
+22:01:24 INFO  : 'ps7_post_config' command is executed.
+22:01:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:01:24 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:01:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:01:24 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:01:24 INFO  : 'configparams force-mem-access 0' command is executed.
+22:01:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:01:24 INFO  : Memory regions updated for context APU
+22:01:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:01:25 INFO  : 'con' command is executed.
+22:01:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+22:01:25 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+22:02:55 INFO  : Disconnected from the channel tcfchan#5.
+22:02:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+22:02:57 INFO  : 'fpga -state' command is executed.
+22:02:59 INFO  : Memory regions updated for context APU
+22:03:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:03:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+22:03:15 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+22:03:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+22:03:30 INFO  : 'fpga -state' command is executed.
+22:03:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:03:30 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+22:03:30 INFO  : 'jtag frequency' command is executed.
+22:03:30 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:03:31 INFO  : Context for 'APU' is selected.
+22:03:31 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+22:03:31 INFO  : 'configparams force-mem-access 1' command is executed.
+22:03:31 INFO  : Context for 'APU' is selected.
+22:03:31 INFO  : 'stop' command is executed.
+22:03:31 INFO  : 'ps7_init' command is executed.
+22:03:31 INFO  : 'ps7_post_config' command is executed.
+22:03:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:03:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:03:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:03:31 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:03:31 INFO  : 'configparams force-mem-access 0' command is executed.
+22:03:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:03:32 INFO  : Memory regions updated for context APU
+22:03:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:03:32 INFO  : 'con' command is executed.
+22:03:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+22:03:32 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+22:04:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:04:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+22:04:06 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+22:04:11 INFO  : Disconnected from the channel tcfchan#6.
+22:04:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+22:04:12 INFO  : 'fpga -state' command is executed.
+22:04:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:04:12 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+22:04:12 INFO  : 'jtag frequency' command is executed.
+22:04:13 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:04:13 INFO  : Context for 'APU' is selected.
+22:04:13 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+22:04:13 INFO  : 'configparams force-mem-access 1' command is executed.
+22:04:13 INFO  : Context for 'APU' is selected.
+22:04:13 INFO  : 'stop' command is executed.
+22:04:13 INFO  : 'ps7_init' command is executed.
+22:04:13 INFO  : 'ps7_post_config' command is executed.
+22:04:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:04:13 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:04:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:04:13 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:04:14 INFO  : 'configparams force-mem-access 0' command is executed.
+22:04:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:04:14 INFO  : Memory regions updated for context APU
+22:04:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:04:14 INFO  : 'con' command is executed.
+22:04:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+22:04:14 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+22:04:28 INFO  : Disconnected from the channel tcfchan#7.
+17:53:09 INFO  : Registering command handlers for SDK TCF services
+17:53:10 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+17:53:17 INFO  : XSCT server has started successfully.
+17:53:18 INFO  : Successfully done setting XSCT server connection channel  
+17:53:24 INFO  : Successfully done setting SDK workspace  
+17:53:24 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+17:53:24 INFO  : Checking for hwspec changes in the project flash_lights_wrapper_hw_platform_0.
+18:00:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:00:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+18:00:07 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+18:00:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+18:00:15 INFO  : 'fpga -state' command is executed.
+18:00:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:00:18 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+18:00:18 INFO  : 'jtag frequency' command is executed.
+18:00:18 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:00:18 INFO  : Context for 'APU' is selected.
+18:00:18 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+18:00:18 INFO  : 'configparams force-mem-access 1' command is executed.
+18:00:18 INFO  : Context for 'APU' is selected.
+18:00:19 INFO  : 'stop' command is executed.
+18:00:19 INFO  : 'ps7_init' command is executed.
+18:00:19 INFO  : 'ps7_post_config' command is executed.
+18:00:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:00:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:00:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:00:20 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:00:20 INFO  : 'configparams force-mem-access 0' command is executed.
+18:00:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:00:20 INFO  : Memory regions updated for context APU
+18:00:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:00:20 INFO  : 'con' command is executed.
+18:00:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+18:00:20 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+18:02:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:02:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+18:02:41 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+18:02:53 INFO  : Disconnected from the channel tcfchan#1.
+18:02:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+18:02:55 INFO  : 'fpga -state' command is executed.
+18:02:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:02:57 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+18:02:57 INFO  : 'jtag frequency' command is executed.
+18:02:57 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:02:58 INFO  : Context for 'APU' is selected.
+18:03:04 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+18:03:04 INFO  : 'configparams force-mem-access 1' command is executed.
+18:03:04 INFO  : Context for 'APU' is selected.
+18:03:04 INFO  : 'stop' command is executed.
+18:03:05 INFO  : 'ps7_init' command is executed.
+18:03:05 INFO  : 'ps7_post_config' command is executed.
+18:03:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:03:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:03:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:03:05 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:03:06 INFO  : 'configparams force-mem-access 0' command is executed.
+18:03:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:03:06 INFO  : Memory regions updated for context APU
+18:03:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:03:06 INFO  : 'con' command is executed.
+18:03:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+18:03:06 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+18:19:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:19:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+18:19:56 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+18:35:35 INFO  : Registering command handlers for SDK TCF services
+18:35:35 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+18:35:40 INFO  : XSCT server has started successfully.
+18:35:40 INFO  : Successfully done setting XSCT server connection channel  
+18:35:40 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+18:35:40 INFO  : Checking for hwspec changes in the project flash_lights_wrapper_hw_platform_0.
+18:35:40 INFO  : Successfully done setting SDK workspace  
+18:35:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:35:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+18:35:56 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+18:36:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+18:36:09 INFO  : 'fpga -state' command is executed.
+18:36:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:36:10 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+18:36:11 INFO  : 'jtag frequency' command is executed.
+18:36:11 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:36:11 INFO  : Context for 'APU' is selected.
+18:36:11 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+18:36:11 INFO  : 'configparams force-mem-access 1' command is executed.
+18:36:11 INFO  : Context for 'APU' is selected.
+18:36:11 INFO  : 'stop' command is executed.
+18:36:12 INFO  : 'ps7_init' command is executed.
+18:36:12 INFO  : 'ps7_post_config' command is executed.
+18:36:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:36:12 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:36:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:36:13 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:36:13 INFO  : 'configparams force-mem-access 0' command is executed.
+18:36:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:36:13 INFO  : Memory regions updated for context APU
+18:36:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:36:14 INFO  : 'con' command is executed.
+18:36:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+18:36:15 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+18:36:44 INFO  : Disconnected from the channel tcfchan#1.
+23:03:08 INFO  : Registering command handlers for SDK TCF services
+23:03:09 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+23:03:16 INFO  : XSCT server has started successfully.
+23:03:22 INFO  : Successfully done setting XSCT server connection channel  
+23:03:22 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+23:03:31 INFO  : Successfully done setting SDK workspace  
+23:03:31 INFO  : Checking for hwspec changes in the project flash_lights_wrapper_hw_platform_0.
+23:03:31 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1540526515103,  Project:1539831138447
+23:03:31 INFO  : The hardware specification for project 'flash_lights_wrapper_hw_platform_0' is different from F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+23:03:31 INFO  : Copied contents of F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf into \flash_lights_wrapper_hw_platform_0\system.hdf.
+23:03:36 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+23:03:47 INFO  : 
+23:03:48 INFO  : Updating hardware inferred compiler options for flash_lights.
+23:03:48 INFO  : Clearing existing target manager status.
+23:03:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:03:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+23:03:55 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+23:04:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+23:04:34 INFO  : 'fpga -state' command is executed.
+23:04:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:04:34 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+23:04:34 INFO  : 'jtag frequency' command is executed.
+23:04:34 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:04:34 INFO  : Context for 'APU' is selected.
+23:04:34 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+23:04:34 INFO  : 'configparams force-mem-access 1' command is executed.
+23:04:34 INFO  : Context for 'APU' is selected.
+23:04:34 INFO  : 'stop' command is executed.
+23:04:34 ERROR : Memory read error at 0xF8007080. AHB AP transaction error, DAP status f0000021
+23:04:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+----------------End of Script----------------
+
+23:05:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:05:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+23:05:59 ERROR : fpga configuration failed. DONE PIN is not HIGH
+23:06:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:06:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+23:06:14 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+23:06:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+23:06:42 INFO  : 'fpga -state' command is executed.
+23:06:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:06:42 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+23:06:42 INFO  : 'jtag frequency' command is executed.
+23:06:42 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:06:42 INFO  : Context for 'APU' is selected.
+23:06:42 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+23:06:42 INFO  : 'configparams force-mem-access 1' command is executed.
+23:06:42 INFO  : Context for 'APU' is selected.
+23:06:42 INFO  : 'stop' command is executed.
+23:06:43 INFO  : 'ps7_init' command is executed.
+23:06:43 INFO  : 'ps7_post_config' command is executed.
+23:06:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:06:43 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:06:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:06:43 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:06:43 INFO  : 'configparams force-mem-access 0' command is executed.
+23:06:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:06:43 INFO  : Memory regions updated for context APU
+23:06:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:06:43 INFO  : 'con' command is executed.
+23:06:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+23:06:43 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+00:22:32 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1540531309779,  Project:1540526515103
+00:22:32 INFO  : Project flash_lights_wrapper_hw_platform_0's source hardware specification located at F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+00:22:32 INFO  : Disconnected from the channel tcfchan#1.
+00:22:37 INFO  : Project flash_lights_wrapper_hw_platform_0's source hardware specification location will not be monitored anymore.
+00:22:51 INFO  : Registering command handlers for SDK TCF services
+00:22:53 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+00:22:56 INFO  : XSCT server has started successfully.
+00:22:56 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+00:22:56 INFO  : Successfully done setting XSCT server connection channel  
+00:22:59 INFO  : Successfully done setting SDK workspace  
+00:23:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:23:05 ERROR : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' is cancelled.
+00:23:05 INFO  : Issued abort command to xsdb.
+00:24:40 INFO  : Registering command handlers for SDK TCF services
+00:24:41 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+00:24:44 INFO  : XSCT server has started successfully.
+00:24:44 INFO  : Successfully done setting XSCT server connection channel  
+00:24:44 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+00:24:44 INFO  : Successfully done setting SDK workspace  
+00:24:44 INFO  : Checking for hwspec changes in the project flash_lights_wrapper_hw_platform_1.
+00:26:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:26:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:26:47 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+00:27:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:27:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:27:36 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+00:28:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:28:22 INFO  : 'fpga -state' command is executed.
+00:28:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:28:22 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+00:28:22 INFO  : 'jtag frequency' command is executed.
+00:28:22 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+00:28:22 INFO  : Context for 'APU' is selected.
+00:28:22 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+00:28:22 INFO  : 'configparams force-mem-access 1' command is executed.
+00:28:22 INFO  : Context for 'APU' is selected.
+00:28:22 INFO  : 'stop' command is executed.
+00:28:23 INFO  : 'ps7_init' command is executed.
+00:28:23 INFO  : 'ps7_post_config' command is executed.
+00:28:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:28:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:28:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:28:23 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:28:23 INFO  : 'configparams force-mem-access 0' command is executed.
+00:28:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:28:23 INFO  : Memory regions updated for context APU
+00:28:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:28:23 INFO  : 'con' command is executed.
+00:28:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+00:28:23 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+00:30:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:30:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:30:14 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+00:32:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:32:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:32:10 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+00:32:42 INFO  : Disconnected from the channel tcfchan#1.
+00:32:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:32:43 INFO  : 'fpga -state' command is executed.
+00:32:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:32:44 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+00:32:44 INFO  : 'jtag frequency' command is executed.
+00:32:44 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+00:32:44 INFO  : Context for 'APU' is selected.
+00:32:46 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+00:32:46 INFO  : 'configparams force-mem-access 1' command is executed.
+00:32:46 INFO  : Context for 'APU' is selected.
+00:32:46 INFO  : 'stop' command is executed.
+00:32:46 INFO  : 'ps7_init' command is executed.
+00:32:46 INFO  : 'ps7_post_config' command is executed.
+00:32:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:32:46 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:32:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:32:47 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:32:47 INFO  : 'configparams force-mem-access 0' command is executed.
+00:32:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:32:47 INFO  : Memory regions updated for context APU
+00:32:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:32:47 INFO  : 'con' command is executed.
+00:32:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+00:32:47 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+00:34:19 INFO  : Disconnected from the channel tcfchan#2.
+00:41:10 INFO  : Registering command handlers for SDK TCF services
+00:41:11 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+00:41:16 INFO  : XSCT server has started successfully.
+00:41:16 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+00:41:16 INFO  : Successfully done setting XSCT server connection channel  
+00:41:21 INFO  : Successfully done setting SDK workspace  
+00:41:21 ERROR : Error occurred while creating hardware platform flash_lights_wrapper_hw_platform_1 from sysdef
+org.eclipse.core.internal.resources.ResourceException: Resource '/flash_lights_wrapper_hw_platform_1/system.hdf' already exists.
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:314)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:301)
+	at org.eclipse.core.internal.resources.File.create(File.java:107)
+	at com.xilinx.sdk.hw.internal.HwProjectCreator.createHwProjectFromZip(HwProjectCreator.java:103)
+	at com.xilinx.sdk.hw.HwProjectUtil.internalCreate(HwProjectUtil.java:266)
+	at com.xilinx.sdk.hw.HwProjectUtil.makeNewHardwareProject(HwProjectUtil.java:210)
+	at com.xilinx.sdk.hw.HwProjectUtil.makeNewHardwareProject(HwProjectUtil.java:197)
+	at com.xilinx.sdk.hw.HwProjectUtil.makeNewHardwareProject(HwProjectUtil.java:171)
+	at com.xilinx.sdk.startup.InitSDK.processHwSpecArgumentTask(InitSDK.java:515)
+	at com.xilinx.sdk.startup.InitSDK.access$8(InitSDK.java:497)
+	at com.xilinx.sdk.startup.InitSDK$12.run(InitSDK.java:448)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+00:41:21 ERROR : Unable to create Hardware Specification Project with specification file: F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf
+00:41:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:41:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:41:51 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+00:43:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:43:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:43:26 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/flash_lights_wrapper.bit"
+00:43:55 INFO  : Registering command handlers for SDK TCF services
+00:43:56 INFO  : Launching XSCT server: xsct.bat -interactive F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\temp_xsdb_launch_script.tcl
+00:43:59 INFO  : XSCT server has started successfully.
+00:43:59 INFO  : Processing command line option -hwspec F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper.hdf.
+00:43:59 INFO  : Successfully done setting XSCT server connection channel  
+00:43:59 INFO  : Successfully done setting SDK workspace  
+00:45:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:45:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:45:12 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_1/flash_lights_wrapper.bit"
+00:46:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:46:04 INFO  : 'fpga -state' command is executed.
+00:46:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:46:05 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+00:46:05 INFO  : 'jtag frequency' command is executed.
+00:46:05 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+00:46:05 INFO  : Context for 'APU' is selected.
+00:46:05 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+00:46:05 INFO  : 'configparams force-mem-access 1' command is executed.
+00:46:05 INFO  : Context for 'APU' is selected.
+00:46:05 INFO  : 'stop' command is executed.
+00:46:05 INFO  : 'ps7_init' command is executed.
+00:46:05 INFO  : 'ps7_post_config' command is executed.
+00:46:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:46:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:46:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:46:06 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:46:06 INFO  : 'configparams force-mem-access 0' command is executed.
+00:46:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:46:06 INFO  : Memory regions updated for context APU
+00:46:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:46:06 INFO  : 'con' command is executed.
+00:46:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+00:46:06 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+00:47:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:47:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:47:40 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_1/flash_lights_wrapper.bit"
+00:48:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:48:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:48:42 ERROR : fpga configuration failed. DONE PIN is not HIGH
+00:48:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:48:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:48:57 INFO  : FPGA configured successfully with bitstream "F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_1/flash_lights_wrapper.bit"
+00:49:40 INFO  : Disconnected from the channel tcfchan#1.
+00:49:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279787440A" && level==0} -index 1' command is executed.
+00:49:41 INFO  : 'fpga -state' command is executed.
+00:49:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:49:42 INFO  : Jtag cable 'Digilent Zybo 210279787440A' is selected.
+00:49:42 INFO  : 'jtag frequency' command is executed.
+00:49:42 INFO  : Sourcing of 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl' is done.
+00:49:42 INFO  : Context for 'APU' is selected.
+00:49:44 INFO  : Hardware design information is loaded from 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf'.
+00:49:44 INFO  : 'configparams force-mem-access 1' command is executed.
+00:49:44 INFO  : Context for 'APU' is selected.
+00:49:44 INFO  : 'stop' command is executed.
+00:49:45 INFO  : 'ps7_init' command is executed.
+00:49:45 INFO  : 'ps7_post_config' command is executed.
+00:49:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:49:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:49:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:49:45 INFO  : The application 'F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:49:45 INFO  : 'configparams force-mem-access 0' command is executed.
+00:49:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+loadhw -hw F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+dow F:/school/2018-2019/fall/hscd/lab2part2/lab2part2.sdk/flash_lights/Debug/flash_lights.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:49:45 INFO  : Memory regions updated for context APU
+00:49:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:49:45 INFO  : 'con' command is executed.
+00:49:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279787440A"} -index 0
+con
+----------------End of Script----------------
+
+00:49:45 INFO  : Launch script is exported to file 'F:\school\2018-2019\fall\hscd\lab2part2\lab2part2.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_flash_lights.elf_on_local.tcl'
+00:50:44 INFO  : Disconnected from the channel tcfchan#2.

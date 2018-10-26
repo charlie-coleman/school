@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Oct 25 23:35:04 2018
+# Process ID: 12844
+# Current directory: f:/school/2018-2019/fall/hscd/lab2part2/lab2part2.tmp/light_counter_v1_0_project/light_counter_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log light_counter_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source light_counter_v1_0.tcl
+# Log file: f:/school/2018-2019/fall/hscd/lab2part2/lab2part2.tmp/light_counter_v1_0_project/light_counter_v1_0_project.runs/synth_1/light_counter_v1_0.vds
+# Journal file: f:/school/2018-2019/fall/hscd/lab2part2/lab2part2.tmp/light_counter_v1_0_project/light_counter_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source light_counter_v1_0.tcl -notrace
