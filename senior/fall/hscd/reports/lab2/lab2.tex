@@ -1,29 +1,22 @@
-\documentclass[12pt]{article}
+\documentclass{article}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
 
 \begin{document}
 \noindent \textbf{Lab 2: Communicate with your hardware} \hfill Charlie Coleman
 
-\noindent \hfill 29 October, 2018\\
+\noindent \hfill 29 October, 2018
 
-\noindent \textbf{Pre-Lab:}
+\noindent \textbf{Pre-Lab:} N/A\\
 
-N/A\\
+\noindent \textbf{Objective:} The objective of this lab is to familiarize ourselves with the connection between our hardware and software, and create our first design to utilize it. This will allow us to transfer data between the halves and test the hardware.\\
 
-\noindent \textbf{Objective:}
+\noindent \textbf{Circuit Diagrams:} N/A\\
 
-The objective of this lab is to familiarize ourselves with the connection between our hardware and software, and create our first design to utilize it. This will allow us to transfer data between the halves and test the hardware.\\
-
-\noindent \textbf{Circuit Diagrams:}
-
-N/A\\
-
-\noindent \textbf{Outcome Predictions:}
-
-At the end of this lab, we should have a settable counter implemented in hardware. When the divisor is set, this counter should increment a register. The software should be able to read this value out of the memory. Then the value of the register will be written to the LEDs on-board.\\
+\noindent \textbf{Outcome Predictions:} At the end of this lab, we should have a settable counter implemented in hardware. When the divisor is set, this counter should increment a register. The software should be able to read this value out of the memory. Then the value of the register will be written to the LEDs on-board.\\
 
 \noindent \textbf{Equipment:}
 
@@ -35,35 +28,32 @@ At the end of this lab, we should have a settable counter implemented in hardwar
 
 \noindent \textbf{Procedure:}
 
-\begin{itemize}
+\begin{itemize}[noitemsep,nolistsep]
 	\item[-] Part 1.
-	\begin{enumerate}
+	\begin{enumerate}[noitemsep, nolistsep]
 		\item Choose how the software and hardware halves will communicate. For the Zybo 7000, the processor and FPGA are on the same board, so this communication is built in.
 		\item Setup your simulation environment for the board
-		\item Create a new AXI IP package within Vivado
-		\item Initialize the package with 16 registers
-		\item Test these registers using the Vivado SDK \8 xil\_io.h
+		\item Create a new AXI IP package with 16 registers
+		\item Test these registers using the Vivado SDK \& \texttt{xil\_io.h}
 	\end{enumerate}
-	\item Part 2.
-	\begin{enumerate}
+	\item[-] Part 2.
+	\begin{enumerate}[noitemsep, nolistsep]
 		\item Using the same IP block as part one, use one register as a divisor
+		\item Create a counter using the system clock with a frequency divisor
+		\item Using the Vivado SDK, write a value into your divisor register
+		\item In a while loop, read the value out of the counter register and output it on the LEDs
 	\end{enumerate}
-\end{itemize}
+\end{itemize}~
 
-\noindent \textbf{Recalculations and Predictions:}
+\noindent \textbf{Recalculations and Predictions:} N/A\\
 
-N/A\\
+\noindent \textbf{Data and Observations:} Using a 100,000,000 divisor, we are able to obtain a count rate of 1/second. We are able to time this. We have 4 LEDs, so the cycle from 0000 to 1111 took 16 seconds.\\
 
-\noindent \textbf{Data and Observations:}
+\noindent \textbf{Analysis and Discussion:} All clock rates set by the SDK were accurately represented on the LEDs. Initially, I assumed the clock rate for the Zybo was 50MHz, so all of the tests were off by a factor of 2. Correcting this in the calculations showed that the divisor was working as intended.\\
 
-N/A\\
+\noindent \textbf{Results:} The final result of part two worked exactly as intended. The SDK was able to read and write data out of the hardware half of the design. We encountered issues when the Xilinx SDK would cache the results of the memory read, meaning that the value of the register was never updated. Using some tools from \texttt{xil\_cache.h} we were able to remedy this issue. We also had a problem where the counter was not updating the register. This was fixed by creating a new signal and replacing the reference to the old register in the output to this new register and adding it to the sensitivity list. After all of these errors, the lab was working as intended.\\
 
-\noindent \textbf{Analysis:}
+\noindent \textbf{Conclusions:} This lab provided me with a refresher on using Xilinx, VHDL, and C. It gave me experience with connecting hardware and software in useful ways. These skills are vital when working on embedded systems and other systems involving both hardware and software components. This lab can be considered a success as it familiarized me with the board I'm using and how to make the two halves of the design communicate efficiently.
 
-\noindent \textbf{Discussion:}
-
-\noindent \textbf{Results:}
-
-\noindent \textbf{Conclusions:}
-
+\thispagestyle{empty}
 \end{document}
