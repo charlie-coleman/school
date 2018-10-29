@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+\noindent \textbf{Lab 2: Communicate with your hardware} \hfill Charlie Coleman
+
+\noindent \hfill 29 October, 2018\\
+
+\noindent \textbf{Pre-Lab:}
+
+N/A\\
+
+\noindent \textbf{Objective:}
+
+The objective of this lab is to familiarize ourselves with the connection between our hardware and software, and create our first design to utilize it. This will allow us to transfer data between the halves and test the hardware.\\
+
+\noindent \textbf{Circuit Diagrams:}
+
+N/A\\
+
+\noindent \textbf{Outcome Predictions:}
+
+At the end of this lab, we should have a settable counter implemented in hardware. When the divisor is set, this counter should increment a register. The software should be able to read this value out of the memory. Then the value of the register will be written to the LEDs on-board.\\
+
+\noindent \textbf{Equipment:}
+
+\begin{itemize}[nolistsep, noitemsep]
+	\item[-] Computer
+	\item[-] Digilent Zybo 7000
+	\item[-] Xilinx Vivado 2018
+\end{itemize}~
+
+\noindent \textbf{Procedure:}
+
+\begin{itemize}
+	\item[-] Part 1.
+	\begin{enumerate}
+		\item Choose how the software and hardware halves will communicate. For the Zybo 7000, the processor and FPGA are on the same board, so this communication is built in.
+		\item Setup your simulation environment for the board
+		\item Create a new AXI IP package within Vivado
+		\item Initialize the package with 16 registers
+		\item Test these registers using the Vivado SDK \8 xil\_io.h
+	\end{enumerate}
+	\item Part 2.
+	\begin{enumerate}
+		\item Using the same IP block as part one, use one register as a divisor
+	\end{enumerate}
+\end{itemize}
+
+\noindent \textbf{Recalculations and Predictions:}
+
+N/A\\
+
+\noindent \textbf{Data and Observations:}
+
+N/A\\
+
+\noindent \textbf{Analysis:}
+
+\noindent \textbf{Discussion:}
+
+\noindent \textbf{Results:}
+
+\noindent \textbf{Conclusions:}
+
+\end{document}
