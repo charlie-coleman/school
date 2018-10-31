@@ -12,18 +12,18 @@
 \contentsline {subsection}{\numberline {4.2}Specification}{2}{subsection.4.2}
 \contentsline {section}{\numberline {5}Technical Analysis \& Recommendation}{2}{section.5}
 \contentsline {section}{\numberline {6}Implementation Plan}{3}{section.6}
-\contentsline {section}{\numberline {7}References}{3}{section.7}
+\contentsline {section}{\numberline {7}References}{4}{section.7}
 \contentsline {section}{\numberline {8}Appendix}{4}{section.8}
 \contentsline {subsection}{\numberline {8.1}Specifications}{4}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Resources}{4}{subsection.8.2}
 \contentsline {subsubsection}{\numberline {8.2.1}Facilities}{4}{subsubsection.8.2.1}
 \contentsline {subsubsection}{\numberline {8.2.2}Lab Equipment}{4}{subsubsection.8.2.2}
 \contentsline {subsubsection}{\numberline {8.2.3}Computer Applications}{4}{subsubsection.8.2.3}
-\contentsline {subsubsection}{\numberline {8.2.4}Specialized Hardware}{4}{subsubsection.8.2.4}
-\contentsline {subsubsection}{\numberline {8.2.5}Communication Protocols}{4}{subsubsection.8.2.5}
+\contentsline {subsubsection}{\numberline {8.2.4}Specialized Hardware}{5}{subsubsection.8.2.4}
+\contentsline {subsubsection}{\numberline {8.2.5}Communication Protocols}{5}{subsubsection.8.2.5}
 \contentsline {subsection}{\numberline {8.3}Testing}{5}{subsection.8.3}
 \contentsline {subsubsection}{\numberline {8.3.1}OCR}{5}{subsubsection.8.3.1}
 \contentsline {subsubsection}{\numberline {8.3.2}Claw}{5}{subsubsection.8.3.2}
 \contentsline {subsubsection}{\numberline {8.3.3}Navigation}{5}{subsubsection.8.3.3}
 \contentsline {subsubsection}{\numberline {8.3.4}Completed Robot}{5}{subsubsection.8.3.4}
-\contentsline {subsection}{\numberline {8.4}Personnel}{5}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.4}Personnel}{6}{subsection.8.4}

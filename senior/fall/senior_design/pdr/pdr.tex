@@ -8,12 +8,13 @@
 \usepackage{tabularx}
 \usepackage{enumitem}
 \usepackage{graphicx}
+\usepackage{pgfgantt}
 \newcommand{\urlNW}[2]{\href[pdfnewwindow=true]{#1}{#2}}
 
 \graphicspath{{./images/}}
 
 \begin{document}
-
+	
 \vspace*{\fill}
 \begin{center}
 
@@ -126,11 +127,45 @@ After identifying the letter on the cube, we will need to move the cube to the m
 
 \section{Implementation Plan}
 
+\begin{center}
+\begin{ganttchart}
+	[
+		hgrid,
+		vgrid,
+		x unit=1.5cm,
+		y unit title=0.8cm,
+		y unit chart=0.8cm,
+		milestone/.append style={xscale=0.4},
+		bar/.append style={pattern=north east lines}
+	]{1}{8}
+	\gantttitle{Project Gantt Chart}{8} \\
+	\gantttitle{2018}{4}
+	\gantttitle{2019}{4}\\
+	\gantttitle{Sept}{1}
+	\gantttitle{Oct}{1}
+	\gantttitle{Nov}{1}
+	\gantttitle{Dec}{1}
+	\gantttitle{Jan}{1}
+	\gantttitle{Feb}{1}
+	\gantttitle{Mar}{1}
+	\gantttitle{Apr}{1} \\
+	
+	\ganttbar{Testing}{3}{8}\\
+	\ganttbar{OCR}{1}{4}\\
+	\ganttbar{Claw}{2}{5}\\
+	\ganttbar{Chassis}{3}{6}\\
+	\ganttbar{Power Supply}{5}{6}\\
+	\ganttbar{Navigation}{4}{7}\\
+	\ganttmilestone{Competition}{8}
+\end{ganttchart}
+\end{center}
+
 \begin{enumerate}[noitemsep]
 	\item Design \& build or find a chassis - Amy \& Heli
 	\item Design \& build a claw - Amy
 	\item OCR Development - Charlie
 	\item Navigation Logic - Charlie
+	\item Hardware Assembly - Amy \& Heli
 	\item Power supply design \& implementation - Heli
 \end{enumerate}
 
@@ -246,5 +281,4 @@ After identifying the letter on the cube, we will need to move the cube to the m
 \subsection{Personnel}
 
 See following pages.
-
 \end{document}
