@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+%\renewcommand*\familydefault{\sfdefault}
+
+\newcommand{\urlNW}[2]{\href[pdfnewwindow=true]{#1}{#2}}
+\def\labelitemi{--}
+\def\labelitemii{$\ast$}
+
+\newcommand{\fullname}{Amy Guo }
+\newcommand{\homeaddress}{2524 Jennifer Crossing, Granite City, IL 62040 }
+\newcommand{\phone}{(618) 225-2769 }
+\newcommand{\emailaddress}{amy.guo@slu.edu }
+\newcommand{\degree}{Bachelor of Science in Computer Engineering }
+\newcommand{\graddate}{May 2019 }
+\newcommand{\university}{Saint Louis University -- Saint Louis, MO }
+\newcommand{\gpa}{3.3}
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue
+}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\thispagestyle{empty}
+	\noindent\begin{center}\huge{\fullname}\end{center}
+	\noindent\uline{\hfill \homeaddress --- \phone --- \emailaddress \hfill} \\\\
+	\begin{tabularx}{\textwidth}{|l|X|}
+		\hline & \\
+		\begin{large}\textbf{Education}\end{large} & \degree, \graddate \\ 
+		& \university \\
+		& \vspace{-\topsep} \begin{itemize}[noitemsep, nolistsep] \item GPA: \gpa \end{itemize}\\
+		\begin{large}\textbf{Projects}\end{large} & \uline{\textbf{Ultimate Frisbee Statistics Tracker} \hfill} \\
+		& \vspace{-\topsep} 
+		\begin{itemize}[noitemsep, topsep=0pt]
+
+			\item Records player statistics throughout a tournament
+			\item Different modes for offense and defense
+			\item User-friendly interface allows for simple data entry and retrieval
+		\end{itemize} \\
+		\begin{large}\textbf{Skills}\end{large}
+		&
+		{\begin{tabularx}{\linewidth}[t]{lX}
+			\textbf{Languages} & Python, Java, C, C++, Assembly, VHDL, Matlab \\
+			& Fluent in English, Mandarin, and Fuzhou \\
+			\textbf{Miscellaneous} & FPGA Design, Eagle CAD, SolidWorks, \LaTeX, Git, ROS, macOS, Windows, Linux
+		\end{tabularx}}\\ & \\
+		\begin{large}\textbf{Work History}\end{large} 
+		& \vspace{-0.7\topsep}
+		\uline{\textbf{Teaching/Lab Assistant} \hfill \footnotesize{\textit{SLU --- Saint Louis, MO (Spring 2017, Present)}}} \\
+		& \vspace{-0.7\topsep}
+		\begin{itemize}[noitemsep, nolistsep]
+			\item Taught students how to utilize lab equipment
+			\item Graded students' reports
+			\item Prepared and delivered lectures on laboratory topics
+		\end{itemize}\\
+		& \uline{\textbf{Research Assistant} \hfill \footnotesize{\textit{UNL NIMBUS Lab --- Lincoln, NE (Summer 2018)}}} \\
+		& \vspace{-0.7\topsep}
+		\begin{itemize}[noitemsep, nolistsep]
+			\item Research Experience for Undergraduates (REU) Program
+			\item Atmospheric profiling using unmanned aerial systems 
+			\item PTH sensor assessment
+			\item Field Experiments, Mission planning, data recording
+		\end{itemize}\\
+		& \uline{\textbf{ITS Intern} \hfill \footnotesize{\textit{SLU --- Saint Louis, MO (Spring \& Fall 2017)}}}\\
+		&\vspace{-0.7\topsep}\begin{itemize}[noitemsep, nolistsep]
+			\item Assist students and faculty with technology questions and support
+			\begin{itemize}[noitemsep, nolistsep]
+				\item Help with both hardware and software questions
+			\end{itemize}
+			\item Maintained system security by exhaustive identity verification
+		\end{itemize} \\
+		\begin{large}\textbf{Conferences}\end{large}
+		& \footnotesize{\textit{Women in Physical Sciences Conf. --- University of Nebraska,Lincoln (2018)}} \\&\\
+		\begin{large}\textbf{Papers}\end{large}
+		& \footnotesize{\textit{Assessment of Pressure/ Temperature/ Humidity Sensors for
+Unmanned Aerial Systems --- UNL NIMBUS Lab (2018)}} \\&\\
+		\begin{large}\textbf{Leadership}\end{large}
+		& \textbf{Secretary} \hfill \footnotesize{\textit{SLU Branch of IEEE --- Saint Louis University (2017-2018)}} \\
+		& \textbf{Vice President} \hfill \footnotesize{\textit{SLU Branch of IEEE --- Saint Louis University (2018-2019)}} \\
+		& \textbf{Social Chair} \hfill \footnotesize{\textit{SLU Branch of SWE --- Saint Louis University (2018-2019)}} \\&\\
+		\begin{large}\textbf{Volunteer History}\end{large} 
+		& \textbf{Volunteer} \hfill \footnotesize{\textit{Make A Difference Day --- Saint Louis University (2015)}}\\
+		& \textbf{Instructor} \hfill \footnotesize{\textit{Billiken Bots --- Saint Louis University (2015-2018)}}\\
+		& \textbf{Instructor} \hfill \footnotesize{\textit{Scout-botics --- Saint Louis University (2015-2018)}} \\ & \\ \hline
+	\end{tabularx}
+\end{document}

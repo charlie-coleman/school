@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\newcommand{\urlNW}[2]{\href[pdfnewwindow=true]{#1}{#2}}
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue
+}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+	\thispagestyle{empty}
+	\noindent\begin{center}\huge{Charlie Coleman}\end{center}
+	\noindent\uline{\hfill 2912 36th St, Des Moines, IA 50310 | (515) 724-2838 | me@charlie-coleman.com \hfill} \\\\
+	\begin{small}
+	\begin{tabularx}{\textwidth}{lX}
+		\begin{large}\textbf{Education}\end{large} & Bachelor of Science in Computer Engineering, May 2019\\ 
+		& Saint Louis University | Saint Louis, MO \\
+		& \vspace{-\topsep} \begin{itemize}[noitemsep, nolistsep] \item Departmental GPA: 3.96, Cumulative GPA: 3.58 \end{itemize}\\
+		\begin{large}\textbf{Projects}\end{large} & \uline{\textbf{Karnaugh Map Solver} \hfill ~}\\
+		&\vspace{-0.7\topsep} \begin{itemize}[noitemsep, nolistsep]
+			\item Written using Javascript, HTML, and CSS
+			\item Uses the Quine-McCluskey Algorithm in combination with Petrick's method to perform boolean simplification
+			\item Allows the user to enter the truth table through multiple methods
+		\end{itemize}\\
+		& \uline{\textbf{Schedule Maker} \hfill ~} \\
+		& \vspace{-0.7\topsep} 
+		\begin{itemize}[noitemsep, nolistsep]
+			\item Written using JavaScript, HTML, and CSS
+			\item Allows users to plan and create a class schedule
+			\item Converts the class data to a base 64 encoded JSON string
+			\begin{itemize}[noitemsep, topsep=0pt]
+				\item This allows the current schedule to be bookmarked/saved
+			\end{itemize}
+			\item Allows the user to export the schedule as a calendar file
+			\begin{itemize}[noitemsep, topsep=0pt]
+				\item Compatible with Google Calendar and Outlook
+			\end{itemize}
+		\end{itemize} \\
+		& \uline{\textbf{Fractal Generator} \hfill ~}\\
+		& \vspace{-0.7\topsep}
+		\begin{itemize}[noitemsep, nolistsep]
+			\item Written using JavaScript, HTML, and CSS
+			\item Generates fractal images using Lindenmayer systems
+			\item Can generate very complex fractals using recursive methods
+			\item Allows the user to export the final fractal as a PNG file
+		\end{itemize} \\
+		\begin{large}\textbf{Technical Skills}\end{large}
+		&
+		{\begin{tabularx}{\linewidth}[t]{lX}
+			\textbf{Operating Systems} & Windows 7/8/10, Linux Mint, Ubuntu, MacOS \\
+			\textbf{Languages} & C++, C, Java, Python, VBA, JavaScript, HTML, CSS, Assembly, VHDL \\
+			\textbf{Miscellaneous} & Microsoft Office, Autodesk Inventor, Git/Github, Agile (scrum) Development
+		\end{tabularx}}\\ & \\
+		\begin{large}\textbf{Work History}\end{large} & \uline{\textbf{Software Engineering Intern} \hfill \textit{Cerner | Kansas City, MO (2018)}}\\
+		&\vspace{-0.7\topsep}
+		\begin{itemize}[noitemsep, nolistsep]
+			\item Re-implemented an existing piece of software in Node.js and ReactJS
+			\item Used Scrum development practices to communicate progress with my manager and team and get feedback
+			\item Used Git/Jenkins/Crucible to test \& review code
+		\end{itemize}\\
+		&\uline{\textbf{Tech Repair Technician} \hfill \textit{Office Depot | Des Moines, IA (2017)}}\\
+		& \vspace{-0.7\topsep}
+		\begin{itemize}[noitemsep, nolistsep]
+			\item Ran diagnostics and repaired customers' computers
+			\item Communicated with team members on what needed to be done
+			\item Worked with customers to diagnose and solve problems
+		\end{itemize} \\
+		& \uline{\textbf{IT Intern} \hfill \textit{PurFoods LLC | Ankeny, IA (2016)}} \\
+		& \vspace{-0.7\topsep}
+		\begin{itemize}[noitemsep, nolistsep]
+			\item Gathered information on the company's computer system
+			\item Documented computer inventory of the company
+			\item Created tools to facilitate easier access to the data for editing/viewing
+			\item Took a project description and decided the best path forward
+			\item Worked mostly independently while giving updates to superiors
+		\end{itemize}\\
+		\begin{large}\textbf{Volunteer History}\end{large} & \textbf{Camp Counselor} \hfill \textit{Catholic Youth Camp | Panora, IA (2014-2018)}\\
+	\end{tabularx}
+	\end{small}
+\end{document}
