@@ -1,9 +1,9 @@
-[submodule "senior/fall/ai2"]
-	path = senior/fall/ai2
+[submodule "senior/fall/ai/"]
+	path = senior/fall/ai/
 	url = http://git.cs.slu.edu/courses/fall18/csci_3760_5930/colemanct.git
-[submodule "senior/fall/oosd2"]
-	path = senior/fall/oosd2
+[submodule "senior/fall/oosd/"]
+	path = senior/fall/oosd/
 	url = http://git.cs.slu.edu/courses/fall18/csci_2300/colemanct.git
-[submodule "senior/fall/os2"]
-	path = senior/fall/os2
+[submodule "senior/fall/os/"]
+	path = senior/fall/os/
 	url = http://git.cs.slu.edu/courses/fall18/csci_3500/colemanct.git
