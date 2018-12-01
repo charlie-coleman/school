@@ -1,0 +1,36 @@
+{
+   ExpandedHierarchyInLayout: "",
+   PinnedBlocks: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y -490 -defaultsOSRD
+preplace port vga_b -pg 1 -y -100 -defaultsOSRD
+preplace port vga_hs -pg 1 -y -80 -defaultsOSRD
+preplace port vga_r -pg 1 -y -140 -defaultsOSRD
+preplace port vga_g -pg 1 -y -120 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y -210 -defaultsOSRD
+preplace port vga_vs -pg 1 -y -60 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 2 -y -310 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -y -360 -defaultsOSRD
+preplace inst vga_out_0 -pg 1 -lvl 2 -y -100 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y -120 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 3 440J -490 NJ -490 NJ
+preplace netloc vga_out_0_vs 1 2 2 NJ -60 NJ
+preplace netloc vga_out_0_hs 1 2 2 NJ -80 NJ
+preplace netloc vga_out_0_r 1 2 2 NJ -140 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 450 -420 NJ
+preplace netloc vga_out_0_g 1 2 2 NJ -120 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 480
+preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 2 1 840
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 460J -210 NJ -210 NJ
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 500 -200 860
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 0 40 470 -410 850
+preplace netloc ps7_0_axi_periph_M00_AXI 1 1 3 490 -480 NJ -480 1160
+preplace netloc vga_out_0_b 1 2 2 NJ -100 NJ
+levelinfo -pg 1 -20 220 670 1010 1180 -top -530 -bot 200
+",
+}
+{
+   da_axi4_cnt: "1",
+   da_ps7_cnt: "1",
+}

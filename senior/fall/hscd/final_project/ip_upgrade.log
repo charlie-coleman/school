@@ -1,0 +1,98 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Wed Nov 28 17:03:52 2018
+| Host         : DESKTOP-PVBM0UH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'dma_and_vga_out_vga_out_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of dma_and_vga_out_vga_out_0_0 (xilinx.com:user:vga_out:1.0) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Wed Nov 28 16:31:20 2018
+| Host         : DESKTOP-PVBM0UH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'dma_and_vga_out_vga_out_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of dma_and_vga_out_vga_out_0_0 (xilinx.com:user:vga_out:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Wed Nov 28 15:38:11 2018
+| Host         : DESKTOP-PVBM0UH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'dma_and_vga_out_vga_out_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of dma_and_vga_out_vga_out_0_0 (xilinx.com:user:vga_out:1.0) from (Rev. 2) to (Rev. 3)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'dma_and_vga_out_vga_out_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'b'
+
+-Upgrade has added port 'g'
+
+-Upgrade has added port 'hs'
+
+-Upgrade has added port 'r'
+
+-Upgrade has added port 'vs'
+
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Wed Nov 28 15:34:08 2018
+| Host         : DESKTOP-PVBM0UH running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'dma_and_vga_out_vga_out_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of dma_and_vga_out_vga_out_0_0 (xilinx.com:user:vga_out:1.0) from (Rev. 1) to (Rev. 2)
+

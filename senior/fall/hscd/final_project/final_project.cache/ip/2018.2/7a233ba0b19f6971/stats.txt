@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Wed Nov 28 22:32:53 UTC 2018
+VLNV: xilinx.com:user:vga_out:1.0
+SynthRuntime: 42

@@ -1,0 +1,22 @@
+Materials:
+    - Raspberry Pi Model 3
+    - Raspberry Pi Camera Module
+    - Custom Claw - 3D printed (Coleman)
+    - Chassis - Vex (Guo)
+    - Battery (Wang)
+    - Voltage Regulator (Wang)
+    - Replica competition board, mothership, etc.
+Methods
+    - OCR for Cube Character Recognition
+        - use image manipulation & OCR libraries such as OpenCV and Tesseract OCR
+        - OCR fails if letter is more than ~20 degrees off axis, so rotate image until successful
+    - Utilize provided JSON file to navigate field
+        - Exact cube position is unknown, so explore square until cube is found
+    - Movement is done using a simple 4-wheeled chassis design
+    - Use shape recognition to find obstacles
+        - Obstacles are circularly symmetrical
+
+Results
+OCR has been achieved with good success using the OpenCV and Tesseract libraries. While the letters cannot be identified if they are more than around 20 degrees from their correct orientation, we can fix this problem by rotating the images by values less than 20 degrees and testing at each points. Once we implemented this in the detection code, the only remaining problems are with C & D. When C is upside down it is identified as a D, and vice versa for D. We have yet to find a solution to this problem.
+
+Objective
