@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tikz-timing}
+\usepackage[backend=biber]{biblatex}
+\usepackage{xparse}
+
+\title{Hardware \& Software Co-design: Final Paper}
+\author{Charlie Coleman}
+\date{\today}
+
+\NewDocumentCommand{\busref}{som}{\texttt{%
+#3%
+\IfValueTF{#2}{[#2]}{}%
+\IfBooleanTF{#1}{\#}{}%
+}}
+
+\newcommand{\itc}{I$^2$C}
+\addbibresource{bibl.bib}
+
+\begin{document}
+
+	\maketitle
+	
+	\section{Serial Communication: \itc}
+	
+	Inter-Integrated Circuit (\itc) is a serial communication protocol created by NXP Semiconductors. As the name implies, the bus was created and is used to connect IC peripherals. The bus consists of master nodes, responsible for generating the clock signal \& initiating conversations, and slave nodes, responsible for recieving the clock signal \& responding to requests from the master nodes. \itc{} can operate at multiple different speeds. They are Fast mode (400 Kbit/s), Fast-mode plus (1 Mbit/s), Hs-mode (3.4 Mbit/s), and Ultra Fast-mode (5 Mbit/s). All speeds supported by \itc{} are backwards compatible, so slower slaves are able to connect to faster masters \& vice versa \autocite{i2cspec}.\\
+	
+	\itc{} supports the connection of many devices, with multiple masters/slaves. In order to specify communication to one device, a 7 bit address is send on the bus. These addresses are allocated by NXP, and must be purchased from them \autocite{i2clicense}. \itc{} does not implement any CRCs or parity bits, so the only error checking is checking that \texttt{SDA} is constant for the duration of the positive clock period. Only one bit is generated for each clock cycle \autocite{i2cspec}.\\
+	
+	Plug-and-play functionality is not explicitely included within the \itc{} specification, and therefore is not available by default in some devices. However, there are ways to implement plug and A master device can poll for addresses and if it recieves an ACK, that device has been added to the network. Master devices can also signal to other masters that they have been connected \autocite{i2clicense}.
+	
+	
+	\begin{figure}[h]
+	\begin{center}
+		\begin{tikztimingtable}[%
+	    	timing/dslope=0.5,
+	    	timing/.style={x=1.33ex,y=4ex},
+	    	x=1.33ex,
+	    	timing/rowdist=5ex,
+	    	timing/name/.style={font=\sffamily\scriptsize}
+		]
+			\busref{SCL} & 58{2c}\\
+			\busref{SDA} & 3{h} 2{l} {14D{ADDR(7:0)}} {2L} {2L} {16D{MSB(7:0)}} {2L} {16D{LSB(7:0)}} {2L} 2{l} 3{h} \\
+			\extracode
+			\begin{pgfonlayer}{background}
+			\begin{scope}[semitransparent, thick]
+				\draw (0.5, -3.25) -- (0.5, -4.5);
+				\node[anchor=south east, inner sep=0pt] at (2.5, -4) {\tiny\texttt start};
+				\draw (2.6, -3.25) -- (2.6, -4.5);
+				\draw (16.5, -3.25) -- (16.5, -4.5);
+				\node[anchor=south east, inner sep=0pt] at (18.5, -4) {\tiny\texttt write};
+				\draw (18.6, -3.25) -- (18.6, -4.5);
+				\node[anchor=south east, inner sep=0pt] at (20.5, -4) {\tiny\texttt ack};
+				\draw (20.6, -3.25) -- (20.6, -4.5);
+				\draw (36.9, -3.25) -- (36.9, -4.5);
+				\node[anchor=south east, inner sep=0pt] at (38.4, -4) {\tiny\texttt ack};
+				\draw (38.6, -3.25) -- (38.6, -4.5);
+				\draw (54.5, -3.25) -- (54.5, -4.5);
+				\node[anchor=south east, inner sep=0pt] at (56, -4) {\tiny\texttt ack};
+				\draw (56.1, -3.25) -- (56.1, -4.5);
+				\node[anchor=south east, inner sep=0pt] at (58, -4) {\tiny\texttt stop};
+				\draw (58.1, -3.25) -- (58.1, -4.5);
+			\end{scope}
+			\end{pgfonlayer}
+		\end{tikztimingtable}
+	\end{center}
+	\caption{A write operation over an \itc{} bus}
+	\end{figure}
+	
+	\section{Parallel Communication: PCI}
+	
+	The Peripheral Component Interconnect (PCI) Local Bus is a parallel communication bus developed originally in 1992. PCI aimed to  allow high bandwidth between display peripherals within a PC. The PCI Bus supports one bus master with multiple devices. Each device shares a portion of memory with the master, which is used for control \& status registers, the device ID + vendor ID, etc \autocite{linuxdocs}.\\
+	
+	The PCI Local Bus supports a different transfer speeds depending on device clock speed and data width. A PCI device can operate at 33MHz or 66MHz, and can have a 32-bit or 64-bit data path. This allows for 3 different transfer speeds: 132 MB/s (32-bit @ 33MHz), 264 MB/s (32-bit @ 66MHz or 64-bit @ 33MHz), or 528 MHz (64-bit @ 66MHz) \autocite{pcispec}.\\
+	
+	As stated above, each PCI target shares a small block of memory with the bus master. This block contains base address registers that help the bus master determine the required memory size of the PCI target. The target device will then be assigned an address range where the device will reside \autocite{pcispec}. A PCI device can only perform DMA operations when it has requested and been granted bus master status. This allows for per-device optimization of DMA rather than relying on a 3rd party DMA controller \autocite{dmainfo}. \\
+	
+	Each PCI device has four interrupt lines, all asynchronous to the clock. A device can use any number of these lines \autocite{pcispec}. PCI is also plug and play capable, as all of the configuration data is held on the card and is not needed to be set by jumpers. A few signals need to be asserted in order to allow the cards to be inserted and removed, but it does not require restarting the whole system \autocite{hotswap}.
+	
+	\begin{figure}[h]
+	\begin{center}
+		\begin{tikztimingtable}[%
+	    	timing/dslope=0.25,
+	    	timing/.style={x=7ex,y=4ex},
+	    	x=7ex,
+	    	timing/rowdist=5ex,
+	    	timing/name/.style={font=\sffamily\scriptsize}
+		]
+			\busref{CLK} & 18{c}\\
+			\busref{FRAME\#} & H 6L H U\\
+			\busref{A/D (31:0)} & U {D{addr}} U {D{$d_1$}} {D{$d_2$}} {D{$d_3$}} {D{$d_4$}} 2U\\
+			\busref{C/BE\# (3:0)} & U {D{C}} {2D{\sffamily\small BE\#}} {D{\sffamily\small BE\#}} {D{\sffamily\small BE\#}} {D{\sffamily\small BE\#}} 2U\\
+			\busref{IRDY\#} & H U 5L 2H\\
+			\busref{TRDY\#} & H U H 4L 2H\\
+			\busref{DEVSEL\#} & H U 5L 2H \\
+			\extracode
+			\begin{pgfonlayer}{background}
+			\begin{scope}[semitransparent, thick]
+			\end{scope}
+			\end{pgfonlayer}
+		\end{tikztimingtable}
+	\end{center}
+	\caption{A 4-byte write operation over a PCI bus}
+	\end{figure}
+	\printbibliography
+\end{document}

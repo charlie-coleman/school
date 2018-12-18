@@ -1,0 +1,168 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global}
+    \entry{hotswap}{online}{}
+      \name{author}{1}{}{%
+        {{hash=cc8e42d2ddfb2f8bec8fbdeeda270e1a}{%
+           family={Group},
+           family_i={G\bibinitperiod},
+           given={PCI\bibnamedelimb Special\bibnamedelima Interest},
+           given_i={P\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc8e42d2ddfb2f8bec8fbdeeda270e1a}
+      \strng{fullhash}{cc8e42d2ddfb2f8bec8fbdeeda270e1a}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{PCI Hot-Plug Specification}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2018}
+      \field{year}{2001}
+      \verb{url}
+      \verb http://www.drydkim.com/MyDocuments/PCI%20Spec/specifications/pcihp1_1.pdf
+      \endverb
+    \endentry
+    \entry{pcispec}{online}{}
+      \name{author}{1}{}{%
+        {{hash=cc8e42d2ddfb2f8bec8fbdeeda270e1a}{%
+           family={Group},
+           family_i={G\bibinitperiod},
+           given={PCI\bibnamedelimb Special\bibnamedelima Interest},
+           given_i={P\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc8e42d2ddfb2f8bec8fbdeeda270e1a}
+      \strng{fullhash}{cc8e42d2ddfb2f8bec8fbdeeda270e1a}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{PCI Local Bus Specification}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2018}
+      \field{year}{1998}
+      \verb{url}
+      \verb https://www.ics.uci.edu/~harris/ics216/pci/PCI_22.pdf
+      \endverb
+    \endentry
+    \entry{i2clicense}{online}{}
+      \name{author}{2}{}{%
+        {{hash=5761a29d8d5b3d83221ceaa20cfacc19}{%
+           family={Irazabal},
+           family_i={I\bibinitperiod},
+           given={Jean-Marc},
+           given_i={J\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=ffbfb7c8dba9c5b107723e6f13390943}{%
+           family={Blozis},
+           family_i={B\bibinitperiod},
+           given={Steve},
+           given_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0f385a082be60682f313dfc6f724891}
+      \strng{fullhash}{d0f385a082be60682f313dfc6f724891}
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{I$^2$C Manual}
+      \field{urlday}{16}
+      \field{urlmonth}{12}
+      \field{urlyear}{2018}
+      \field{year}{2013}
+      \verb{url}
+      \verb https://www.nxp.com/docs/en/application-note/AN10216.pdf
+      \endverb
+    \endentry
+    \entry{dmainfo}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ac6c4b0e7bce512579a8d6c40d1a25a9}{%
+           family={Loop},
+           family_i={L\bibinitperiod},
+           given={The\bibnamedelima Infinite},
+           given_i={T\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac6c4b0e7bce512579a8d6c40d1a25a9}
+      \strng{fullhash}{ac6c4b0e7bce512579a8d6c40d1a25a9}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An overview of direct memory access}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2018}
+      \field{year}{2014}
+      \verb{url}
+      \verb https://geidav.wordpress.com/2014/04/27/an-overview-of-direct-memory-access/
+      \endverb
+    \endentry
+    \entry{linuxdocs}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d42f37ef4e6b0856a2cf1ade866a7cf8}{%
+           family={Rusling},
+           family_i={R\bibinitperiod},
+           given={David\bibnamedelima A.},
+           given_i={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d42f37ef4e6b0856a2cf1ade866a7cf8}
+      \strng{fullhash}{d42f37ef4e6b0856a2cf1ade866a7cf8}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Chapter 6: PCI - The Linux Documentation Project}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2018}
+      \field{year}{1999}
+      \verb{url}
+      \verb http://tldp.org/LDP/tlk/dd/pci.html
+      \endverb
+    \endentry
+    \entry{i2cspec}{online}{}
+      \name{author}{1}{}{%
+        {{hash=bdd95750033c6d1e71751acaf3c3d8de}{%
+           family={Semiconductors},
+           family_i={S\bibinitperiod},
+           given={NXP},
+           given_i={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdd95750033c6d1e71751acaf3c3d8de}
+      \strng{fullhash}{bdd95750033c6d1e71751acaf3c3d8de}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{I$^2$C-bus specification and user manual}
+      \field{urlday}{16}
+      \field{urlmonth}{12}
+      \field{urlyear}{2018}
+      \field{year}{2014}
+      \verb{url}
+      \verb https://www.nxp.com/docs/en/user-guide/UM10204.pdf
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
