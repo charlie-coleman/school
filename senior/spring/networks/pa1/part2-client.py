@@ -57,7 +57,7 @@ if len(sys.argv) > 2:
             data = recmsg(s, 1024)
         s.close()
 
-    print("{0:.9f}ms, {1:.3f}Kb/s".format(mean(rtt), tput/1000))
+    print("{0:.9f}ms, {1:.9f}Kb/s".format(mean(rtt), tput/1000))
 
 else:
     print("Missing port number.\n python3 pa1-client.py <host> <port>")
