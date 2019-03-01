@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\itshape,
+  xleftmargin=1em,
+  literate={->}{$\rightarrow$}{2}
+           {α}{$\alpha$}{1}
+           {δ}{$\delta$}{1}
+           {\\epsilon}{$\epsilon$}{1}
+}
+\usetikzlibrary{trees, automata, positioning, arrows}
+\newcommand{\ra}{$\rightarrow$}
+
+\begin{document}
+	\begin{center}
+		\begin{large} Programming Languages HW \# 4 \end{large}
+		
+		\hfill Charlie Coleman
+		
+		\begin{enumerate}
+			\item \begin{enumerate}
+				\item It is not LL because $E \rightarrow E+T | ... \equiv A\rightarrow A\alpha|\beta$
+				
+				\begin{tikzpicture}[level 1/.style={sibling distance=3cm},level 2/.style={sibling distance=15mm}, level distance=1cm]
+					\node {E}
+						child {
+							node {E}
+							child {
+								node {E}
+								child {
+									node {id}
+								}
+							}
+							child {
+								node {-}
+							}
+							child {
+								node {T}
+								child {
+									node {T}
+									child {
+										node {T}
+										child {
+											node {F}
+											child { node {id} }
+										}
+									}
+									child {
+										node {*}
+									}
+									child {
+										node {F}
+										child {
+											node {(}
+										}
+										child {
+											node {E}
+											child {
+												node {E}
+												child {
+													node {T}
+													child {
+														node {F}
+														child { node {id} }
+													}
+												}
+											}
+											child {
+												node {+}
+											}
+											child {
+												node {T}
+												child {
+													node {F}
+													child { node {id} }
+												}
+											}
+										}
+										child {
+											node {)}
+										}
+									}
+								}
+								child { node {*} }
+								child {
+									node {F}
+									child { node {4} }
+								}
+							}
+						}
+						child {
+							node {+}
+						}
+						child {
+							node {T}
+							child { node {F} child { node {id} } }
+						};
+				\end{tikzpicture}
+				
+				\item 
+				
+				\begin{tikzpicture}[baseline=(current bounding box.north)]
+					\Tree
+						[.E
+							[.T
+								[.F 7 ]
+								[.T' $\epsilon$ ]
+							]
+							[.E' 
+								[.- ]
+								[.T
+									[.F 8 ]
+									[.T'
+										[.* ]
+										[.F 
+											[.( ]
+											[.E 
+												[.T [.F 3 ] ]
+												[.E'
+													[.+ ]
+													[.T [.F 2 ] ]
+												]
+											]
+											[.) ]
+										]
+										[.T'
+											[./ ]
+											[.F 4 ]
+											[.T' $\epsilon$ ]
+										]								
+									]
+								]
+								[.E'
+									[.+ ]
+									[.T [.F 11 ] ]								
+								]
+							]
+						]
+				\end{tikzpicture}
+			\end{enumerate}
+			
+			\item \begin{enumerate}
+				\item
+				
+				\begin{lstlisting}
+FIRST(S) -> {a, b, \epsilon}
+FIRST(A) -> {b, a}
+FIRST(B) -> {a, b}
+FOLLOW(S) -> {a, b}
+FOLLOW(A) -> {b, a}
+FOLLOW(B) -> {a, b}
+				\end{lstlisting}
+				
+			\item ~
+			
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				& a & b & $\epsilon$ \\ \hline
+				S & S \ra{} aB & S \ra{} bA & S \ra{} $\epsilon$ \\ \hline
+				A & A \ra{} aS & A \ra{} bAA & \\ \hline
+				B & B \ra{} aBB & B \ra{} bS & \\ \hline
+			\end{tabular}
+			
+			\item ~
+			
+			\begin{tabular}{cccc}
+				\underline{Matched} & \underline{Stack} & \underline{Input} & \underline{Action} \\
+				& S\$ & baab\$ & S \ra{} bA \\
+				& bA\$ & baab\$ & match \\
+				b & A\$ & aab\$ & A \ra{} aS \\
+				b & aS\$ & aab\$ & match \\
+				ba & S\$ & ab\$ & S \ra{} aB \\
+				ba & aB\$ & ab\$ & match \\
+				baa & B\$ & b\$ & B \ra{} bS \\
+				baa & bS\$ & b\$ & match \\
+				baab & S\$ & \$ & S \ra{} $\epsilon$ \\
+				baab & \$ & \$ & match\\
+				baab\$ & & & \\
+			\end{tabular}						
+			
+			\end{enumerate}
+			
+			\item \begin{lstlisting}
+S -> BRE
+B -> ^|\epsilon
+R -> X*|X+
+X -> (Y)|[Y]
+Y -> idY|\epsilon
+E -> $|\epsilon
+			\end{lstlisting}
+			
+			This is LL
+		\end{enumerate}
+	\end{center}
+\end{document}

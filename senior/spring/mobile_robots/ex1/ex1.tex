@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\begin{document}
+	\begin{center}
+		\begin{large} Mobile Robotics Exam \# 1 \end{large}
+	\end{center}
+	
+	\hfill Charlie Coleman
+	
+	\begin{enumerate}
+		\item ~
+		
+		\begin{tabular}{|c|ccc|}
+			\hline
+			& SW1 & SW2 & Castor \\ \hline
+			$\alpha$ & 30 & 150 & 270 \\
+			$\beta$ & 0 & 0 & 0 \\
+			$\gamma$ & 0 & 0 & N/A \\
+			d & N/A & N/A & 1.5 \\
+			l & 3.464 & 3.464 & 2 \\
+			r & 2 & 2 & 1 \\ \hline
+		\end{tabular}
+		
+		\[
+			\begin{bmatrix}
+				J_1 (\beta_s) \\
+				C_1 (\beta_s)
+			\end{bmatrix} R(\theta) \dot{\varepsilon_I} = \begin{bmatrix}
+				J_2 \phi \\
+				0
+			\end{bmatrix}
+		\]
+		\[
+			\begin{bmatrix}
+				\begin{bmatrix}
+					\sin(\alpha + \beta_c(t)) & -\cos(\alpha + \beta_c(t)) & -l_c\cos(\alpha + \beta_c(t)) \\
+					\sin(30) & -\cos(30) & -l_{S1}\cos(30) \\
+					\sin(150) & -\cos(150) & -l_{S2}\cos(150)
+				\end{bmatrix}\\
+				\begin{bmatrix}
+					\cos(\alpha + \beta_c(t)) & \sin(\alpha + \beta_c(t)) & l_c \sin(\alpha + \beta_c(t)) \\
+					\cos(30) & \sin(30) & l_{S1}\sin(0) \\
+					\cos(150) & \sin(150) & l_{S2}\sin(0) \\
+				\end{bmatrix}
+			\end{bmatrix} R(\theta) \dot{\varepsilon}_I = \begin{bmatrix}
+				\begin{bmatrix}
+					r_c \dot{\phi_c} \\
+					r_{S1} \dot{\phi}_{S1} \\
+					r_{S2} \dot{\phi}_{S2}
+				\end{bmatrix} \\
+				\begin{bmatrix}
+					d\dot{\beta_c} \\
+					r_{sw} \dot{\phi}_{sw1} \\
+					r_{sw} \dot{\phi}_{sw2}
+				\end{bmatrix}
+			\end{bmatrix}
+		\]
+	
+	We can remove rows 1, 5, \& 6 as they do not imply any constraints on this system.
+	
+	\[
+		\begin{bmatrix}
+			\sin(30) & -\cos(30) & -l_{S1}\cos(30) \\
+			\sin(150) & -\cos(150) & -l_{S2}\cos(150) \\
+			\cos(\alpha + \beta_c(t)) & \sin(\alpha + \beta_c(t)) & l_c \sin(\alpha + \beta_c(t))
+		\end{bmatrix} R(\theta) \dot{\varepsilon}_I = \begin{bmatrix}
+			r_{S1} \dot{\phi}_{S1} \\
+			r_{S2} \dot{\phi}_{S2} \\
+			d\dot{\beta}_c \\
+		\end{bmatrix}
+	\]
+	\[
+		\begin{bmatrix}
+			0.5 & -0.866 & -3.464 \\
+			0.5 & 0.866 & -3.464 \\
+			\cos(\alpha + \beta_c(t)) & \sin(\alpha + \beta_c(t)) & 2\sin(\alpha + \beta_c(t))
+		\end{bmatrix} R(\theta) \dot{\varepsilon}_I = \begin{bmatrix}
+			2 \dot{\phi}_{S1} \\
+			2 \dot{\phi}_{S2} \\
+			1.5 \dot{\beta}_c \\
+		\end{bmatrix}
+	\]
+	
+	\item $
+		\dot{\varepsilon}_I = R(\theta)^{-1} \begin{bmatrix}
+			0.5 & -0.866 & -3 \\
+			0.5 & 0.866 & 3 \\
+			\cos(270) & \sin(270) & 2\sin(270)
+		\end{bmatrix}^{-1} \begin{bmatrix}
+			2*1.25 \\
+			2*1.2 \\
+			0
+		\end{bmatrix} = \begin{bmatrix}
+			4.9 \text{ m/s} \\
+			-0.0789 \text{ m/s} \\
+			0.0394 \text{ rad/s}
+		\end{bmatrix}
+	$
+	
+	\item $\delta_m = 3 - \text{rank}[C_1(\beta_s(t))] = 2$
+	\item $\delta_s = \text{rank}[C_{1s}(\beta_s(t))] = 0$
+	\item $\delta_M = \delta_m + \delta_s = 2$
+	\item DDOF is 2, the robot can move forwards/backwards, left/right. DOF is 3, the robot can move in the x, y, and yaw directions.
+	\item
+	\end{enumerate}
+\end{document}
