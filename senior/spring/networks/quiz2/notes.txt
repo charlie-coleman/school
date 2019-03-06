@@ -1,0 +1,215 @@
+Sockets
+	Definition: door between application process and end-end-transport protocol
+	Blocking: when you call a socket function, app hangs until data recieved/connection established
+	Non-blocking: never waits for an operation to complete
+	Socket Types
+		TCP: reliable, byte stream-oriented
+			Server creates a socket when contacted by client
+			Allows for multiple distinguishable clients
+			Application viewpoint: reliable, in-order byte-stream transfer ("pipe")
+		UDP: unreliable datagram
+			Connectionless: no handshake before data transfer
+			Transmitted data may be lost or out-of-order
+			provides unreliable transfer of groups of bytes
+	Bind
+		Socket created -> no address associated
+		Impossible for remote processes to find a socket w/o an address, therefore we must bind it to an address
+
+	Example
+		Server
+			socket		- create socket
+			bind			- give address of socket on the Server
+			listen		- max # of connection requests that can be pending for this process
+			accept		- establish connection with client
+			send,recv	- stream based equivalents of read/write
+			shutdown	- end reading or writing
+			close			- release kernel data structs
+		Client
+			socket		- create socket
+			connect		- connect to a server
+			send,recv	- stream-based equivalents of read/write
+			shutdown	- end reading or writing
+			close 		- release kernel data structs
+
+	Address Family: used to designate addresses socket can comm with, 29 in linux kernel
+		AF_INET 		- IPv4 address
+		AF_INET6 		- IPv6 address
+		AF_UNIX 		- unix socket
+	Service Type 	- specifies TCP/UDP/raw/etc
+		SOCK_DGRAM 	- UDP
+		SOCK_STREAM - TCP
+
+Transport Principles - mux, demux, reliable data transfer, flow control, congestion control
+
+DTN - Delay tolerant networks, store for a long time then forward.
+
+Multiplexing (and demultiplexing) - needed to delive data to the right application/process
+	Multiplexing at sender - handle data from multiple sockets, add transport header (used for demux)
+	Demultiplexing at recv - use header info to deliver received segments to correct socket
+
+	Connectionless Demux - only looks at destination port number
+		Host only uses dest IP addr, port # to direct segments to appropriate socket
+		IP dgrams w/ same (dest, port#) but different source IP addrs and/or port#s will be directed to same socket at the destination
+		Source port # (UDP) - needed as return address for mux/demux
+			Transport assigns a port upon UDP socket creation
+			Client lets transport (kernel) pick the port
+			Port acts as a "return mail address"
+		TCP
+			Sockets are identified by (src IP, src port#, dst IP, dist port#)
+
+UDP
+	Other than mux/demux & minor error checking, adds nothing to IP
+	Examples - DMS, SNMP, UDP-based streaming
+	Connectionless means:
+		1. no handshaking between sender/receiver
+		2. UDP segments are handled independently
+	Connectionless transport is always unreliable, but can be reliable at app lvl
+	Pros:
+		Finer control on what is sent & when
+			TCP may have congestion control
+			TCP will continue to resend until it receives an ack
+		No connection establishment
+			UDP blasts data without any prelim
+			No delay for connection establish
+		No connection state
+			TCP maintains conn. states in end-systems
+		Small packet header overhead
+			TCP - 20 bytes
+			UDP - 8 bytes
+	Checksum - 1s compliment of the sum of all 16 bit segments
+		Weak error checking, but works most of the time because errors come in bursts
+
+Principles of Reliable Communication -
+	FSM = Finite State Machine
+	Build FSM for reliable connection, then remove assumptions gradually
+	Assumptions:
+		No Packet Loss
+		No Packet Corruption
+		No out-of-order (OOO) packets
+
+Stop-and-wait - send one packet, wait for respones (bad)
+
+Go-Back-N
+	send_base or "base" - seq no of first unacknowledged packet
+	nextseqnum					- smallest unused seq no
+	window							- # of unack'd pkts allowed
+
+	Why have a finite window? flow/congestion control, can't send more than source can process
+	Cumulative ack - ack seq # means all packets < seq# have been received successfully
+	Timeout - timer is for the oldest in-flight packet
+		when timeout(n): retransmit packet, retransmit all unack'd pkts in window
+	OOO packets are discarded
+		because you can't ack a pkt with a higher seq# (cumulative ack)
+
+	Pros
+		Good for bandwidth/delay product
+
+	Con
+		If there is a loss, I have to retransmit the whole window
+
+Selective Repeat -
+	Avoids unnecessary retransmissions
+	OOO pkts get buffered until they can be delivered in a batch
+	Requires acks on every packet, individually
+	OOO acks are accepted
+	Sender sets timer for every unack'd pkt
+	Receiver ignores extra pkts
+	To avoid problems, window_size <= seq_no/2
+	Seq#s lost in the net are dangerous, so add TTL (time to leave) to protocol
+
+TCP
+	Point to point (1 sender, 1 receiver)
+	Reliable, in-order byte stream
+	Pipelined
+	Full duplex
+	Connection oriented - handshaking inits sender/receiver state before data exchange
+	Flow controlled - sender will not overwhelm receiver
+	32 bit seq_no
+	Segments must fit in 65515 byts (IPv4 payload limit)
+	Each link has a Max Transfer Unit (MTU) of 1500 bytes (ethernet payload size)
+	TCP uses "dynamic window protocol" for pipelining
+
+TCP Header
+	Segment seq no is the seq no for the first byte in the data
+	Ack gives the seq no of the next byte expected from other side (cumulative ack)
+	OOO segments are handled based on implementation, not protocol
+	Timeout time is set using estimated rtt and a safety margin
+	EstimatedRTT = (1-a)*EstimatedRTT + a*SampleRTT
+		Exponential weighted moving average
+		Influence of the past decreases exponentially
+		a = 0.125 (most of the time)
+	DevRTT  = (1-B)*DevRTT + B*|SampleRTT - EstimatedRTT|
+		B = 0.25 (most of the time)
+	TimeoutInterval = EstimatedRTT + 4*DevRTT
+	Single timer for all segments - recommended
+	When timeout happens - retransmit segment that timed out, restart timer
+	When ack recvd - If ack is for unack'd seg, update ack'd list
+		start timer if there are still unack'd segs
+
+TCP Mechanisms
+	After first timeout occurs - double the timeout interval
+		If there is a timeout, must be an error in the net, become patient
+	TCP fast retransmit (speed up) - don't wait for timeout
+		Timeout period is often relatively long
+		Detect lost segments via duplicate acks
+			if a segment is lost, there will likely be many duplicate acks
+		If sender receives 3 acks for the same data
+			resend unacked segment with smallest seq no (trip dup ack == don't wait for timeout)
+	3-way handshake
+		Client sends SYN w/o payload, picks up a client initial sequence number (client_isn(rnd))
+		Server allocates memory buffers and sends SYN-ACK seg, ACK field = client_isn
+		Client allocates buffer and acks the SYN-ACK with an ACK whose seq# is client_isn+1
+	Closing a connection
+		client sends seg with FIN = 1
+		server responds with ack
+
+(TCP) Congestion Control
+	Congestion control - network is congested
+	Flow control			 - receiver is congested
+	TCP Implementation
+		Sender maintains a rcv window - how much free buffer the receiver has?
+		Window size header field of the TCP seg
+			rwnd = RcvBuffer - [lastByteRcvd - lastByteRead]
+
+	Most Important Rules of Flow Control
+		Keep window of unack'd pkts < "window size"
+		Rcvr sends its value of rwnd back all the time with an ack
+			not only when it has something to submit
+				This guarantees no blocking of sender. "keep alive" form even if not receiving data to avoid locks
+
+	Why?
+		avoid "too many sources sending too much data too fast for network to handle"
+
+	How does it manifest?
+		Lost packets (buffer overflow at routers)
+		Long delays (queueing in router buffers)
+
+		Approaches
+			End-to-end congestion control
+				Feedback signal is given by the end-user
+			Network assisted congestion control
+				Packet is sent either to sender directly
+				Bit is included by router so receiver can send feedback
+
+	TCP Congestion Algo
+		Slow Start
+			When connection begins, increase rate exponentially until first loss
+				cwnd = 1MSS
+				double every RTT (done by cwnd++ for every ack)
+			After packet loss:
+				Set slow-start-threshold (ssthreshold) to cwnd/2
+				cwnd = 1
+				enter Congestion Avoidance
+
+		Congestion Avoidance
+			Increase cwnd, but much less aggressively
+			cwnd++ every ack
+			if (3 dup acks) cwnd /= 2; enter fast recovery mode
+			if (timeout) cwnd = 1; enter slow start mode
+
+		Fast Recovery
+			for every dup ack - cwnd++
+			if (timeout) slow start mode;
+			if (ack) congestion avoidance mode
+
+		This algo is AIMD (additive increase, multiplicative decrease)
