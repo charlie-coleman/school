@@ -1,0 +1,25 @@
+Chapter 2
+  Scanning
+    Regular Expressions - sequence of symbols/characters expressing a string or pattern to be searched for within a longer piece of text
+      Tokens - basic building blocks of programs. Shortest strings or characters with individual meaning
+        E.G. - keywords, identifiers, symbols, constants, etc.
+    DFA - deterministic finite automaton
+        - in any given state with a given input character there is never more than one possible outgoing transition labeled by that character
+
+    NFA - non-deterministic finite automaton
+        - doesn't follow that rule for DFAs
+      See figure 2.7 for rules to make one
+    NFA -> DFA
+    Flex
+  Parsing
+    CFGs
+      Ambiguity
+    Left recursion
+    LL(1)
+    LR
+    Bison
+  Binding
+  Control flow
+  Variables
+  Subroutines
+  Object Orientation

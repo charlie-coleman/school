@@ -1,0 +1,227 @@
+1. What is a regular expression? What is a DFA/NFA? (See questions on the homework relating to these concepts.)
+  Regular Expression - string of symbols/characters that defines a pattern of symbols/characters
+  DFA - deterministic finite automaton, a set of states & inputs, where every input can only lead to one state. No input combination has an ambiguous final state
+  NFA - non-deterministic finite automaton, a set of states & inputs that does not fit the DFA rules. One input can have multiple possible outcomes.
+
+2. What is a context free grammar? (Again, see homework questions.)
+  CFG - context free grammar, a generator for a context free language. It is a set of recursive rules used to generate patterns for a language.
+
+3. What is a LL grammar? What is an LR grammar? Why are they useful classes to consider? (Hint: see question 8 below.)
+  LL - Left-to-right, left-most derivation
+     - left most non-terminal is replaced in each step
+  LR - Left-to-right, right-most derivation
+
+  LL - parsed by predictive parser, aka does not require backtracking. Easier to write by hand.
+  LR - larger set of parsers, bottom-up parser. shift tokens into its forest then reduces when it recognizes right-side expressions
+
+  Both reduce the complexity of parsing to O(n) (linear)
+
+4. Be able to construct FIRST and FOLLOW sets for an LL grammar, and the predictive parsing table. (See examples from class, as well as the homework.)
+  FIRST(\alph) := set of possible first terminals in any derivation of \alph by the grammar
+    1) if x is a terminal, FIRST(x) = {x}
+    2) if X->\eps is a production, add \eps to FIRST(X)
+    3) if X is a nonterminal:
+          if X->Y1Y2...Yk is a production:
+            add a if a is in FIRST(Yi) and \eps is in FIRST(Y1),...,FIRST(Yi-1)
+            add \eps if \eps is in FIRST(Y1),...,FIRST(Yk)
+
+  FOLLOW(\alph)
+    1) Put $ in FOLLOW(S) where S is the start symbol
+    2) Given a production: A -> \alph B \beta
+      Everything in FIRST(\beta) goes in FOLLOW(B) (except \eps, if it is there)
+    3) Given a production: A -> \alph B (or A -> \alph B \beta when \eps in FIRST(\beta))
+      Everything in FOLLOW(A) also goes in FOLLOW(B)
+
+  TABLE
+    1) for each term a in FIRST(\alph), add
+      X -> \alph to M(A, a)
+    2) If \eps is in FIRST(\alph), add X -> \alph to M(A, b) for each term b in FOLLOW(A)
+    3) If \eps is in FIRST(\alph) and $ is in FOLLOW(A) add A -> \alph to M(A, $)
+
+5. What is a leftmost versus a rightmost derivation? Be able to construct these, as well as parse trees.
+  Left most - left most non-term is replaced each step
+  Right most - right most non-term is replaced each step
+
+6. What is lex/flex? (Recall basic rules, etc.)
+  Lex - tool to generate a scanner, not widely used anymore
+  Flex - fast lexical analyzer generator
+    - Reads a spec from a scanner from:
+      - *.lex file
+      - standard input
+    - Generates a lex.yy.c file as output
+    - lex.yy.c is compiled with -lfl library to produce an executable
+    - The executable analyzes its input stream and transforms it into a sequence of tokens
+    - generates a yylex() function as output (why -lfl is needed)
+    - scans for regexs and executes matching C code when found
+    - can also keep state to mimic a DFA
+    Modifying C code output
+      %{ All code in this block will be copied directly to the output C code }%
+      %top is used to place C code at the top of the output file, like #includes
+    Definition Section
+      Form: "name definition", e.g. "digit [0-9]" or "ID [a-z][a-z0-9]*"
+    Rules Section
+      Form: "pattern action" where pattern is unindented, action is on the same line
+      Any indented line or line surrounded by %{}% can be used to declare vars, etc.
+    Example Patterns
+      'x'       matches char x
+      '.'       any char (except newline)
+      'xyz'     matches x|y|z
+      'abj-oZ'  matches a,b, j->o, or Z
+      '[^A-Z]'  matches not A->Z (^ == negation)
+      *         0 or more
+      +         1 or more
+      ?         0 or 1
+      {n-m}     between n and m occurrences
+      {n}       exactly n occurrences
+      '{name}'    expansion of some name from your definitions section
+      $         end of line
+    Special actions
+      ECHO                  echo yytext
+      BEGIN condition       puts scanner into new state (similar to a dfa)
+      REJECT                directs scanner to go to 'second best' matching rule, makes things very slow
+    States
+      INITIAL     default state
+      %s          define new state in the first section, inclusive aka matches patterns without an explicit state
+      %x          defines an exclusive state, does not match strings without explicit state
+
+7. What is the goal of tokenizing? Why is it done separately from parsing?
+  Tokenizing - saves time since character by character processing is slow.
+    Designing a parser without tokenizing is considerably less intuitive and creates a messier parse tree
+
+
+8. What is the big-O complexity of parsing? (Hint: there isn’t one answer to this question! Be able to explain those trade-offs we discussed. This should also connect to your answer to question 3, by the way.)
+  In general, cubic, but when the set of CFGs supported is restricted to LL or LR, it can be O(n)
+
+
+9. What is binding time?
+  The point at which a binding is created or, more generally, the point at which any implementation decision is made
+
+  STATIC - bound before runtime
+  DYNAMIC - bound during runtime
+
+10. What is the advantage of binding as early as possible? Why do we delay bindings despite this in some languages? Give an example of a language that does each.
+  Early - greater efficiency
+  Later - greater flexibility
+
+  Early example - C
+  Later example - Python
+
+11. What do lifetime and visibility mean in the context of binding?
+  Lifetime - period of time from creation to destruction
+  Visibility -
+
+12. What do we mean by the scope of a binding?
+  The textual region of the program in which a binding is active
+
+13. What is dynamic scoping (versus static scoping)?
+
+
+14. What is elaboration?
+
+
+15. What is a closed scope?
+
+
+16. What does the use of dynamic scoping imply the need for run-time type checking? Give an example of a language again, and explain specific features that this choice gives (or takes away from) the language.
+
+
+17. Explain the differences (and similarities) between overloading, coercion, and polymorphism. Give an example of each of them in a programming language.
+
+
+18. What is the difference between the reference model of variables and the value model? Why is the distinction so important? Give examples of languages that use each model.
+
+
+19. Why is the distinction between mutable and immutable variables so important in a language with a reference model for variables? (Hint: Think Python.)
+
+
+20. List a few of the main uses for goto, and the (much better!!) alternatives for each.
+
+
+21. What is a continuation?
+
+
+22. Why do languages provide case statements if they already have if-then-else statements?e
+
+
+23. Why do many languages require that the step size of an enumeration controlled loop be a compile-time constant? In a similar vein, why do languages not allow the bounds of increment of an enumeration controlled loop to be floating-point numbers? What do you lose (and gain) in the language if you relax these requirements?
+
+
+24. What are the advantages and disadvantages of making the index variable local to the loop it controls?
+
+
+25. What is tail-recursion, and why is it important?
+
+
+26. What is lazy evaluation? When is it used, and why? Give an example of a language where it is used.
+
+
+27. Define and compare/contrast the following: strongly typed, statically typed, dynamically typed, weakly typed. Be ready with some examples, too.
+
+
+28. Give two examples of languages that lack a boolean type. What do they use instead? What are some advantages and disadvantages of this model?
+
+
+29. What is the difference between type equivalence and type compatibility?
+
+
+30. What are structural and name equivalence? Discuss comparative advantages, and give examples of languages that use each.
+
+
+31. What are strict and loose name equivalence?42. What is a dynamic link on the frame, and what is a static link?
+
+
+32. Under what circumstances does a type conversion require a run-time check? Give at least 2 examples.
+
+
+33. What are “holes” in records? When do they arise, and what are the strategies that are used to minimize the problems they cause?
+
+
+34. Under what circumstances can an array declared within a subroutine be allocated in the stack? Under what circumstances can it be allocated in the heap?
+
+
+35. What is the difference between row-major and column-major layouts of arrays, and why should a programmer care which one is used?
+
+
+36. What are dangling references? When are they created, and why are they a problem?
+
+
+37. What is garbage collection? Describe the reference count model of garbage collecting, and explain briefly why it doesn’t always work.
+
+
+38. Why was automatic garbage collection so slow to be adopted by modern programming languages? (In other words, what are the disadvantages of automatic garbage collection?)
+
+
+39. Describe the strategies we discussed to mitigate dangling references (tombstones and locks and keys), and how they solve the problem. Are there any weaknesses associated with them?
+
+
+40. Most statically typed languages since the 1970s (like Java and C#) use some form of name equivalence. Is structural equivalence a bad idea? Why or why not?
+
+
+41. What type of information is added to the stack within a frame when a new function is called?
+
+
+42. What is a dynamic link on the frame, and what is a static link?
+
+
+43. What is the calling sequence, and what is the prolog and epilog in the context of a function call? What is one reason to put more code in one versus the other?
+
+
+44. What is an inline function? Why are they used?
+
+
+45. What is a LEAF routine, and why do we care about them?
+
+
+46. What are the 3 basic parameter passing paradigms? What are a few advantages or disadvantages of each?
+
+
+47. Why does exception code need to ”unwind the stack”? How is this handled?
+
+
+48. What is a module and a module type? How are these precursors to object orientation?
+
+
+49. What are the fundamental concepts of object orientation? Be able to explain them, and give a simple example of what each means.
+
+
+50. What is dynamic method binding in the context of objects? How is it implemented in the context of inheritance?
