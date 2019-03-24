@@ -108,120 +108,208 @@
 
 11. What do lifetime and visibility mean in the context of binding?
   Lifetime - period of time from creation to destruction
-  Visibility -
+  Visibility - scope
 
 12. What do we mean by the scope of a binding?
   The textual region of the program in which a binding is active
 
 13. What is dynamic scoping (versus static scoping)?
-
+  Dynamic - bindings depend on the current state of program execution
+          - cannot always be resolved by examining the program as they are dependent on calling sequences
+          - to resolve, use the most recent, active binding made at runtime
+  Static  - determination of scopes can be made by the compiler
+          - All bindings for identifiers can be resolved by examining the program
+          - typically the most recent, active binding made at compile time
 
 14. What is elaboration?
-
+  The process of creating bindings when entering a scope
 
 15. What is a closed scope?
-
+  A module where names must be explicitly imported
+  Import commands are used to explicitly load things
 
 16. What does the use of dynamic scoping imply the need for run-time type checking? Give an example of a language again, and explain specific features that this choice gives (or takes away from) the language.
-
+  Type determination isn't always possible when dynamic scope rules are in effect.
+  Example - early LISP
+  Benefit - provide implicit params to subroutines
+  Loss - using the same var name in different functions without conflict.
 
 17. Explain the differences (and similarities) between overloading, coercion, and polymorphism. Give an example of each of them in a programming language.
-
+  Overloading   creation of multiple function behaviors depending on variable types passed to the function
+  Coercion      automatic conversion of a value from one type to another when required by context
+  Polymorphism  more general term encompassing coercion & overloading, means to allow a single subroutine to accept args of multiple types
 
 18. What is the difference between the reference model of variables and the value model? Why is the distinction so important? Give examples of languages that use each model.
-
+  Reference model - a variable is not a named container for a value; rather, it is a named reference to a value.
+    Example: ML
+  Value model - a variable contains a value
+    Example: C
 
 19. Why is the distinction between mutable and immutable variables so important in a language with a reference model for variables? (Hint: Think Python.)
 
 
 20. List a few of the main uses for goto, and the (much better!!) alternatives for each.
-
+  Jump to end of current subroutine - return
+  Escape from loop - exit/break
+  Repeat section of code - while/for loops
+  Error handling - throw/catch
 
 21. What is a continuation?
-
+  Generalization of the idea of gotos which unwind the stack when called
 
 22. Why do languages provide case statements if they already have if-then-else statements?e
-
+  case statements simplify some if-then-else statements
+  useful when all if statements are checking the same variable for different values
 
 23. Why do many languages require that the step size of an enumeration controlled loop be a compile-time constant? In a similar vein, why do languages not allow the bounds of increment of an enumeration controlled loop to be floating-point numbers? What do you lose (and gain) in the language if you relax these requirements?
+  Allows for pre-computation of the loops, leading to much more optimized code.
+  No floats because the imperfect precision can lead to varying/unexpected # of iterations based on implementation
 
+  Gain - the ability to change the number of iterations at execution times, loop variables with non-integer values, etc.
+  Lose - execution efficiency
 
 24. What are the advantages and disadvantages of making the index variable local to the loop it controls?
-
+  Advantages - can use the same var name for multiple loops (not nested), can not be modified by the larger program
+  Disadvantages - can't access the variable after the loop has completed
 
 25. What is tail-recursion, and why is it important?
-
+  When no computation follows recursive call
+  Allows the compiler to translate to machine code that 'runs in place', aka return to the start of the function with the new parameters
 
 26. What is lazy evaluation? When is it used, and why? Give an example of a language where it is used.
-
+  value of a parameter is only calculated when it is needed, if ever
+  Example: Haskell
 
 27. Define and compare/contrast the following: strongly typed, statically typed, dynamically typed, weakly typed. Be ready with some examples, too.
-
+  Strongly typed      prevents you from applying an operation to data on which it is not appropriate          Java
+  Statically typed    compiler can do all type checking at compile time                                       Pascal
+  Dynamically typed   compile does not type check at compile time, but at run time                            Python
+  Weakly typed        opposite of strongly typed                                                              C
 
 28. Give two examples of languages that lack a boolean type. What do they use instead? What are some advantages and disadvantages of this model?
+  C90 - int
+    Advantages - can check if a value is non-zero very easily
+    Disadvantage - mistypes like a = 9 will eval to true when you may have wanted a == 9
+  Lisp - empty list == false, anything else == true
+    Advantage - can check if a variable exists with a simple if(var)
+    Disadvantage - no type checking when using a variable as a boolean
 
 
 29. What is the difference between type equivalence and type compatibility?
-
+  equivalence - two variables have the same type in the eyes of the compiler
+  compatibility - the variables types are different, but can be used interchangably for some functions
 
 30. What are structural and name equivalence? Discuss comparative advantages, and give examples of languages that use each.
+  Structural - based on the content of type declarations
+    Advantage: does not require a common library of types for all code in a piece of software
+    Example: C
+  Name - based on lexical occurrence of type declarations
+    Advantage: if 2 structs contain the same variables but are distinct in the eyes of the programmer, the compiler will tell them
+    Example: Java
 
-
-31. What are strict and loose name equivalence?42. What is a dynamic link on the frame, and what is a static link?
-
+31. What are strict and loose name equivalence?
+  Strict - aliased names are distinct
+  Loose - not strict
 
 32. Under what circumstances does a type conversion require a run-time check? Give at least 2 examples.
-
+  long to int - longs use twice as many bits, need to check for overflow at runtime
+  int to char - guarantee that the int represents a valid ascii/utf8 character
 
 33. What are “holes” in records? When do they arise, and what are the strategies that are used to minimize the problems they cause?
-
+  when a variable within a record does not take up a whole word in the machine code
+  smart compilers can re-arrange fields to minimize this
 
 34. Under what circumstances can an array declared within a subroutine be allocated in the stack? Under what circumstances can it be allocated in the heap?
-
+  Heap - global lifetime & static shape
+  Stack - local lifetime & static shape
 
 35. What is the difference between row-major and column-major layouts of arrays, and why should a programmer care which one is used?
+  Row-major - all elements in the same row are consecutive in memory
+  Column-major - all elements in the same column are consecutive in memory
 
+  Indexing the array is much more efficient if you loop over the major dimension first, then increment the other
 
 36. What are dangling references? When are they created, and why are they a problem?
-
+  Dangling ref - binding to an object that no is longer live
+  When - when an object is dereferenced but the data at the pointers location is not changed
+  Can cause variables to have an unexpected value upon creation
 
 37. What is garbage collection? Describe the reference count model of garbage collecting, and explain briefly why it doesn’t always work.
-
+  Garbage collection - removing objects that cannot be accessed by reference
+  Ref Count - every item in the heap contains a count of all references to it. When it hits 0, it is removed
+    - circular data structures don't work at all, every value has at least 1 reference
 
 38. Why was automatic garbage collection so slow to be adopted by modern programming languages? (In other words, what are the disadvantages of automatic garbage collection?)
-
+  It's computationally expensive. AKA it's slow.
 
 39. Describe the strategies we discussed to mitigate dangling references (tombstones and locks and keys), and how they solve the problem. Are there any weaknesses associated with them?
-
+  Tombstone - valid pointers point to a tombstone that refers to an object. A dangling ref refers to an expired tombstone
+    Weakness -
+  Lock & Key - valid pointer contains a key that should matches the object on the heap.
+    Weakness - small chance that the old key matches the new one on the object
 
 40. Most statically typed languages since the 1970s (like Java and C#) use some form of name equivalence. Is structural equivalence a bad idea? Why or why not?
-
+  Named equivalence gives trust to the programmer. If they created a new type, it is most likely supposed to be distinct from the other types.
+  Structural equivalence could cause strange errors due to unintentional type coercion
 
 41. What type of information is added to the stack within a frame when a new function is called?
-
+  Arguments, return values, book-keeping info, local vars, temporaries
 
 42. What is a dynamic link on the frame, and what is a static link?
-
+  Dynamic - store saved value of the frame pointer, so it returns to the correct calling method
+  Static - store context for scope purposes
 
 43. What is the calling sequence, and what is the prolog and epilog in the context of a function call? What is one reason to put more code in one versus the other?
+  Code a caller executes to set up a new subroutine
+  Prolog - code that runs on the way into the function call
+  Epilog - code that runs on the way out of the function call
+  Space is saved by giving it to the callee
 
+  Prolog
+    Pass params
+    Save return addr
+    change program counter
+    change stack pointer
+    save registers that could be overwritten
+    change frame pointer
+    initializing code for new objects in new frame
+  Epilog
+    Pass return params/values
+    executing finalization code for local objects
+    deallocating the stack frame
+    restore registers
+    restoring program counter
 
 44. What is an inline function? Why are they used?
-
+  functions that the compiler can expand inline.
+  Reduces stack overhead
 
 45. What is a LEAF routine, and why do we care about them?
-
+  A subroutine that calls no other routines
+  does not need to save return address, static links, caller saves registers, to the stack
 
 46. What are the 3 basic parameter passing paradigms? What are a few advantages or disadvantages of each?
+  Value
+    Adv - can be used in calculations without modifying callers value
+    disadv - can't make permanent changes
+  Reference (simulated by pointers)
+    Adv - same as real reference
+    Disadv - can lead to changes where there shouldn't be
+  Reference
+    Adv - permanent changes, saves space/time copying
+    Disadv - can't be used without changing
 
 
 47. Why does exception code need to ”unwind the stack”? How is this handled?
-
+  If the exception is not handled in the current routine, it is handed up the dynamic chain
 
 48. What is a module and a module type? How are these precursors to object orientation?
-
+  Module - collection of objects (subroutines, variables, types, etc) encapsulated in a way such that they are visible to the outside only if exported, but visible to everyone inside
+  Module type - every module is treated as a type, rather than a simple encapsulation construct
+  They allow every function/operation to be thought of as belonging to an object, and allows for inheritance of these features in new object types without rewriting
 
 49. What are the fundamental concepts of object orientation? Be able to explain them, and give a simple example of what each means.
-
+  inheritance - new classes can be an extension/refinement of existing classes
+  dynamic method dispatch - allows refined classes to override definition of an operation in the inherited class
 
 50. What is dynamic method binding in the context of objects? How is it implemented in the context of inheritance?
