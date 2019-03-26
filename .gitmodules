@@ -7,3 +7,6 @@
 [submodule "senior/fall/os"]
 	path = senior/fall/os
 	url = http://git.cs.slu.edu/courses/fall18/csci_3500/colemanct.git
+[submodule "senior/fall/senior_design/group"]
+	path = senior/fall/senior_design/group
+	url = git@github.com:charlie-coleman/senior_design.git
