@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+	\begin{large}
+		\noindent \textbf{Lab 4: Completing My Project}
+	\end{large}
+	\hfill Charlie Coleman
+	
+	\hfill 2018-12-18\\
+
+	\noindent \textbf{Objective:} The objective of this lab is to complete the design laid out in labs one through three using hardware and software\\ components.\\
+	
+	\noindent \textbf{Equipment:}
+	
+	\begin{itemize}[nolistsep, noitemsep]
+		\item[-] Computer
+		\item[-] Digilent Zybo 7000
+		\item[-] Xilinx Vivado 2018
+	\end{itemize}~
+	
+	\noindent \textbf{Procedure:}
+	\begin{itemize}[noitemsep, nolistsep]
+	\item[-] Hardware	
+		\begin{enumerate}[nolistsep, noitemsep]
+			\item Connect the Zybo 7000 you computer and ensure you have the board files for Vivado.
+			\item Create a new project with the Zybo as the target
+			\item Create an empty block design.
+			\item From the IP catalog, place the:
+				\begin{itemize}[noitemsep, nolistsep]
+					\item[-] ZYNQ7 Processing System
+					\item[-] XADC Wizard
+				\end{itemize}
+			\item Create a custom IP block called VGA\_controller 
+				\begin{enumerate}[noitemsep, nolistsep]
+					\item Give the IP block 16 registers
+					\item It will need 4 outputs,
+						\begin{itemize}[noitemsep, nolistsep]
+							\item[-] \texttt{hs - std\_logic}
+							\item[-] \texttt{vs - std\_logic}
+							\item[-] \texttt{row - std\_logic\_vector(9 downto 0)}
+							\item[-] \texttt{col - std\_logic\_vector(9 downto 0)}
+						\end{itemize}
+					\item Create a 100MHz $\rightarrow$ 25MHz clock divider and a new clock signal
+					\item Create your horizontal sync (hs) and vertical sync (vs) signals
+						\begin{enumerate}[noitemsep, nolistsep]
+							\item HS should toggle with the 25MHz clock
+							\item VS should go high for 1 clock period when HS reaches the width of the frame
+						\end{enumerate}
+					\item row \& col should increment with VS \& HS accordingly
+				\end{enumerate}
+			\item Create a custom IP block for the ship
+				\begin{enumerate}[noitemsep, nolistsep]
+					\item Give the IP block 16 registers
+					\item It will have 2 inputs and 3 outputs
+						\begin{itemize}[nolistsep, noitemsep]
+							\item[-] \texttt{in: row - std\_logic\_vector(9 downto 0)}
+							\item[-] \texttt{in: col - std\_logic\_vector(9 downto 0)}
+							\item[-] \texttt{out: red - std\_logic\_vector(4 downto 0)}
+							\item[-] \texttt{out: green - std\_logic\_vector(5 downto 0)}
+							\item[-] \texttt{out: blue - std\_logic\_vector(4 downto 0)}
+						\end{itemize}
+					\item Create a 32x32 array of 16 bit vectors for the pixel values
+					\item Use a register to hold the current player position
+					\item If the row \& column correspond to a pixel in the player's sprite, output that value over the red, green, \& blue lines
+					\item Use a register to input new colors into the array of pixels for the player
+					\item Use a register as a data valid signal for the hardware
+					\item Use another register as the index of the array to write a value to.
+					\item When the data is valid, over the position given with the new pixel value.
+					\item Also read in a new player position when data is valid.
+				\end{enumerate}
+			\item Create a custom IP block for your maze
+				\begin{enumerate}
+					\item Give the IP block 16 registers
+					\item The block will need 5 inputs and 3 outputs
+						\begin{itemize}[noitemsep, nolistsep]
+							\item[-] \texttt{in: r\_in - std\_logic\_vector(4 downto 0)}
+							\item[-] \texttt{in: g\_in - std\_logic\_vector(5 downto 0)}
+							\item[-] \texttt{in: b\_in - std\_logic\_vector(4 downto 0)}
+							\item[-] \texttt{in: row - std\_logic\_vector(9 downto 0)}
+							\item[-] \texttt{in: col - std\_logic\_vector(9 downto 0)}
+							\item[-] \texttt{out: r\_out - std\_logic\_vector(4 downto 0)}
+							\item[-] \texttt{out: g\_out - std\_logic\_vector(5 downto 0)}
+							\item[-] \texttt{out: b\_out - std\_logic\_vector(4 downto 0)}
+						\end{itemize}
+					\item The RGB inputs to this block come from the ship to aid in hit detection.
+					\item Draw a maze by checking if the row \& col values are in certain ranges, creating rectangles.
+					\item Check if the input RGB is not equal to zero while you are drawing a wall. If so, write 0xFFFFFFFF into a register to signal to the software side that a collision has been detected.
+					\item Output the maze RGB or the ship RGB out the RGB out signals, depending on which is activated.
+				\end{enumerate}
+			\item Run block automation, connection automation
+			\item Create 5 output ports in the overall block design
+				\begin{itemize}[noitemsep, nolistsep]
+					\item[-] vga\_hs
+					\item[-] vga\_vs
+					\item[-] vga\_r[4:0]
+					\item[-] vga\_g[5:0]
+					\item[-] vga\_b[4:0]
+				\end{itemize}
+			\item Create 4 input ports for the ADC
+				\begin{itemize}[noitemsep,nolistsep]
+					\item[-] vauxn7
+					\item[-] vauxp7
+					\item[-] vauxn14
+					\item[-] vauxp14
+				\end{itemize}
+			\item Open the XADC Wizard \& enable channel sequencer
+			\item Activate channels 7 \& 14 (these are used by the Zybo)
+			\item Connect the inputs to the XADC Wizard
+			\item Connect vga\_hs \& vga\_vs to the VGA controller
+			\item Connect the VGA RGB signals to the maze controller
+			\item Generate bitstream \& export to SDK
+		\end{enumerate}
+	\item[-] Software
+		\begin{enumerate}[noitemsep, nolistsep]
+			\item Create a new hello world project
+			\item Clear the helloworld.c file
+			\item Create a helloworld.h file
+			\item Make an array of pixel positions for the ship, treating 16,16 as the origin.
+			\item Create a struct for the player with its position, speed, and angle.
+			\item Create an initialize function in the C file
+				\begin{enumerate}[noitemsep, nolistsep]
+					\item Initialize the player variable, set it's position to the start of your maze, speed to zero and it's angle to point it whichever direction it will start moving.
+					\item Write the player sprite to the hardware using the data valid/pixel value/pixel position/player position registers.
+				\end{enumerate}
+			\item Create the main game logic
+				\begin{enumerate}[nolistsep, noitemsep]
+					\item Write a function to rotate points around the origin given a point and an angle. (you will need to link the math library in order to use sin \& cos)
+					\item Write an updatePlayerPosition() function, which will take the speed, a single double, and turn use it to displace the player correctly based on it's angle. You need to create a new point (0, speed) and rotate it to the player's angle, then add this point to the player's position. You also need to decrease the player's speed gradually, so decrement by 0.1
+					\item Write a updatePlayerSprite() function, this should take every point in the player sprite array and rotate it to the new angle, then write these values to the hardware.
+					\item Write a getInput() function, which will poll the ADC registers and check their values. They run much faster than 60Hz, so there shouldn't be any waiting required. Use the X/Y values of the joystick to increase player speed/change angle accordingly.
+					\item Write a checkCollisions() function, which checks the maze register that will hold ones if a collision has occurred. If it has, reset the player to it's original position, speed, and angle
+				\end{enumerate}
+			\item Combine all of these functions into a game loop function. This function will need to wait for the frame to be done drawing to restart.
+		\end{enumerate}
+	\item[$\star$] Program the Zybo \& launch the C code on the hardware. You should have a maze!
+	\end{itemize}
+	
+	\noindent \textbf{Recalculations and Predictions:} N/A\\
+	
+	\noindent \textbf{Data and Observations:} There is no real data to be looked at in this lab. It was observed that the design ran successfully on multiply monitors, which points to the fact that it was running at 60Hz. The player was able to interact with the game through a joystick, and the game was able to successfully detect a collision with a wall and punish the player for it. The collision detection was very accurate, and the game was playable.\\
+	
+	\noindent \textbf{Analysis and Discussion:} No data was collected in this lab, the behavior and observations from the design matched expectations very closely. \\
+	
+	\noindent \textbf{Conclusions:} In the end, this lab was a success. A maze was successfully implemented using a combination of software and hardware designs. This knowledge base will be very helpful in future situations as it has helped me become more familiar and comfortable designing things in hardware, while normally I would simply default to software. The connection between hardware and software using the AXI interface seems to be a somewhat common method and will be very useful if I am to use a device with this functionality in the future. 
+	
+	I gained experience in C and VHDL, and while I had used both before, I gained a lot of useful information from this project. I had never utilized C (or any software) without an operating system before. I had also never created multiple designs in VHDL to connect together with other, commercial IP blocks. Overall, this lab was a great success. 
+\end{document}
