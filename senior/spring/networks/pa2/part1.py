@@ -54,20 +54,17 @@ for line in fIn.read().splitlines():
 nodeWeights = [randStrInt(nodeMin, nodeMax) for i in range(0, nodes)]
 
 if (topology == "LINEAR"):
-    nodeWeights = ""
     for i in range(0, nodes-1):
         line = str(i) + "\t" + str(i+1) + "\t" + randStrInt(linkMin, linkMax)+"\n"
         fOut.write(line)
     fOut.write("\t".join(nodeWeights) + "\n")
 if (topology == "FULL"):
-    nodeWeights = ""
     for i in range(0, nodes-1):
         for j in range(i+1, nodes):
             line = str(i) + "\t" + str(j)+"\t" + randStrInt(linkMin, linkMax)+"\n"
             fOut.write(line)
     fOut.write("\t".join(nodeWeights) + "\n")
 if (topology == "STAR"):
-    nodeWeights = ""
     for i in range(1, nodes):
         line = "0\t" + str(i) + "\t" + randStrInt(linkMin, linkMax)+"\n"
         fOut.write(line)
