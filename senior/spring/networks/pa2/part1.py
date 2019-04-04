@@ -13,7 +13,7 @@ if ((len(sys.argv)-1) >= 2):
 fIn = open(fInName, 'r')
 fOut = open(fOutName, 'w')
 
-def connections(node, arr, orig):
+def connections(node, arr, orig ):
     conns = []
     addConns = [node]
     orig.append(node)
@@ -56,7 +56,7 @@ nodeWeights = [randStrInt(nodeMin, nodeMax) for i in range(0, nodes)]
 if (topology == "LINEAR"):
     nodeWeights = ""
     for i in range(0, nodes-1):
-        line = str(i) + "\t" + str(i+1)+"\t" + randStrInt(linkMin, linkMax)+"\n"
+        line = str(i) + "\t" + str(i+1) + "\t" + randStrInt(linkMin, linkMax)+"\n"
         fOut.write(line)
     fOut.write("\t".join(nodeWeights) + "\n")
 if (topology == "FULL"):
