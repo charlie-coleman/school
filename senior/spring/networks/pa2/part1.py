@@ -51,7 +51,6 @@ for line in fIn.read().splitlines():
     elif (param[0] == "LINK-MAX"):
         linkMax = int(param[1])
 
-print(nodes,topology,alpha,nodeMin,nodeMax,linkMin,linkMax)
 nodeWeights = [randStrInt(nodeMin, nodeMax) for i in range(0, nodes)]
 
 if (topology == "LINEAR"):
