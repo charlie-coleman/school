@@ -1,9 +1,17 @@
 import sys, random, os
 
-filename = sys.argv[1]
+fInName = "generic.conf"
+if ((len(sys.argv)-1) == 0):
+    raise Exception("Improper format: python3 part1.py <file in> <file out>")
+elif ((len(sys.argv)-1) >= 1):
+    fInName = sys.argv[1]
 
-fIn = open(filename, 'r')
-fOut = open(os.path.splitext(filename)[0]+".out", 'w')
+fOutName = os.path.splitext(fInName)[0]+".out"
+if ((len(sys.argv)-1) >= 2):
+    fOutName = sys.argv[2]
+
+fIn = open(fInName, 'r')
+fOut = open(fOutName, 'w')
 
 def connections(node, arr, orig):
     conns = []
@@ -44,32 +52,27 @@ for line in fIn.read().splitlines():
         linkMax = int(param[1])
 
 print(nodes,topology,alpha,nodeMin,nodeMax,linkMin,linkMax)
+nodeWeights = [randStrInt(nodeMin, nodeMax) for i in range(0, nodes)]
 
 if (topology == "LINEAR"):
     nodeWeights = ""
     for i in range(0, nodes-1):
         line = str(i) + "\t" + str(i+1)+"\t" + randStrInt(linkMin, linkMax)+"\n"
         fOut.write(line)
-        nodeWeights += randStrInt(nodeMin,nodeMax) + "\t"
-    nodeWeights += randStrInt(nodeMin,nodeMax) + "\n"
-    fOut.write(nodeWeights)
+    fOut.write("\t".join(nodeWeights) + "\n")
 if (topology == "FULL"):
     nodeWeights = ""
     for i in range(0, nodes-1):
         for j in range(i+1, nodes):
             line = str(i) + "\t" + str(j)+"\t" + randStrInt(linkMin, linkMax)+"\n"
             fOut.write(line)
-        nodeWeights += randStrInt(nodeMin, nodeMax) + "\t"
-    nodeWeights += randStrInt(nodeMin, nodeMax) + "\n"
-    fOut.write(nodeWeights)
+    fOut.write("\t".join(nodeWeights) + "\n")
 if (topology == "STAR"):
     nodeWeights = ""
     for i in range(1, nodes):
         line = "0\t" + str(i) + "\t" + randStrInt(linkMin, linkMax)+"\n"
         fOut.write(line)
-        nodeWeights += randStrInt(nodeMin,nodeMax) + "\t"
-    nodeWeights += randStrInt(nodeMin, nodeMax) + "\n"
-    fOut.write(nodeWeights)
+    fOut.write("\t".join(nodeWeights) + "\n")
 if (topology == "RANDOM"):
     arr = [[False for i in range(0, nodes)] for i in range(0, nodes)]
     x = 0
@@ -84,12 +87,9 @@ if (topology == "RANDOM"):
         if (x > 1000):
             print("ERROR: Could not generate a connected graph. Perhaps choose a different alpha or number of nodes?\n")
             break
-    nodeWeights = ""
     for i in range(0,nodes-1):
         for j in range(i+1,nodes):
             if (arr[i][j]):
                 line = str(i) + "\t" + str(j) + "\t" + randStrInt(linkMin,linkMax) + "\n"
                 fOut.write(line)
-        nodeWeights += randStrInt(nodeMin, nodeMax) + "\t"
-    nodeWeights += randStrInt(nodeMin, nodeMax) + "\n"
-    fOut.write(nodeWeights)
+    fOut.write("\t".join(nodeWeights) + "\n")
