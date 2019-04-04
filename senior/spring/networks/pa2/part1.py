@@ -28,8 +28,8 @@ def connections(node, arr, orig ):
     conns.sort()
     return list(dict.fromkeys(conns))
 
-def randStrInt(min,max):
-    return str(random.randint(min,max))
+def randStrInt(minVal,maxVal):
+    return str(random.randint(minVal,maxVal))
 
 def printAdjMatrix(arr):
     [print("\t".join([str(arr[i][j]) for j in range(0,nodes)])) for i in range(0,nodes)]
