@@ -1,4 +1,0 @@
-NumberHits:0
-Timestamp: Fri Oct 26 05:17:23 UTC 2018
-VLNV: xilinx.com:user:light_counter:1.0
-SynthRuntime: 35

@@ -1,4 +1,0 @@
-NumberHits:0
-Timestamp: Wed Oct 17 22:39:50 UTC 2018
-VLNV: xilinx.com:user:rw_reg:1.0
-SynthRuntime: 48

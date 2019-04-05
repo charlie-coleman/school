@@ -1,0 +1,85 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{varwidth}
+
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\lstdefinestyle{Python}{
+    language        = Python,
+    basicstyle      = \ttfamily\small,
+    keywordstyle    = \color{deepblue},
+    keywordstyle    = [2] \color{teal}, % just to check that it works
+    stringstyle     = \color{deepgreen},
+    commentstyle    = \color{deepred}\ttfamily,
+    frame       = single,
+    numbers     = left,
+    showspaces  = false,
+    showstringspaces    = false,
+    captionpos  = t,
+    caption     = \lstname
+}
+
+\renewcommand{\lstlistingname}{Program}
+
+\title{Documentation for CSCI 3650 Programming Assignment \#2}
+\author{Charlie Coleman}
+
+\begin{document}
+
+	\maketitle
+
+	\section{Documentation}
+
+	\subsection{Configuration to Network Description}
+	
+	Firstly, you need to create a configuration file for your network. Some examples are given in the \texttt{./configs/} directory, but if you'd like to make your own the format is as follows.
+	
+	\begin{verbatim}
+		nodes: Int
+		topology: linear|full|star|random
+		alpha: Float
+		node-min: Int
+		node-max: Int
+		link-min: Int
+		link-max: Int
+	\end{verbatim}
+	
+	Once you have a properly formatted configuration file, you can execute the code with the following command:
+	
+	\begin{center}
+	\verb|python3 part1.py <file in> <file out>|
+	\end{center}	
+	
+	Only the input file name is required. If \texttt{file out} is left out, it will default to the name of the input with \texttt{.out} as the extension. This code will output a file of the format:
+	
+	\begin{verbatim}
+	Source-Node-ID	Destination Node-ID	Link0-weight
+	Source-Node-ID	Destination Node-ID	Link1-weight
+	...
+	Node0-weight	Node1-weight...	NodeN-weight
+	\end{verbatim}
+
+	\subsection{Network Description to Virtual Network}
+	
+	Once we have a network description file from \texttt{part1.py}, we can pass it to \texttt{part2.py} to get create our virtual network. To run \texttt{part2.py}, use the following command.
+	
+	\begin{center}
+	\verb|python3 part2.py <file in>|
+	\end{center}
+	
+	This will parse the network description file you specify and create a virtual network that matches that topology.
+	
+	\pagebreak
+	
+	\section{Code}
+	
+	\lstinputlisting[breaklines,style=Python]{../part1.py}
+	\lstinputlisting[breaklines,style=Python]{../part2.py}
+\end{document}
