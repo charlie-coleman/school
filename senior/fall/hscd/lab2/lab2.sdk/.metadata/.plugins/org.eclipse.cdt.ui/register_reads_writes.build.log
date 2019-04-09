@@ -1,8 +1,0 @@
-18:32:26 **** Auto Build of configuration Debug for project register_reads_writes ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Nothing to be done for `main-build'.
-
-18:32:26 Build Finished (took 260ms)
-
