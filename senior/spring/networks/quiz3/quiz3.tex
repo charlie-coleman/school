@@ -1,0 +1,85 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\begin{document}
+	\section{Network Layer}
+	
+	\subsection{Data Plane}
+	
+	\begin{itemize}[noitemsep]
+		\item local, per-router function
+		\item determines how datagram arriving on router input port is forwarded to router output port
+		\item forwarding function
+	\end{itemize}
+	
+	\subsection{Control Plane}
+	
+	\begin{itemize}[noitemsep]
+		\item network-wide logic
+		\item determines how datagram is routed among routers along end-end path from source host to destination host
+	\end{itemize}
+	
+	\section{Inside a Router}
+	
+	\subsection{Routing Processor}
+	
+	performs control and management plane functions
+	
+	\begin{itemize}[noitemsep]
+		\item maintains routing table
+		\item attaches link state information to routing table
+		\item computes forwarding table
+		\item in SDN, it is also responsible for the communication and event handling with the 'controller'
+		\item performs network management functions (e.g. packet counting stats, etc.)
+	\end{itemize}
+	
+	\subsection{Input port functions}
+	
+	Line termination - physical layer functions = bit-level reception
+	Link Layer Protocol - Data link layer functions = ethernet interoperation
+	Lookup, forwarding, queueing - decentralized switching = lookup functions
+	
+	\subsection{How much to buffer?}
+	
+	$B = RTT * C$
+	
+	RTT - round trip time (e.g. 250 ms)
+	
+	C - Link Capacity (e.g. 10 Gbps)
+	
+	New eq: $B = \cfrac{RTT * C}{\sqrt{N}}$
+	
+	N - \# of flows
+	
+	\section{Internet Protocol}
+	
+	\subsection{Why does IP have a checksum?}
+	
+	\begin{enumerate}[noitemsep]
+		\item IP does not have to run over TCP/UDP
+		\item TCP/UDP checksum entire package, IP only header
+		\item Note that checksum has to be recomputed at every router since the TTL changes
+	\end{enumerate}
+	
+	\subsection{IPv4 Addressing}
+	
+	IP Address: 32-bit identifier for host, router interface
+	
+	\noindent Interface: connection between host/router and physical link
+	\begin{itemize}[noitemsep, nolistsep]
+		\item router's typically have multiple interfaces
+		\item host typically has one or two interfaces (wired Ethernet, wireless 802.11)
+	\end{itemize}
+	
+	\noindent CIDR - Classless InterDomain Routing
+	\begin{itemize}[noitemsep]
+		\item subnet portion of address of arbitrary length
+		\item address format: a.b.c.d/x where x is the \# of bits in the subnet portion of the address
+	\end{itemize}
+	
+	\section{Generalized Forward and SDN}
+\end{document}
