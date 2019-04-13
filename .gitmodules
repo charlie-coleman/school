@@ -10,3 +10,6 @@
 [submodule "senior/fall/senior_design/group"]
 	path = senior/fall/senior_design/group
 	url = git@github.com:charlie-coleman/senior_design.git
+[submodule "senior/spring/prog_langs/repo"]
+	path = senior/spring/prog_langs/repo
+	url = git@git.cs.slu.edu:courses/spring19/csci_3200/colemanct
