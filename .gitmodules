@@ -13,3 +13,9 @@
 [submodule "senior/spring/prog_langs/repo"]
 	path = senior/spring/prog_langs/repo
 	url = git@git.cs.slu.edu:courses/spring19/csci_3200/colemanct
+[submodule "senior/spring/senior_design/repo"]
+	path = senior/spring/senior_design/repo
+	url = git@github.com:charlie-coleman/senior_design
+[submodule "senior/spring/sd"]
+	path = senior/spring/sd
+	url = https://github.com/charlie-coleman/senior_design
