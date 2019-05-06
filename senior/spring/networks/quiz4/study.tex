@@ -1,0 +1,677 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\newcommand{\topic}[1]{\noindent\textbf{#1}}
+\newcommand{\define}[1]{\noindent\textit{#1 |}}
+
+\setlist{nolistsep, noitemsep}
+
+\begin{document}
+
+\begin{center}
+	\begin{large} \textbf{Computer Networks Quiz \# 4} \end{large}
+\end{center}
+
+\hfill Charlie Coleman
+
+\setcounter{section}{5}
+\section{Link layer and LANS}
+
+\subsection{Introduction, Services}
+
+\topic{Terminology:}
+
+\begin{itemize}
+	\item hosts \& routers: nodes
+	\item communication channels that connect adjacent nodes along communication path: links
+		\begin{itemize}
+			\item wired links
+			\item wireless links
+			\item LANs
+		\end{itemize}
+	\item layer-2 packet: frame, encapsulates datagram
+\end{itemize}~\\
+
+\noindent data-link layer has responsibility of transferring datagram from one node to physically adjacent node over a link.
+
+\subsubsection*{Link Layer Services}
+
+\topic{Framing:}
+
+Used in almost all link-layer protocols, framing encapsulates the network-layer datagrams within a link-layer frame before transmission. Frame consists of: data field (network layer datagram is inserted here) and a number of header fields. Structure is defined by the link-layer protocol.
+
+\topic{Link Access:}
+
+\define{MAC} medium access control
+
+A MAC protocol specifies the rules by which a frame is transmitted onto the link. The MAC protocol complexity is tied to how many senders/receivers exist on the line.
+
+\topic{Reliable delivery:}
+
+Reliable delivery means the service guarantees the transmission of the network-layer datagram without error, like TCP. Can be achieved with acks + retransmission. Reliable LL transport is typically used on links with high error rates (wireless). This prevents end-to-end retransmission. Adds potentially unnecessary overhead to low error rate conns, like fiber/ethernet.
+
+\topic{Error detection \& correction}
+
+Include some form of error checking bits, perform the check locally on the LL to prevent sending a bad datagram
+
+\subsubsection*{Where is the LL implemented?}
+
+In every host.
+
+Typically in an 'adaptor' (network interface card) or chip (e.g. ethernet card, 802.11 card, etc.)
+
+\subsection{Error detection, Correction}
+
+Most basic form: Redundancy
+
+\subsubsection*{Error Detection and Correction (EDC)}
+
+\define{EDC} Error Detection and Correction bits, a.k.a. the redundancy
+
+\define{D} Data protected by error checking, may include the header fields
+
+Error Detection is not 100\% reliable!
+\begin{itemize}[noitemsep,nolistsep]
+	\item protocols can miss errors (rarely though)
+	\item larger EDC fields == better error detection/correction (but more overhead)
+\end{itemize}
+
+\subsubsection*{How do we detect errors?}
+
+\begin{enumerate}[noitemsep, nolistsep]
+	\item Parity checking
+	\begin{itemize}[noitemsep, nolistsep]
+		\item Vertical parity checking
+		\item Horizontal parity checking
+		\item Both
+	\end{itemize}
+	\item Checksum (on IPv6 headers \& UDP/TCP data)
+	\item CRCs
+\end{enumerate}
+
+\subsection{Multiple Access Protocols}
+	
+\subsubsection*{Multiple Access Links}
+
+\topic{Two Types of "Links"}
+\begin{itemize}
+	\item point-to-point
+	\begin{itemize}
+		\item PPP for dial-up access
+		\item point-to-point link between ethernet switch, host
+	\end{itemize}
+	\item broadcast (shared wire or medium)
+	\begin{itemize}
+		\item old-fashioned ethernet
+		\item upstream HFC
+		\item 802.11 wireless LAN
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Access Control Point Goals}
+
+\begin{enumerate}
+	\item At any time, only one needs to access the channel
+	\item Even if more access the channel, there should be minimal or no collision!
+\end{enumerate}
+
+\subsubsection*{No out-of-band channel are allowed for coordination}
+
+A "collision" occurs if a node receives two or more signals at the same time
+
+\define{Multiple Access protocol} distributed algo that determines how nodes share a channel, i.e. determine when nodes can transmit
+
+\define{No-out-of-bound channel constraint} communication about channel sharing must use the channel itself
+
+\subsubsection*{An Ideal Multi-access protocol}
+
+Given: A broadcast channel of rate R bps
+
+\noindent Want:
+\begin{enumerate}
+	\item when one node wants to transmit, it can send at rate R.
+	\item when M nodes want to transmit, each can send at average rate R/M
+	\item fully decentralized (or distributed):
+		\begin{itemize}
+			\item no special node coordinate transmissions
+			\item no synch of clocks, slots
+		\end{itemize}
+	\item As simple as possible to implement (always true)
+\end{enumerate}
+
+\subsubsection*{3 Broad Classes of MAC protocols}
+
+\begin{itemize}
+	\item Channel Partitioning
+	\begin{itemize}
+		\item divide channel into smaller pieces (time slots, frequency, code)
+		\item allocate piece to node for exclusive use
+	\end{itemize}
+	\item Random Access
+	\begin{itemize}
+		\item channel not divided, allow collisions
+		\item "recover" from collisions 
+	\end{itemize}		
+	\item "Taking Turns"
+	\begin{itemize}
+		\item nodes take turns, but nodes with more to send can take longer
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Channel Partitioning MAC Protocols}
+
+\begin{itemize}
+	\item TDMA: Time Division Multiple Access
+	\begin{itemize}
+		\item Access to channel in "rounds"
+		\item Each situation gets fixed length slot (length = packet transmission time) in each round
+		\item unused slots go idle (ew)
+	\end{itemize}
+	\begin{tabular}{l|l}
+	Pros & Cons \\ \hline
+	No Collision! & channel is underutilized when few sources have packets \\
+	Fair allocation & nodes must wait their turn, even if it is free
+	\end{tabular}
+	
+	\item FDMA: Frequency Division Multiple Access
+	\begin{itemize}
+		\item channel spectrum divided into frequency bands
+		\item each station assigned fixed frequency band
+		\item unused transmission time in frequency bands goes idle
+		\item Guard bands are introduced to avoid interference
+	\end{itemize}
+	
+	\item CDMA: Code Division Multiple Access
+	\begin{itemize}
+		\item Assign a different code to each channel
+		\item Channels then use a different code to reconstruct bits
+		\item \textbf{Multiple nodes can send at the same time!}
+	\end{itemize}
+	
+	\item WDMA: Wavelength Division ... (used in fiber)
+	\begin{itemize}
+		\item Same principle as FDMA
+	\end{itemize}
+	
+	\item SDMA: Space Division ...
+	\begin{itemize}
+		\item Reuse the same frequency but at different space (like radio stations)
+	\end{itemize}
+	
+	\item OFDMA: Orthogonal Frequency Division ...
+	\begin{itemize}
+		\item Frequency slots are orthogonal so no guard bands
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Random Access Protocols}
+
+When a node has a packet to send
+\begin{itemize}
+	\item transmit at full channel data rate R
+	\item no \textit{a priori} coordination among nodes
+\end{itemize}
+
+\noindent Collision? Wait a bit (random amount) and retry!
+
+\begin{enumerate}
+	\item Slotted ALOHA (retransmit with prob p)
+	
+	Assumptions:
+	\begin{enumerate}
+		\item All frames same size
+		\item Time divided into equal size slots (time to transmit 1 frame)
+		\item Nodes start to transmit only slot beginning
+		\item Nodes are sync'ed
+		\item if $\geq$2 nodes transmit in slot, all nodes detect collision
+		\item if collision, probability p you transmit in each frame until success
+	\end{enumerate}
+	
+	\begin{itemize}
+		\item Pros:
+		\begin{itemize}
+			\item single active node can continuously transmit at full channel rate
+			\item highly decentralized: only slots in nodes need to be in sync
+			\item simple
+		\end{itemize}
+		\item Cons:
+		\begin{itemize}
+			\item collisions, wasting time slots
+			\item idle slots
+			\item nodes may be able to detect collision in less than time to transmit packet
+			\item clock sync required
+		\end{itemize}
+	\end{itemize}
+	
+	\item ALOHA
+	\begin{itemize}
+		\item No sync, no time slots, just wait a random amount of time
+		\item Less efficient than slotted!
+	\end{itemize}
+	
+	\item CSMA: Carrier Sense Multiple Access
+	\begin{itemize}
+		\item Listen before you transmit!
+		\item If idle, transmit everything
+		\item If busy, wait
+		\item If collision, sucks for you. just do it again?
+		\item propagation delay $\rightarrow$ collisions
+	\end{itemize}
+	
+	\item CSMA/CD: CSMA + collision detection
+	\begin{itemize}
+		\item Cancel transmissions when collision is detected
+		\item easy in wired transmission, difficult wirelessly
+	\end{itemize}
+\end{enumerate}
+
+\subsubsection*{Taking Turns: Literally Jesus?}
+
+Channel Partitioning Protocols:
+\begin{itemize}
+	\item share channel efficiently \& fairly at high loads
+	\item super shit at low load
+\end{itemize}
+
+\noindent Random Access Protocols:
+\begin{itemize}
+	\item efficient at low loads
+	\item 8 car pile up at high loads
+\end{itemize}
+
+\noindent "Taking Turns" Protocols:
+
+Everything you've ever wanted and more
+
+\noindent Examples:
+\begin{itemize}
+	\item Polling:
+	\begin{itemize}
+		\item master node invites slave nodes to transmit in turn
+		\item typically used with "dumb" slave devices
+		\item Concerns:
+		\begin{itemize}
+			\item polling overhead
+			\item latency
+			\item single point of failure (master)
+		\end{itemize}
+	\end{itemize}
+	\item Token Passing
+	\begin{itemize}
+		\item Control token passed from one node to next sequentially
+		\item token message
+		\item concerns:
+		\begin{itemize}
+			\item token overhead
+			\item latency
+			\item token is a single point of failure
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{LANs}
+
+\subsubsection*{Addressing}
+
+Every adapter on LAN has it's own unique LAN address
+
+\noindent MAC addresses are allocated by IEEE, bought buy manufacturer to ensure uniqueness
+
+\noindent MAC is portable, as LAN cards can move between LANs
+
+\noindent IP hierarchical address is not portable, depends on IP subnet
+
+\subsubsection*{ARP}
+
+\define{ARP} Address Resolution Protocol, each IP node on LAN has table
+\begin{itemize}
+	\item IP/MAC address mappings for some LAN nodes \verb|< IP address; MAC address; TTL >|
+	\item TTL (Time to Live): time after which address mappings will be forgotten (typically 20 min)
+\end{itemize}
+
+\noindent The Protocol
+\begin{itemize}
+	\item A wants to send datagram to B
+	
+	but B's MAC address not in A's ARP table
+	
+	\item A broadcasts ARP query packet, containing B's IP address
+	\begin{itemize}
+		\item destination MAC address = FF-FF-FF-FF-FF-FF
+		\item all nodes on LAN receive ARP query
+	\end{itemize}
+	\item B receives ARP packet, replies to A with its (B's) MAC address, send to A's MAC
+	\item A caches (saves) IP-to-MAC address pair in its ARP table until information becomes old (times out) (this is a soft state, information goes away)
+	
+	\item ARP is "plug-and-play", nodes create their own ARP table
+\end{itemize}
+
+\subsubsection*{Ethernet}
+
+\begin{itemize}
+	\item Dominant wired LAN tech
+	\item Single chip, multiple speeds
+	\item first widely used LAN tech
+	\item simple, cheap
+	\item kept up with speed race: 10Mbps - 10Gbps
+	\item Connectionless - no handshaking
+	\item Unreliable - no acks/nacks
+	\item Uses CSMA/CD with binary back-off
+\end{itemize}
+
+\noindent Topologies
+\begin{itemize}
+	\item Bus - popular through mid-90s
+	\begin{itemize}
+		\item all nodes in same collision domain (can collide with each other)
+	\end{itemize}
+	\item Star - popular today
+	\begin{itemize}
+		\item active switch in the center of the network
+		\item each spoke runs a separate ethernet protocol (no collision)
+	\end{itemize}
+\end{itemize}
+
+\noindent Ethernet Frame
+\begin{itemize}
+	\item sending adaptar encapsulates IP datagram in Ethernet Frame
+\end{itemize}
+\begin{enumerate}
+	\item Preamble - 7 bytes of 10101010 followed by 10101011, syncs the clock \& rate
+	\item Addresses - 6 byte source \& dest MAC addresses, if it's for the adapter it passes to the network layer protocol
+	\item type - indicates higher layer protocol (mostly IP, but others possible)
+	\item CRC - error detection, frame dropped if error detected
+\end{enumerate}
+
+\subsubsection*{Switches}
+
+\begin{itemize}
+	\item Link-Layer device - active role
+	\begin{itemize}
+		\item store \& forward Ethernet frames
+		\item Examine MAC address, selectively forward, use CSMA/CD
+	\end{itemize}
+	\item Transparent, hosts are unaware they exist
+	\item Plug-and-play, self-learning | No config required!
+	\item Buffer packets
+	\item Separate instance of protocol on each link, no collisions
+\end{itemize}
+
+\subsubsection*{VLANs}
+
+\define{VLAN} Virtual LAN, simplify LAN topology using software 'switches'
+	
+\subsection{Link Virtualization}
+
+\subsubsection*{MPLS}
+
+\define{MPLS} MultiProtocol Layer Switching
+
+Operates between OSI Layer 2 and Layer 3
+
+\begin{itemize}
+	\item Initial Goal | high-speed IP forwarding using fixed length label (instead of IP address)
+	\begin{itemize}
+		\item fast lookup using fixed length identifier (rather than shortest prefix matching)
+		\item borrowing ideas from Virtual Circuit approach
+		\item but IP datagram still keeps IP address!
+	\end{itemize}
+	\item MPLS forwarding can differ from IP
+	\begin{itemize}
+		\item use destination and source addresses to route flows to same destination differently (traffic engineering)
+		\item re-route flows quickly if link fails: pre-computed backup paths (useful for VoIP)
+	\end{itemize}
+\end{itemize}
+
+\setcounter{section}{7}
+\section{Network Security}
+
+\subsection{What is Networking Security?}
+
+Types of attacks
+\begin{itemize}
+	\item Lying
+	\begin{itemize}
+		\item DNS poisoning
+		\item BGP false route advertising
+		\item False IP or MAC address
+	\end{itemize}
+	\item Talking too much
+	\begin{itemize}
+		\item Congest someone's server
+		\item Congest someone's network
+	\end{itemize}
+	\item Listening too much
+	\begin{itemize}
+		\item side channel attacks in VM
+		\item Man in the middle attack
+	\end{itemize}
+\end{itemize}
+
+\noindent Properties of a Secure Communication
+\begin{enumerate}
+	\item Confidentiality | only sender \& intended receiver should "understand" message contents
+	\begin{itemize}
+		\item sender encrypts message
+		\item receiver decrypts message
+	\end{itemize}
+	
+	\item End Point Authentication
+	\begin{itemize}
+		\item sender, receiver want to confirm identity of each other
+	\end{itemize}
+	
+	\item Message Integrity | sender, receiver want to ensure message not altered without detection
+	
+	\item Access \& Availability | services must be accessible and available to users
+\end{enumerate}
+
+\subsection{Principles of Cryptography}
+
+\begin{itemize}
+	\item Symmetric Key Crypto | sender, receiver share a secret key
+	\begin{itemize}
+		\item Stream ciphers | have a keystream, plaintext digits are encrypted one at a time to create a stream of encrypted data
+		\item Block ciphers | encrypt 1 block at a time, send it all
+		\item Cipher block chaining | prevents memorizing encrypted data and comparing to future, add some randomness to the cipher and send the randomness in plaintext
+		
+		to save bandwidth, send once then use a generator
+		
+		\item \textbf{DES: Data Encryption Standard} | popular symmetric method
+		\begin{itemize}
+			\item US encryption standard
+			\item 56 bit encryption key, 64 bit block size
+			\item block cipher + CBC
+			\item Not that secure, so just do it 3 times with 3 keys, duh
+		\end{itemize}
+		
+		\item \textbf{AES: Advanced Encryption Standard} | DES? Never heard of him.
+		\begin{itemize}
+			\item still symmetric, replaced DES
+			\item 128bit block, 128/192/256 bit keys
+			\item if DES can be cracked in 1 sec, AES will take 149 trillion years
+		\end{itemize}
+	\end{itemize}
+	
+	\item Public Key Crypto | sender, receiver have a public + private key
+	\begin{itemize}
+		\item No symmetric key
+		\item Need a function that returns the same value when executed on either side
+		\item \textbf{RSA} | Rivest, Shamir, Adelson algo
+		\begin{enumerate}
+			\item Choose 2 large prime numbers p, q (1024+ bits ea)
+			\item n = pq, z = (p-1)(q-1)
+			\item e < n \&\& e is relatively prime with z
+			\item choose d where e*d mod z = 1
+			\item Public Key: (n, e), Private Key: (n, d)
+		\end{enumerate}
+		Encryption/Decryption
+		\begin{enumerate}
+			\item To encrypt message m, $c = m^e \text{ mod } n$
+			\item To decrypt encrypted message c, $m = c^d \text{ mod } n$
+		\end{enumerate}
+		\begin{itemize}
+			\item DES is 100x faster
+			\item To improve speeds, establish a connection using RSA and generate a symmetric key, then use AES/DES/another symm key crypto
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Message Integrity}
+
+\subsubsection*{Goals}
+
+\begin{itemize}
+	\item message is indeed send by intended sender
+	\item message is not tampered with on its way to the receiver
+\end{itemize}
+
+\subsubsection*{Digital Signatures}
+
+\begin{itemize}
+	\item Cryptographic Hash
+	\begin{itemize}
+		\item Hash function (H(m)) takes an input \& computes a fixed-size string (checksum/CRC)
+		\item Hashes have the property that H(x) == H(y) is very unlikely (unfeasible)
+		\item Simple digital signature - encrypt with your private key!
+		\item Hash functions:
+		\begin{itemize}
+			\item MD5 | 128 bit hash
+			\item SHA-1 | 160 bit message digest
+		\end{itemize}
+		\item Use a secret shared key to prevent tampering with the message
+	\end{itemize}
+	
+	\item Certification Authorities
+	\begin{itemize}
+		\item binds public key to a particular entity
+		\item entity registers its public key with CA
+		\begin{itemize}
+			\item entity provides "proof of identity" to CA
+			\item CA creates certificate binding entity to its public key
+			\item certificate contains entity's public key digitally signed by the CA
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{End Point Authentication}
+
+Authenticating a conversation at the time it is occurring
+
+\begin{itemize}
+	\item needs to run before communication can commence
+	\item basically use public key encryption + CA + a nonce (one time use random number to prevent replay attacks)
+\end{itemize}
+
+\subsection{Securing e-mail}
+
+\subsubsection*{Confidentiality}
+
+\begin{enumerate}
+	\item Generate random symmetric private key
+	\item encrypt message with symm priv key
+	\item encrypts symm priv key with receiver's public key
+	\item send both to receiver
+	\item receiver decodes symm priv key using their private key
+	\item receiver decodes message with symm priv key
+\end{enumerate}
+
+\subsubsection*{Message Integrity}
+
+\begin{enumerate}
+	\item Sign message with hash, m' = H(m + s)
+	\item Sign with priv key
+	\item Send message and encrypted hash
+	\item receiver can decode the hash, hash the received message and compare
+\end{enumerate}
+
+\subsubsection*{Both?}
+
+Chain message integrity into confidentiality
+
+\subsection{Securing TCP Connections: SSL}
+
+\begin{itemize}
+	\item supported by almost all browsers \& web servers
+	\item Base for https
+	\item billions sent over SSL every year
+	\item TLS - variation
+	\item Provides:
+	\begin{itemize}
+		\item confidentiality
+		\item integrity
+		\item authentication
+	\end{itemize}
+	\item PGP (the email stuff) would not work for byte streams or interactive data
+\end{itemize}
+
+\subsubsection*{4 Components}
+
+\begin{enumerate}
+	\item Handshake | use certificates \& private keys to authenticate each other and exchange shared secret
+	\item Key derivation | use shared secret to derive a set of keys
+	\item Data transfer | break up data to be transferred into a series of records
+	\item Connection closure | special messages to securely close connection
+\end{enumerate}
+
+\subsubsection*{Splitting into Records}
+
+\begin{itemize}
+	\item If we used streams, no message integrity until completed transfer
+	\item With records, we are susceptible to replay attacks
+	\item to prevent that, we use a sequence number in our hash
+	\item attacker could still replay a whole connection
+	\item to prevent, we use a nonce for each connection lifetime
+	\item Attacker could close the connection before one side knows
+	\item to prevent, add a type to the hash
+\end{itemize}
+
+\subsection{Network Layer Security: IPsec}
+
+\subsubsection*{What is network layer confidentiality?}
+
+\begin{itemize}
+	\item Sender encrypts all network layer payload, IP payload would be hidden
+	\item Payload hidden from 3rd party sniffing
+	\item Said to provide "blanket coverage"
+\end{itemize}
+
+\noindent\textbf{IPsec provides confidentiality, auth, integrity, and replay-attack prevention}
+
+\subsubsection*{Transport v Tunnel}
+
+\begin{itemize}
+	\item Transport mode:
+	\begin{itemize}
+		\item provides a secure connection between two endpoints as it encapsulates IP's payload (only encrypts payload)
+	\end{itemize}
+	\item Tunneling mode:
+	\begin{itemize}
+		\item encapsulates entire IP packet to provide a virtual "secure hop" between two gateways
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Security Associations \& their Databases}
+
+\define{Security Association} simplex, info is housed at the receiver. Includes:
+\begin{itemize}
+	\item 32 bit SA id | Security Parameter Index (SPI)
+	\item SA origin | IP addr
+	\item SA dest | IP addr
+	\item Encryption type
+	\item Encryption key
+	\item Type of Integrity check
+	\item auth key
+\end{itemize}
+
+\define{SAD} Security Ass. Database, holds all that shit I just listed, key is the SPI
+
+\subsection{Securing Wireless LANs}
+
+\subsection{Operational Security: Firewall \& IDS}
+
+\end{document}
