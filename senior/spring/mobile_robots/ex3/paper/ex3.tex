@@ -4,7 +4,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{listings}
-\usepackage{algorithm2e}
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -118,6 +117,7 @@
 
 	To estimate our position in problem three, I found the intersection point of each line with each of the other lines. I placed my beacons in the corners of the field. This caused some errors when I used the intersection point with beacons opposite each other on the grid. Because of this, I only used the two intersection points of the next beacon around the board. Using this method, I obtained four 'good' intersection points and my estimate was the centroid of these points. Below is an example output of this method. The black points are the good intersection points, the red dot is the estimated position and the red x is the actual position.
 	
+	I did not use the inscribed angle method used in class because the angle of the robot was not needed in our result, only the position.	
 	\begin{center}\includegraphics[width=0.8\textwidth]{p3ex}\end{center}
 	
 	\pagebreak
