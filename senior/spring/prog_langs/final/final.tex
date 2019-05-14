@@ -1,0 +1,159 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{titlesec}
+
+\setlist{nolistsep, noitemsep}
+
+\titleformat{\section}[block]{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\newcommand{\define}[1]{\noindent\textit{#1} | }
+
+\begin{document}
+
+\begin{center}
+	\begin{large} \textbf{Programming Languages Final Exam} \end{large}
+\end{center}
+
+\hfill Charlie Coleman
+
+\section{Functional Programming}
+
+\subsection{What is a side effect, and why do functional languages not have them?}
+
+Side effects are observable effects outside of the return of a function, like outputting text to the console or modifying a file. This makes formal verification of code easier, and allows the output of code to be more easily predicted.
+
+\subsection{Give an example of how control flow is different in functional languages (particularly in Haskell). What type of statements in standard programming languages are not allowed in functional languages?}
+
+There is no for loop or while loop in Haskell. Everything is executed using a function call.
+
+\subsection{What is a higher order function? What is a first class object?}
+
+\define{Higher order function} A function that takes another function as an argument or returns a function.
+
+\define{First class object} An object with no restrictions on its use. It is an object that can be passed and returned to/by functions.
+
+\subsection{How is I/O accommodated in functional programming languages, since it is pretty much purely based on side effects?}
+
+I/O is only allowed in specific places within Haskell, like a main function or a larger I/O block
+
+\subsection{What is a functor in Haskell?}
+
+Functor is a type class in Haskell. It is designed to hold things that can be mapped over, like lists.
+
+\subsection{How are types different in Haskell? Describe its type classes, and how they are different from object oriented classes.}
+
+New data types can be defined as composites of existing types. Type classes define what operations can be performed on different data types.
+
+\subsection{Be prepared to code Haskell functions, at the level of one of our homework assignments}
+
+\subsection{What types of tools from functional programming are starting to show up in languages like Python and C++, and why are they being increasingly used there?}
+
+\define{Map, filter, reduce} clean logic, parallelizable (especially map \& filter)
+
+\define{First class objects} everything is an object in Python
+
+\define{Higher order function} useful for callback functions and other use cases
+
+\define{Lambda expressions} quick, single use functions prove useful in Python
+
+\subsection{How are the tools in Python or C++ different from a more traditional functional language, like Python or Lisp?}
+
+More complicated syntax, some require libraries to achieve the functionality, 
+
+\subsection{Why do the more extreme proponents of functional programming object to structured paradigms? List a few examples from your reading on the subject (for that last essay).}
+
+~
+
+\section{Prolog}
+
+\subsection{List a few applications of Prolog, or things that it can do well}
+
+AI, Natural Language Processing, good for enumeration of all possible solutions to a problem
+
+\subsection{What is unification, and how does Prolog attempt to do it?}
+
+\define{Unification} applying the resolution principle and pattern matching things into appropriate spots
+
+\noindent Rules of unification:
+\begin{enumerate}
+	\item A constant only unifies with itself
+	\item Two structures unify if they have the same functor and arity, and the corresponding arguments unify recursively.
+	\item A variable unifies with anything. If the other thing has a value, then the variable is instantiated. If the other thing is an uninstantiated variable, then the two are associated so that later values will be shared.
+\end{enumerate}
+
+\subsection{What is a functor in Prolog?}
+
+A functor is the name outside the parenthesis of an operation or other data manip. If you say \verb|rainy(seatle)| rainy is the functor.
+
+\subsection{How is a variable represented in Prolog? How are clauses formed?}
+
+Variables are all caps. Clauses are what define the functor output. 
+
+\begin{verbatim}
+<base clause> ::= <structure>.
+<non-base clause> ::= <structure :- <structures>.
+\end{verbatim}
+
+\subsection{Does the ordering of the clauses in a database matter in Prolog? Why or why not?}
+
+Yes, the clauses are checked in the order they are typed.
+
+\subsection{What is the cut (!) in Prolog?}
+
+Cut prevents prolog from backtracking past a goal. This essentially locks variables in their current state.
+
+\subsection{Again, be prepared to write or expand a short Prolog program, at the level of a single homework question or one of our examples from class.}
+
+~
+
+\section{COBOL}
+
+\subsection{Name one place COBOL is still in use, and give several reasons.}
+
+A lot of places. Many businesses maintain legacy COBOL. This is because the codebases are so large and still function, so many companies don't think it worthwhile to update.
+
+\subsection{What are the principle strengths and weaknesses of COBOL?}
+
+Easy to read syntax. Can handle large amounts of data. Reliable.
+
+\noindent No pointers, user defined types, user defined functions (initially)
+
+\subsection{How are COBOL programs organized?}
+
+\begin{enumerate}
+	\item Identification Division (required)
+		
+		| Supplies information about the program to the programmer and compiler
+		
+	\item Environment Division
+	
+		| Used to describe the environment in which program should run
+		
+	\item Data Division
+	
+		| Provides description to the data items the program will process
+		
+	\item Procedure Division (required)
+	
+		| Contains code used to manipulate the data
+\end{enumerate}
+
+\section{Educational Languages}
+
+\subsection{What are some of the major innovations that show up in educational programming languages?}
+
+Graphical representation of the code, syntax error prevention by only allowing valid commands
+
+\subsection{What are a few programming languages that have been developed for teaching purposes, and what are some of their strengths and weaknesses?}
+
+\define{Alice} 3D environment, use is limited mostly to games and video creation.
+
+\define{Scratch} 2D environment, no first class functions, limited file I/O, can interact with Mindstorm
+
+\end{document}
